@@ -76,6 +76,7 @@ class Blog extends Component {
       <Layout>
         <SEO
           title="Web Development Blog | Chase Ohlson"
+          url={'https://chaseohlson.com/blog'}
           description="Chase Ohlson's web development blog.  Covering topics like React & Gatsby and other stuff"
         />
         <HeroWrapper>

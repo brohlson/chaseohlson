@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import social from '../images/social.jpg'
-import helpers from '../util/helpers'
 
 function SEO({
   description,
@@ -16,6 +15,7 @@ function SEO({
   type,
   createdAt,
   updatedAt,
+  url,
 }) {
   return (
     <StaticQuery
@@ -32,6 +32,14 @@ function SEO({
             titleTemplate={`%s`}
             meta={[
               {
+                property: `og:title`,
+                content: title,
+              },
+              {
+                property: `og:url`,
+                content: url,
+              },
+              {
                 name: `description`,
                 content: metaDescription,
               },
@@ -40,8 +48,16 @@ function SEO({
                 content: img || social,
               },
               {
-                property: `og:title`,
-                content: title,
+                property: `og:type`,
+                content: type || `website`,
+              },
+              {
+                property: `og:updated_time`,
+                content: updatedAt,
+              },
+              {
+                property: `og:published_time`,
+                content: createdAt,
               },
               {
                 property: `og:description`,
@@ -49,7 +65,7 @@ function SEO({
               },
               {
                 property: `og:type`,
-                content: type || `website`,
+                content: `website`,
               },
               {
                 name: `twitter:card`,
@@ -83,12 +99,6 @@ function SEO({
               .concat(meta)}
           >
             {preconnect && <link rel="preconnect" href={preconnect} />}
-            {createdAt && (
-              <meta property="article:published_time" content={createdAt} />
-            )}
-            {updatedAt && (
-              <meta property="og:updated_time" content={updatedAt} />
-            )}
           </Helmet>
         )
       }}
@@ -105,6 +115,7 @@ SEO.defaultProps = {
 SEO.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
   lang: PropTypes.string,
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),

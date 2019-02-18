@@ -171,6 +171,7 @@ const StandardBlog = ({ data: { blog } }) => (
       type={'article'}
       createdAt={blog.dateOverride || blog.createdAt}
       updatedAt={blog.updatedAt}
+      url={`https://chaseohlson.com/${blog.slug}`}
     />
     <Wrapper>
       <ImgWrapper>
