@@ -63,10 +63,6 @@ function SEO({
                 content: metaDescription,
               },
               {
-                property: `og:type`,
-                content: `website`,
-              },
-              {
                 name: `twitter:card`,
                 content: `summary`,
               },
