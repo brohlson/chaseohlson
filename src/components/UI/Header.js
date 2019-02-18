@@ -302,12 +302,12 @@ export default class Header extends Component {
             >
               Clients
             </Link>
-            <Link
+            {/* <Link
               onClick={e => this._handleLinkClick(e, '#testimonials')}
               to={'/#testimonials'}
             >
               Testimonials
-            </Link>
+            </Link> */}
             <Link className="divider" to={'/contact'}>
               Contact
             </Link>
@@ -350,12 +350,12 @@ export default class Header extends Component {
             >
               Clients
             </Link>
-            <Link
+            {/* <Link
               onClick={e => this._handleLinkClick(e, '#testimonials')}
               to={'/#testimonials'}
             >
               Testimonials
-            </Link>
+            </Link> */}
             <Link className="divider" to={'/contact'}>
               Contact
             </Link>
