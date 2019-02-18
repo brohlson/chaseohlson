@@ -17,7 +17,6 @@ const IndexPage = ({
     <SEO
       title={homeData.edges[0].node.titleTag}
       description={homeData.edges[0].node.meta}
-      preconnect={'https://p.scdn.co'}
       url={'https://chaseohlson.com'}
       keywords={[
         'web developer',

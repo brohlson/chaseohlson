@@ -10,7 +10,6 @@ function SEO({
   meta,
   keywords,
   title,
-  preconnect,
   img,
   type,
   createdAt,
@@ -97,9 +96,7 @@ function SEO({
                   : []
               )
               .concat(meta)}
-          >
-            {preconnect && <link rel="preconnect" href={preconnect} />}
-          </Helmet>
+          />
         )
       }}
     />
@@ -119,7 +116,6 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
-  preconnect: PropTypes.string,
   img: PropTypes.string,
   type: PropTypes.string,
   createdAt: PropTypes.string,

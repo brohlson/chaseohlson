@@ -24,7 +24,6 @@ const Contact = () => (
         'Looking for a new website or ongoing support on your React app? Contact Chase Ohlson here.'
       }
       url={'https://chaseohlson.com/contact'}
-      preconnect={'https://www.gstatic.com'}
     />
     <ContactWrapper>
       <Container>
