@@ -8,6 +8,11 @@ const helpers = {
 
     return results
   },
+  getUrl: () => {
+    if (typeof window !== undefined) {
+      return window.location
+    }
+  },
 }
 
 export default helpers

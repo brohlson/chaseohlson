@@ -5446,6 +5446,13 @@ gatsby-link@^2.0.7:
     "@types/reach__router" "^1.0.0"
     prop-types "^15.6.1"
 
+gatsby-plugin-canonical-urls@^2.0.10:
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-canonical-urls/-/gatsby-plugin-canonical-urls-2.0.10.tgz#74430ea0526d2b7b87649a2fe4295bdd28081456"
+  integrity sha512-XEhGiku4dg8ezsM+QI0ql8Rda4SLRM0m0ntd9+D6ubDZAXLH9CSpnYL8bfACiBdWmyAokPARY+X5mTkGrULypA==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+
 gatsby-plugin-google-analytics@^2.0.8:
   version "2.0.8"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.0.8.tgz#bef7913726e70f03533c4d14bfc73f8bd73550e0"
@@ -5461,6 +5468,14 @@ gatsby-plugin-manifest@^2.0.9:
     "@babel/runtime" "^7.0.0"
     bluebird "^3.5.0"
     sharp "^0.21.0"
+
+gatsby-plugin-nprogress@^2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-nprogress/-/gatsby-plugin-nprogress-2.0.8.tgz#7d7d38982ac52f7d8993ab26de50e091fdc7511d"
+  integrity sha512-fOjkg47OQRVdPQ+BNCSGeMm5dHo90mAfbAp2JVvxPRKTo8etCi5Dywk4Y3EI1MHKEIvPyq/r8+kVB6DFcEe5xA==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    nprogress "^0.2.0"
 
 gatsby-plugin-offline@^2.0.16:
   version "2.0.20"
@@ -8698,6 +8713,11 @@ npmlog@^4.0.1, npmlog@^4.0.2, npmlog@^4.1.2:
     console-control-strings "~1.1.0"
     gauge "~2.7.3"
     set-blocking "~2.0.0"
+
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
+  integrity sha1-y480xTIT2JVyP8urkH6UIq28r7E=
 
 nth-check@^1.0.1, nth-check@^1.0.2, nth-check@~1.0.1:
   version "1.0.2"

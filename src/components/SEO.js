@@ -2,8 +2,21 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import social from '../images/social.jpg'
+import helpers from '../util/helpers'
 
-function SEO({ description, lang, meta, keywords, title, preconnect }) {
+function SEO({
+  description,
+  lang,
+  meta,
+  keywords,
+  title,
+  preconnect,
+  img,
+  type,
+  createdAt,
+  updatedAt,
+}) {
   return (
     <StaticQuery
       query={detailsQuery}
@@ -23,16 +36,28 @@ function SEO({ description, lang, meta, keywords, title, preconnect }) {
                 content: metaDescription,
               },
               {
+                property: `og:image`,
+                content: img || social,
+              },
+              {
                 property: `og:title`,
                 content: title,
+              },
+              {
+                property: `og:url`,
+                content: helpers.getUrl(),
               },
               {
                 property: `og:description`,
                 content: metaDescription,
               },
               {
+                name: `description`,
+                content: metaDescription,
+              },
+              {
                 property: `og:type`,
-                content: `website`,
+                content: type || `website`,
               },
               {
                 name: `twitter:card`,
@@ -50,6 +75,10 @@ function SEO({ description, lang, meta, keywords, title, preconnect }) {
                 name: `twitter:description`,
                 content: metaDescription,
               },
+              {
+                name: `twitter:image`,
+                content: img || social,
+              },
             ]
               .concat(
                 keywords.length > 0
@@ -62,6 +91,12 @@ function SEO({ description, lang, meta, keywords, title, preconnect }) {
               .concat(meta)}
           >
             {preconnect && <link rel="preconnect" href={preconnect} />}
+            {createdAt && (
+              <meta property="article:published_time" content={createdAt} />
+            )}
+            {updatedAt && (
+              <meta property="og:updated_time" content={updatedAt} />
+            )}
           </Helmet>
         )
       }}
@@ -76,12 +111,16 @@ SEO.defaultProps = {
 }
 
 SEO.propTypes = {
-  description: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
   lang: PropTypes.string,
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired,
   preconnect: PropTypes.string,
+  img: PropTypes.string,
+  type: PropTypes.string,
+  createdAt: PropTypes.string,
+  updatedAt: PropTypes.string,
 }
 
 export default SEO

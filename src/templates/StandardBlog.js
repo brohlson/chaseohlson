@@ -164,7 +164,14 @@ const PostWrapper = styled.div`
 
 const StandardBlog = ({ data: { blog } }) => (
   <Layout>
-    <SEO title={blog.titleTag} description={blog.metaDescription} />
+    <SEO
+      title={blog.titleTag}
+      description={blog.metaDescription}
+      img={blog.featuredImage.file.url}
+      type={'article'}
+      createdAt={blog.dateOverride || blog.createdAt}
+      updatedAt={blog.updatedAt}
+    />
     <Wrapper>
       <ImgWrapper>
         <PostImg backgroundColor={'#2B2B2B'} fluid={blog.featuredImage.fluid} />
@@ -220,6 +227,7 @@ export const blogQuery = graphql`
       slug
       titleTag
       createdAt
+      updatedAt
       metaDescription
       dateOverride
       tags
@@ -229,6 +237,9 @@ export const blogQuery = graphql`
         }
       }
       featuredImage {
+        file {
+          url
+        }
         fluid(maxWidth: 1400) {
           sizes
           src

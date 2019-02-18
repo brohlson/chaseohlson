@@ -18,6 +18,13 @@ const IndexPage = ({
       title={homeData.edges[0].node.titleTag}
       description={homeData.edges[0].node.meta}
       preconnect={'https://p.scdn.co'}
+      keywords={[
+        'web developer',
+        'web developer los angeles',
+        'los angeles web developer',
+        'freelance web developer',
+        'los angeles web development',
+      ]}
     />
     <Hero
       desktop={desktopImage.childImageSharp.fluid}

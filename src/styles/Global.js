@@ -383,21 +383,25 @@ pre[class*='language-'] {
   background: linear-gradient(90deg, #EF412D, #4F2920);
   -webkit-overflow-scrolling: touch;
   overflow: auto;
+  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
 pre[class*='language-'] {
   overflow: auto;
   padding: 1.3125rem;
+  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
 pre[class*='language-']::-moz-selection {
   /* Firefox */
   background: hsl(207, 4%, 16%);
+  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
 pre[class*='language-']::selection {
   /* Safari */
   background: hsl(207, 4%, 16%);
+  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
 /* Text Selection colour */
@@ -405,12 +409,14 @@ pre[class*='language-']::-moz-selection,
 pre[class*='language-'] ::-moz-selection {
   text-shadow: none;
   background: hsla(0, 0%, 100%, 0.15);
+  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
 pre[class*='language-']::selection,
 pre[class*='language-'] ::selection {
   text-shadow: none;
   background: hsla(0, 0%, 100%, 0.15);
+  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
 /* Inline code */
@@ -420,28 +426,34 @@ pre[class*='language-'] ::selection {
   color: var(--inlineCode-text);
   padding: 0.15em 0.2em 0.05em;
   white-space: normal;
+  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
 .token.attr-name {
   color: rgb(173, 219, 103);
   font-style: italic;
+  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
 .token.comment {
   color: rgb(128, 147, 147);
+  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
 .token.string,
 .token.url {
   color: rgb(173, 219, 103);
+  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
 .token.variable {
   color: rgb(214, 222, 235);
+  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
 .token.number {
   color: rgb(247, 140, 108);
+  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
 .token.builtin,
@@ -449,43 +461,52 @@ pre[class*='language-'] ::selection {
 .token.constant,
 .token.function {
   color: rgb(130, 170, 255);
+  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
 .token.punctuation {
   color: rgb(199, 146, 234);
+  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
 .token.selector,
 .token.doctype {
   color: rgb(199, 146, 234);
   font-style: 'italic';
+  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
 .token.class-name {
   color: rgb(255, 203, 139);
+  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
 .token.tag,
 .token.operator,
 .token.keyword {
   color: #ffa7c4;
+  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
 .token.boolean {
   color: rgb(255, 88, 116);
+  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
 .token.property {
   color: rgb(128, 203, 196);
+  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
 .token.namespace {
   color: rgb(178, 204, 214);
+  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
 pre[data-line] {
   padding: 1em 0 1em 3em;
   position: relative;
+  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
 `
