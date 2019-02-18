@@ -105,6 +105,40 @@ const PostWrapper = styled.div`
   padding: 6rem 0;
   max-width: 100%;
 
+  h2 {
+    margin-bottom: 2rem;
+  }
+
+  a {
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 0.2rem 0.4rem;
+    color: white;
+    z-index: 10;
+    &:hover {
+      color: ${props => props.theme.colors.black};
+      &::before {
+        height: 0.2rem;
+        width: 100%;
+        opacity: 1;
+      }
+    }
+    &:before {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      bottom: -1px;
+      left: 0;
+      opacity: 1;
+      color: white;
+      transition: all 0.3s ease;
+      background: ${props => props.theme.gradients.red};
+    }
+  }
+
   &:after {
     content: '';
     position: absolute;

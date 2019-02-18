@@ -189,6 +189,7 @@ pre {
   margin-bottom: 1rem !important;
   overflow: auto;
   -ms-overflow-style: scrollbar;
+  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
 figure {
@@ -483,7 +484,8 @@ pre[class*='language-'] ::selection {
 
 .token.tag,
 .token.operator,
-.token.keyword {
+.token.keyword,
+.token.interpolation {
   color: #ffa7c4;
   font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
