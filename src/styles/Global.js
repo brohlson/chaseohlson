@@ -423,9 +423,9 @@ pre[class*='language-'] ::selection {
 /* Inline code */
 :not(pre) > code[class*='language-'] {
   border-radius: 0.3em;
-  background: var(--inlineCode-bg);
-  color: var(--inlineCode-text);
-  padding: 0.15em 0.2em 0.05em;
+  background: #212529;
+  color: #fff;
+  padding: .4rem;
   white-space: normal;
   font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
