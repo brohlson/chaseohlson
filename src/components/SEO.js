@@ -44,15 +44,7 @@ function SEO({
                 content: title,
               },
               {
-                property: `og:url`,
-                content: helpers.getUrl(),
-              },
-              {
                 property: `og:description`,
-                content: metaDescription,
-              },
-              {
-                name: `description`,
                 content: metaDescription,
               },
               {
