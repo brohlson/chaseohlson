@@ -177,7 +177,7 @@ const ProjectBlock = ({ project }) => (
           {project.projectLink && (
             <div className="p__cta">
               <a
-                href={project.projectLink + '?ref=chaseohlson.com'}
+                href={project.projectLink}
                 target="_blank"
                 rel="nofollow noopener noreferrer"
               >
