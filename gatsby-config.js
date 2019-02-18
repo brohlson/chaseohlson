@@ -60,6 +60,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://chaseohlson.com',
+        sitemap: 'https://chaseohlson.com/sitemap.xml',
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
