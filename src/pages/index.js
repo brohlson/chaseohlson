@@ -6,7 +6,7 @@ import About from '../components/Home/About'
 import Exp from '../components/Home/Exp'
 import Projects from '../components/Home/Projects'
 import Clients from '../components/Home/Clients'
-// import Testimonials from '../components/Home/Testimonials'
+import Testimonials from '../components/Home/Testimonials'
 import Recent from '../components/Home/Recent'
 import { graphql } from 'gatsby'
 
@@ -41,7 +41,7 @@ const IndexPage = ({
       projects={homeData.edges[0].node.projectBlocks}
     />
     <Clients logos={homeData.edges[0].node.clientLogos} />
-    {/* <Testimonials testimonials={homeData.edges[0].node.testimonialBlocks} /> */}
+    <Testimonials testimonials={homeData.edges[0].node.testimonialBlocks} />
     <Recent posts={blogData.edges} />
   </Layout>
 )
