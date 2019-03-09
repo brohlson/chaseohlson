@@ -30,14 +30,14 @@ exports.handler = function(event, context, callback) {
     if (error) {
       console.log(error)
       callback(null, {
-        errorCode,
+        statusCode: errorCode,
         headers,
         body: JSON.stringify(error),
       })
     } else {
       console.log(body)
       callback(null, {
-        successCode,
+        statusCode: successCode,
         headers,
         body: JSON.stringify(body),
       })
