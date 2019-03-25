@@ -58,7 +58,8 @@
     "dev": "concurrently \"gatsby develop\" \"yarn generate\"",
     "generate": "netlify-lambda serve functions-src",
     "format": "prettier --write \"src/**/*.js\"",
-    "clear": "rm -rf .cache/ && rm -rf node_modules/ && yarn cache clean --force && yarn install"
+    "clear": "rm -rf .cache/ && rm -rf node_modules/ && yarn cache clean --force && yarn install",
+    "serve": "gatsby serve"
   },
   "devDependencies": {
     "prettier": "^1.15.2"

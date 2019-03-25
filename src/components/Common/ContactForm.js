@@ -78,7 +78,9 @@ const Form = styled.form`
   }
 `
 
-const Input = styled.input`
+const Input = styled.input.attrs(() => ({
+  'data-hj-whitelist': '',
+}))`
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -94,7 +96,9 @@ const InputWrapper = styled.div`
   box-sizing: border-box;
 `
 
-const Message = styled.textarea`
+const Message = styled.textarea.attrs(() => ({
+  'data-hj-whitelist': '',
+}))`
   width: 100%;
   line-height: 1.6;
   resize: vertical;
