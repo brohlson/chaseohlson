@@ -24,11 +24,11 @@ const Form = styled.form`
   margin-top: 3rem;
   max-width: 100%;
 
-  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @media screen and (max-width: 600px) {
     select,
     textarea,
     input {
-      font-size: 16px;
+      font-size: 16px !important;
     }
   }
 
