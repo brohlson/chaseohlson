@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Container from '../UI/Container'
@@ -115,58 +115,48 @@ const Copy = ({ person, company, quote, active }) => (
     </div>
   </CopyWrapper>
 )
-export default class Testimonials extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { index: 0 }
-  }
-
-  static propTypes = {
-    testimonials: PropTypes.array.isRequired,
-  }
-
-  handleDotClick = idx => {
-    this.setState({ index: idx })
-  }
-
-  render() {
-    let { testimonials } = this.props
-    let { index } = this.state
-    return (
-      <TestWrapper id="testimonials">
-        <Container>
-          <div className="title">
-            <h2>Things People Say</h2>
-          </div>
-          <div className="module">
-            <div className="inner">
-              <div className="nav">
-                {testimonials &&
-                  Array.from(testimonials).map((noop, idx) => (
-                    <Dot
-                      onClick={() => this.handleDotClick(idx)}
-                      active={index === idx}
-                      key={idx}
-                      num={idx}
-                    >
-                      <div />
-                    </Dot>
-                  ))}
-              </div>
+function Testimonials({ testimonials }) {
+  const [index, setIndex] = useState(0)
+  return (
+    <TestWrapper id="testimonials">
+      <Container>
+        <div className="title">
+          <h2>Things People Say</h2>
+        </div>
+        <div className="module">
+          <div className="inner">
+            <div className="nav">
               {testimonials &&
-                testimonials.map((item, idx) => (
-                  <Copy
-                    key={idx}
+                Array.from(testimonials).map((noop, idx) => (
+                  <Dot
+                    onClick={() => setIndex(idx)}
                     active={index === idx}
-                    person={item.person}
-                    company={item.company}
-                    quote={item.quote}
-                  />
+                    key={idx}
+                    num={idx}
+                  >
+                    <div />
+                  </Dot>
                 ))}
             </div>
+            {testimonials &&
+              testimonials.map((item, idx) => (
+                <Copy
+                  key={idx}
+                  active={index === idx}
+                  person={item.person}
+                  company={item.company}
+                  quote={item.quote}
+                />
+              ))}
           </div>
-        </Container>
-      </TestWrapper>
-    )
-  }
+        </div>
+      </Container>
+    </TestWrapper>
+  )
 }
+
+Testimonials.propTypes = {
+  testimonials: PropTypes.array.isRequired,
+}
+
+export default Testimonials

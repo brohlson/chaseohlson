@@ -15,6 +15,7 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-offline',
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {

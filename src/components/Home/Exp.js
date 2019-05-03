@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Container from '../UI/Container'
@@ -231,26 +231,15 @@ const TitleDetailBlockWrapper = styled.div`
   }
 `
 
-export default class Exp extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      index: 0,
-    }
-  }
-  static propTypes = {
-    blocks: PropTypes.array.isRequired,
-  }
+function Exp({ blocks }) {
+  const [index, setIndex] = useState(0)
 
-  handleLeftClick = idx => {
-    let { index } = this.state
+  const handleLeftClick = idx => {
     let val = index === parseInt(idx) ? null : parseInt(idx)
-    this.setState({ index: val })
+    setIndex(val)
   }
 
-  renderLeftBlocks = () => {
-    let { blocks } = this.props
-    let { index } = this.state
+  const renderLeftBlocks = () => {
     return blocks.map((block, idx) => {
       let { company, details, position, timeframe } = block
       return (
@@ -258,7 +247,7 @@ export default class Exp extends Component {
           selected={index === idx}
           key={idx}
           id={idx}
-          onClick={() => this.handleLeftClick(idx)}
+          onClick={() => handleLeftClick(idx)}
         >
           <div className="title">
             <span>{company}</span>
@@ -286,9 +275,7 @@ export default class Exp extends Component {
     })
   }
 
-  renderDetailBlocks = () => {
-    let { blocks } = this.props
-    let { index } = this.state
+  const renderDetailBlocks = () => {
     return blocks.map((block, idx) => {
       let { details, position, timeframe } = block
       return (
@@ -310,19 +297,23 @@ export default class Exp extends Component {
     })
   }
 
-  render() {
-    return (
-      <ExpWrapper id="experience">
-        <Container>
-          <div className="title">
-            <h2>Experience</h2>
-          </div>
-          <div className="module">
-            <div className="left">{this.renderLeftBlocks()}</div>
-            <div className="right">{this.renderDetailBlocks()}</div>
-          </div>
-        </Container>
-      </ExpWrapper>
-    )
-  }
+  return (
+    <ExpWrapper id="experience">
+      <Container>
+        <div className="title">
+          <h2>Experience</h2>
+        </div>
+        <div className="module">
+          <div className="left">{renderLeftBlocks()}</div>
+          <div className="right">{renderDetailBlocks()}</div>
+        </div>
+      </Container>
+    </ExpWrapper>
+  )
 }
+
+Exp.propTypes = {
+  blocks: PropTypes.array.isRequired,
+}
+
+export default Exp
