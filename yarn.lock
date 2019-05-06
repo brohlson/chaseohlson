@@ -5634,6 +5634,13 @@ gatsby-plugin-canonical-urls@^2.0.10:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
+gatsby-plugin-drift@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-drift/-/gatsby-plugin-drift-1.0.0.tgz#2c26ac9f588908c888d3782f694d3e23cd06950f"
+  integrity sha512-rEyN8En+BK/SgSLb2mNrVTwMAQtnAJv5f0X444X8ikJJ8byAJFGOyHlbuK0rVl/QvMgcw9E65cW3PhY6wrVCuA==
+  dependencies:
+    babel-runtime "^6.26.0"
+
 gatsby-plugin-google-analytics@^2.0.8:
   version "2.0.8"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.0.8.tgz#bef7913726e70f03533c4d14bfc73f8bd73550e0"

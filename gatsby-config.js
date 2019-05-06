@@ -104,6 +104,12 @@ module.exports = {
         trackingId: process.env.GOOGLE_ID,
       },
     },
+    {
+      resolve: 'gatsby-plugin-drift',
+      options: {
+        appId: process.env.DRIFT_ID,
+      },
+    },
   ],
   developMiddleware: app => {
     app.use(
