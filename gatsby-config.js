@@ -91,25 +91,25 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-hotjar`,
-      options: {
-        id: process.env.HOTJAR_ID,
-        sv: process.env.HOTJAR_VERSION,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-hotjar`,
+    //   options: {
+    //     id: process.env.HOTJAR_ID,
+    //     sv: process.env.HOTJAR_VERSION,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: process.env.GOOGLE_ID,
       },
     },
-    {
-      resolve: 'gatsby-plugin-drift',
-      options: {
-        appId: process.env.DRIFT_ID,
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-drift',
+    //   options: {
+    //     appId: process.env.DRIFT_ID,
+    //   },
+    // },
   ],
   developMiddleware: app => {
     app.use(
