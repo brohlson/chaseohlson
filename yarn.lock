@@ -12955,10 +12955,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typeface-exo-2@^0.0.54:
-  version "0.0.54"
-  resolved "https://registry.yarnpkg.com/typeface-exo-2/-/typeface-exo-2-0.0.54.tgz#58c6e87c9a7d0d4dfe31080d901848847c1ff01f"
-  integrity sha512-OXRTmGVdD11G68i9kMhFpqaKiwozPU3fCcxj5PCpRANK/YWId5xN+87xu/GWIVkcZe87W/kjy/8yRpFrsVbRYA==
+typeface-exo-2@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-exo-2/-/typeface-exo-2-0.0.72.tgz#dc7ecddd106264eab0fec76e931f2b9feb8b7329"
+  integrity sha512-PKsXGtoMap2953TneJoHfS1UNwAzB7iB0YPcHu5P2pI+Y0AKLCv4ihfz1QZaW3OTP+rkB147L0Kd7ZxRRPkIvQ==
 
 typeface-inconsolata@^0.0.54:
   version "0.0.54"
