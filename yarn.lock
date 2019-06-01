@@ -10828,10 +10828,10 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-moment@^0.8.4:
-  version "0.8.4"
-  resolved "https://registry.yarnpkg.com/react-moment/-/react-moment-0.8.4.tgz#18eb59e1541c8b216353e23c21e9db50e42e2edb"
-  integrity sha512-QhI19OcfhiAn60/O6bMR0w8ApXrPFCjv6+eV0I/P9/AswzjgEAx4L7VxMBCpS/jrythLa12Q9v88req+ys4YpA==
+react-moment@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/react-moment/-/react-moment-0.9.0.tgz#25aefe0b612fe11e83f9c4be6db3b1b54e04f3c9"
+  integrity sha512-mtgBBoi+uqSpIay97TDFaW86va1M2RE7tGsTqFKH5v3WnpGmJAhUxDIXKdRO31wGF/H4KUi3vxhyjzO8GtvMKA==
 
 react-side-effect@^1.1.0:
   version "1.1.5"
