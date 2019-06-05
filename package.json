@@ -46,7 +46,7 @@
     "spotify-web-api-node": "^4.0.0",
     "styled-components": "^4.2.1",
     "typeface-exo-2": "^0.0.72",
-    "typeface-inconsolata": "^0.0.54",
+    "typeface-inconsolata": "^0.0.72",
     "typeface-roboto-mono": "^0.0.54"
   },
   "keywords": [

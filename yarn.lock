@@ -13133,10 +13133,10 @@ typeface-exo-2@^0.0.72:
   resolved "https://registry.yarnpkg.com/typeface-exo-2/-/typeface-exo-2-0.0.72.tgz#dc7ecddd106264eab0fec76e931f2b9feb8b7329"
   integrity sha512-PKsXGtoMap2953TneJoHfS1UNwAzB7iB0YPcHu5P2pI+Y0AKLCv4ihfz1QZaW3OTP+rkB147L0Kd7ZxRRPkIvQ==
 
-typeface-inconsolata@^0.0.54:
-  version "0.0.54"
-  resolved "https://registry.yarnpkg.com/typeface-inconsolata/-/typeface-inconsolata-0.0.54.tgz#9a7f7726eb615a3ab53dc19732f6c77adc65d5b5"
-  integrity sha512-T7hV2VUY4cPkdEHSC7/iKw/mFA3VbQFnxqr9Kl/T7mGK5Me73z+TBCo0uN5KZPER12ud6rqxldnh5JsglgzwFA==
+typeface-inconsolata@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-inconsolata/-/typeface-inconsolata-0.0.72.tgz#6b5c92132c7d3e83f7a17025087d8d717ada63d5"
+  integrity sha512-ITFhcI2ANWmSEPVgQgPJHh6RyiCf1pnkRXj1VxjsxfSwRrXFGgGITRJV+HxW7kTRDx+3/6RReT2/SWsMPqJaTA==
 
 typeface-roboto-mono@^0.0.54:
   version "0.0.54"
