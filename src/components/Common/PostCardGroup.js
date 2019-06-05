@@ -47,7 +47,7 @@ const PostCardGroup = ({ posts, topBorder }) => (
   </PostCardGroupWrapper>
 )
 
-PostCard.propTypes = {
+PostCardGroup.propTypes = {
   posts: PropTypes.array.isRequired,
   topBorder: PropTypes.bool,
 }

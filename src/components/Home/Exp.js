@@ -176,7 +176,7 @@ const TitleDetailBlockWrapper = styled.div`
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
-    max-height: ${props => (props.selected ? `500px` : `0`)};
+    max-height: ${props => (props.selected ? `800px` : `0`)};
     span {
       color: ${props => props.theme.colors.black};
       text-transform: none;
@@ -246,7 +246,6 @@ function Exp({ blocks }) {
         <TitleBlockWrapper
           selected={index === idx}
           key={idx}
-          id={idx}
           onClick={() => handleLeftClick(idx)}
         >
           <div className="title">
@@ -279,7 +278,7 @@ function Exp({ blocks }) {
     return blocks.map((block, idx) => {
       let { details, position, timeframe } = block
       return (
-        <DetailBlockWrapper selected={index === idx} key={idx} id={idx}>
+        <DetailBlockWrapper selected={index === idx} key={idx}>
           <div className="position">
             <span>{position}</span>
           </div>
