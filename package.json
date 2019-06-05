@@ -34,7 +34,7 @@
     "moment": "^2.23.0",
     "netlify-lambda": "^1.1.1",
     "node-spotify-api": "^1.0.7",
-    "prismjs": "^1.15.0",
+    "prismjs": "^1.16.0",
     "prop-types": "^15.6.2",
     "react": "16.7.0-alpha.2",
     "react-audio-player": "^0.11.0",
