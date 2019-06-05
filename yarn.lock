@@ -9181,10 +9181,10 @@ node-releases@^1.1.21:
   dependencies:
     semver "^5.3.0"
 
-node-spotify-api@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/node-spotify-api/-/node-spotify-api-1.0.7.tgz#09dd3088428fbf1d0ca4cdf6bbb2d1236bdaa934"
-  integrity sha512-/nM5ImBjgatzdRHc3MVY+t9iynC0LpO1PEkOlfyG1ogtlny2dQ++oq9m3qLJocbEqtZxtg66w5z4DXxdlSOsSg==
+node-spotify-api@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/node-spotify-api/-/node-spotify-api-1.1.1.tgz#27b3a7e3890730ee14e9195994f793925d1c0937"
+  integrity sha512-7TUox594clquz7VWUxEy2qwJN8q/W66+l4AOi9DLnnAukJ0TzckDYpxbdfMv1zDQjV+s/YbqxInwUdpla1H48Q==
   dependencies:
     request "^2.81.0"
     request-promise "^4.2.1"
