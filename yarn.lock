@@ -10807,10 +10807,10 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-moment@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/react-moment/-/react-moment-0.9.0.tgz#25aefe0b612fe11e83f9c4be6db3b1b54e04f3c9"
-  integrity sha512-mtgBBoi+uqSpIay97TDFaW86va1M2RE7tGsTqFKH5v3WnpGmJAhUxDIXKdRO31wGF/H4KUi3vxhyjzO8GtvMKA==
+react-moment@^0.9.2:
+  version "0.9.2"
+  resolved "https://registry.yarnpkg.com/react-moment/-/react-moment-0.9.2.tgz#1cdc6ed02f1735282282129edf0f607f420df039"
+  integrity sha512-jpKIEvcEOTSa4RXWTjDlvja7sN+ee5Gyk5ZKa704FZxE01OxmKIpq9GUliqTrAgdDYJJUQsnqQamczn0TN+DTg==
 
 react-reconciler@^0.20.0:
   version "0.20.4"
