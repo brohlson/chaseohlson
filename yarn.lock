@@ -11303,10 +11303,10 @@ scroll-behavior@^0.9.9:
     dom-helpers "^3.2.1"
     invariant "^2.2.2"
 
-scroll-to-element@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/scroll-to-element/-/scroll-to-element-2.0.2.tgz#f4fc74f26482337a5b8f656552fda0f41644f0f6"
-  integrity sha512-RYfez9f/Ewo5mLV0g9/Zb1gb/EZ+8T9gZPBB2eV6AhkkE4HY6duVYjF1nBRXxoS2EyfEORjttQmg9buXsUHvRQ==
+scroll-to-element@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/scroll-to-element/-/scroll-to-element-2.0.3.tgz#99b404fc6a09fe73f3c062cd5b8a14efb6404e4d"
+  integrity sha512-5herPcm9jMfQgRwu94lH5mei+2YhipR4RQ2nAvnBxJb2tG+P7O0ctOKAaAZBXbBejnn+MImh3wrAUA5EcLnjEQ==
   dependencies:
     raf "^3.4.0"
 
