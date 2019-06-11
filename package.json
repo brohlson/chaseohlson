@@ -63,7 +63,7 @@
     "serve": "gatsby serve"
   },
   "devDependencies": {
-    "prettier": "^1.17.1"
+    "prettier": "^1.18.2"
   },
   "repository": {
     "type": "git",
