@@ -26,7 +26,7 @@
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-prismjs": "^3.2.11",
     "gatsby-source-contentful": "^2.0.71",
-    "gatsby-source-filesystem": "^2.0.8",
+    "gatsby-source-filesystem": "^2.0.40",
     "gatsby-transformer-remark": "^2.4.0",
     "gatsby-transformer-sharp": "^2.1.21",
     "http-proxy-middleware": "^0.19.1",
