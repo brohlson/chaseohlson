@@ -5337,10 +5337,10 @@ gatsby-plugin-robots-txt@^1.4.0:
     "@babel/runtime" "^7.3.1"
     generate-robotstxt "^6.0.0"
 
-gatsby-plugin-sharp@^2.1.5:
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.1.5.tgz#f032cd6e1a42980685cbb386a58420a168002060"
-  integrity sha512-qHW0HJ3PK/HrTxg9wEqh8oHPv4R2SThn9z2n5m7pkrHOK9ZLHTkUaXtSNqcKzTap9cd7K4sjgw3EXaM5G7Jc8A==
+gatsby-plugin-sharp@^2.1.5, gatsby-plugin-sharp@^2.1.7:
+  version "2.1.7"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.1.7.tgz#5f54ad420a62d6b35b75c86b8aabaac1a2db119d"
+  integrity sha512-kLcNQcRaNLncjtjac0mDxckozYNsSq2WT3q9KH1GndBeYC3yv4XE1QgcBwArxu+7keRyVpim6oz4Iv9mMVvW/w==
   dependencies:
     "@babel/runtime" "^7.0.0"
     async "^2.1.2"
@@ -5404,10 +5404,10 @@ gatsby-remark-prismjs@^3.2.11:
     parse-numeric-range "^0.0.2"
     unist-util-visit "^1.3.0"
 
-gatsby-source-contentful@^2.0.71:
-  version "2.0.71"
-  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.0.71.tgz#11c4ae9bae14ddf476fabc088f593edd638eced1"
-  integrity sha512-ubZRfO17PHcO6V9ucLFp3HpR8Rj6CWZVY2hSiyb06NTEbvEPWd2alBjdmHXpEo3zlzCXi5BYu11SYDT2ZpVR6w==
+gatsby-source-contentful@^2.0.73:
+  version "2.0.73"
+  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.0.73.tgz#dd7d4dead997c5bbf5f27a90cc629a14a7932dab"
+  integrity sha512-MrLHTdDjxSB/KpO0SyS9xTvjYqS/K8GmEHo5M5X/yTc3RaEXAVADYlDy5dXqsLGMRS+YZf3jT0l9duQK70cTvg==
   dependencies:
     "@babel/runtime" "^7.0.0"
     axios "^0.19.0"
@@ -5417,18 +5417,18 @@ gatsby-source-contentful@^2.0.71:
     contentful "^6.1.0"
     deep-map "^1.5.0"
     fs-extra "^4.0.2"
-    gatsby-plugin-sharp "^2.1.5"
-    gatsby-source-filesystem "^2.0.39"
+    gatsby-plugin-sharp "^2.1.7"
+    gatsby-source-filesystem "^2.0.41"
     is-online "^7.0.0"
     joi "^14.0.0"
     json-stringify-safe "^5.0.1"
     lodash "^4.17.10"
     qs "^6.4.0"
 
-gatsby-source-filesystem@^2.0.39, gatsby-source-filesystem@^2.0.8:
-  version "2.0.39"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.0.39.tgz#39d0f55aae594eea65454728676d92f1b43ba6e5"
-  integrity sha512-RL5J1WTrb6snyTeCmylt8/6cmhJxftjZGFLFHByEERyVEgMMiNDRHWqmrW/oWwkQ6Gvxi4GNnYUPsps+9Azv8Q==
+gatsby-source-filesystem@^2.0.41, gatsby-source-filesystem@^2.0.8:
+  version "2.0.41"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.0.41.tgz#a60f5402879c5c5dddd3f51b549e72f4d429d911"
+  integrity sha512-OtiKhHyIKkx/HMSGCanIklZENXGbQgaEg8g4ye6dq7pZ7NW5bk/0bHJa0Tn6YHZwjNjOqx3es1EQj5yyJejWRA==
   dependencies:
     "@babel/runtime" "^7.0.0"
     better-queue "^3.8.7"
