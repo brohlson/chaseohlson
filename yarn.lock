@@ -5336,10 +5336,10 @@ gatsby-plugin-robots-txt@^1.4.0:
     "@babel/runtime" "^7.3.1"
     generate-robotstxt "^6.0.0"
 
-gatsby-plugin-sharp@^2.1.5:
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.1.5.tgz#f032cd6e1a42980685cbb386a58420a168002060"
-  integrity sha512-qHW0HJ3PK/HrTxg9wEqh8oHPv4R2SThn9z2n5m7pkrHOK9ZLHTkUaXtSNqcKzTap9cd7K4sjgw3EXaM5G7Jc8A==
+gatsby-plugin-sharp@^2.1.5, gatsby-plugin-sharp@^2.1.6:
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.1.6.tgz#bdd32ef0243f302f66f68c0611732ce33df9079f"
+  integrity sha512-r8usE/XOAXP4AHr/Vdtt2+2+EGeS7ivdTVw06INOZ7tSpJZ7bJkxIDz4vzkAhY6fq+XVS2Hdv5cFIVPN34flgw==
   dependencies:
     "@babel/runtime" "^7.0.0"
     async "^2.1.2"
@@ -5353,7 +5353,7 @@ gatsby-plugin-sharp@^2.1.5:
     mini-svg-data-uri "^1.0.0"
     potrace "^2.1.1"
     probe-image-size "^4.0.0"
-    progress "^1.1.8"
+    progress "^2.0.3"
     semver "^5.6.0"
     sharp "^0.22.1"
     svgo "^1.2.0"
@@ -5403,10 +5403,10 @@ gatsby-remark-prismjs@^3.2.11:
     parse-numeric-range "^0.0.2"
     unist-util-visit "^1.3.0"
 
-gatsby-source-contentful@^2.0.71:
-  version "2.0.71"
-  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.0.71.tgz#11c4ae9bae14ddf476fabc088f593edd638eced1"
-  integrity sha512-ubZRfO17PHcO6V9ucLFp3HpR8Rj6CWZVY2hSiyb06NTEbvEPWd2alBjdmHXpEo3zlzCXi5BYu11SYDT2ZpVR6w==
+gatsby-source-contentful@^2.0.72:
+  version "2.0.72"
+  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.0.72.tgz#32e4725d00f44590e6d77a5e2d52852ea718315a"
+  integrity sha512-d5AzyA6fHww8iyA/grBgz3OjzKoaAaGoChwaOoY83L1J+IMdOuPGOXErGJb+ylR7/n6wfeaOh4g5anZzukmwnQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
     axios "^0.19.0"
@@ -5416,18 +5416,18 @@ gatsby-source-contentful@^2.0.71:
     contentful "^6.1.0"
     deep-map "^1.5.0"
     fs-extra "^4.0.2"
-    gatsby-plugin-sharp "^2.1.5"
-    gatsby-source-filesystem "^2.0.39"
+    gatsby-plugin-sharp "^2.1.6"
+    gatsby-source-filesystem "^2.0.40"
     is-online "^7.0.0"
     joi "^14.0.0"
     json-stringify-safe "^5.0.1"
     lodash "^4.17.10"
     qs "^6.4.0"
 
-gatsby-source-filesystem@^2.0.39, gatsby-source-filesystem@^2.0.8:
-  version "2.0.39"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.0.39.tgz#39d0f55aae594eea65454728676d92f1b43ba6e5"
-  integrity sha512-RL5J1WTrb6snyTeCmylt8/6cmhJxftjZGFLFHByEERyVEgMMiNDRHWqmrW/oWwkQ6Gvxi4GNnYUPsps+9Azv8Q==
+gatsby-source-filesystem@^2.0.40, gatsby-source-filesystem@^2.0.8:
+  version "2.0.40"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.0.40.tgz#e185d110c6fc677ec2eb70916da25887611bb30d"
+  integrity sha512-Jx9nu4xUNvHAVjaBmBKJuivtvEtuADfcTjojqzufDx5RIB3g8/FYpcJwIuXivobZF5HCy+d4jvHH9IwzCfHIdA==
   dependencies:
     "@babel/runtime" "^7.0.0"
     better-queue "^3.8.7"
@@ -5439,7 +5439,7 @@ gatsby-source-filesystem@^2.0.39, gatsby-source-filesystem@^2.0.8:
     md5-file "^3.1.1"
     mime "^2.2.0"
     pretty-bytes "^4.0.2"
-    progress "^1.1.8"
+    progress "^2.0.3"
     read-chunk "^3.0.0"
     valid-url "^1.0.9"
     xstate "^3.1.0"
@@ -9948,12 +9948,7 @@ process@~0.5.1:
   resolved "https://registry.yarnpkg.com/process/-/process-0.5.2.tgz#1638d8a8e34c2f440a91db95ab9aeb677fc185cf"
   integrity sha1-FjjYqONML0QKkduVq5rrZ3/Bhc8=
 
-progress@^1.1.8:
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/progress/-/progress-1.1.8.tgz#e260c78f6161cdd9b0e56cc3e0a85de17c7a57be"
-  integrity sha1-4mDHj2Fhzdmw5WzD4Khd4Xx6V74=
-
-progress@^2.0.0:
+progress@^2.0.0, progress@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
