@@ -5425,10 +5425,10 @@ gatsby-source-contentful@^2.0.73:
     lodash "^4.17.10"
     qs "^6.4.0"
 
-gatsby-source-filesystem@^2.0.41, gatsby-source-filesystem@^2.0.8:
-  version "2.0.41"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.0.41.tgz#a60f5402879c5c5dddd3f51b549e72f4d429d911"
-  integrity sha512-OtiKhHyIKkx/HMSGCanIklZENXGbQgaEg8g4ye6dq7pZ7NW5bk/0bHJa0Tn6YHZwjNjOqx3es1EQj5yyJejWRA==
+gatsby-source-filesystem@^2.0.41, gatsby-source-filesystem@^2.0.43:
+  version "2.0.43"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.0.43.tgz#0f5dcca737db63b57b4e6b3d922a9991246222da"
+  integrity sha512-z4HMnTcigoXtd3rRa/yQScgFJU5w13c9T5Yw/k58M+ysrnpFEG34VOxwot22mEuMXMM/Fdg5PwH4a54F3OQTcQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
     better-queue "^3.8.7"
@@ -5440,7 +5440,7 @@ gatsby-source-filesystem@^2.0.41, gatsby-source-filesystem@^2.0.8:
     md5-file "^3.1.1"
     mime "^2.2.0"
     pretty-bytes "^4.0.2"
-    progress "^1.1.8"
+    progress "^2.0.3"
     read-chunk "^3.0.0"
     valid-url "^1.0.9"
     xstate "^3.1.0"
