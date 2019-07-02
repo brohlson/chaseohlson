@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
-import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Container from '../components/UI/Container'
 import Button from '../components/UI/Button'
@@ -73,7 +72,7 @@ class Blog extends Component {
     let { allLoaded, chunksPerPage } = this.state
     let { edges } = this.props.data.blogData
     return (
-      <Layout>
+      <Fragment>
         <SEO
           title="Web Development Blog | Chase Ohlson"
           url={'https://chaseohlson.com/blog'}
@@ -100,7 +99,7 @@ class Blog extends Component {
             )}
           </Container>
         </PostsWrapper>
-      </Layout>
+      </Fragment>
     )
   }
 }

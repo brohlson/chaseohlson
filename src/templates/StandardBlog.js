@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import Layout from '../components/Layout'
 import Container from '../components/UI/Container'
 import SEO from '../components/SEO'
 import Img from 'gatsby-image'
@@ -197,7 +196,7 @@ const PostWrapper = styled.div`
 `
 
 const StandardBlog = ({ data: { blog } }) => (
-  <Layout>
+  <Fragment>
     <SEO
       title={blog.titleTag}
       description={blog.metaDescription}
@@ -248,7 +247,7 @@ const StandardBlog = ({ data: { blog } }) => (
         </Container>
       </BodyWrapper>
     </Wrapper>
-  </Layout>
+  </Fragment>
 )
 
 StandardBlog.propTypes = {

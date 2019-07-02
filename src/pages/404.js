@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 
 const Wrap = styled.div`
@@ -16,13 +15,13 @@ const Wrap = styled.div`
 `
 
 const NotFoundPage = () => (
-  <Layout>
+  <Fragment>
     <SEO title="404 | Page Not Found | Chase Ohlson" />
     <Wrap>
       <h1>404</h1>
       <p>Page Not Found</p>
     </Wrap>
-  </Layout>
+  </Fragment>
 )
 
 export default NotFoundPage

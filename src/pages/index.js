@@ -1,5 +1,4 @@
-import React from 'react'
-import Layout from '../components/Layout'
+import React, { Fragment } from 'react'
 import Hero from '../components/Home/Hero'
 import SEO from '../components/SEO'
 import About from '../components/Home/About'
@@ -13,7 +12,7 @@ import { graphql } from 'gatsby'
 const IndexPage = ({
   data: { homeData, blogData, desktopImage, mobileImage },
 }) => (
-  <Layout>
+  <Fragment>
     <SEO
       title={homeData.edges[0].node.titleTag}
       description={homeData.edges[0].node.meta}
@@ -43,7 +42,7 @@ const IndexPage = ({
     <Clients logos={homeData.edges[0].node.clientLogos} />
     <Testimonials testimonials={homeData.edges[0].node.testimonialBlocks} />
     <Recent posts={blogData.edges} />
-  </Layout>
+  </Fragment>
 )
 
 export default IndexPage

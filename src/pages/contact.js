@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Container from '../components/UI/Container'
 import ContactForm from '../components/Common/ContactForm'
@@ -17,7 +16,7 @@ const ContactWrapper = styled.div`
 `
 
 const Contact = () => (
-  <Layout>
+  <Fragment>
     <SEO
       title={'Contact | Chase Ohlson'}
       description={
@@ -31,7 +30,7 @@ const Contact = () => (
         <ContactForm />
       </Container>
     </ContactWrapper>
-  </Layout>
+  </Fragment>
 )
 
 export default Contact
