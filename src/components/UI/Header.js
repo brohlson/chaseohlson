@@ -217,6 +217,10 @@ export default class Header extends Component {
     }
   }
 
+  componentDidUpdate(prevProps) {
+    console.log(prevProps)
+  }
+
   _handleScroll = () => {
     if (typeof window !== undefined) {
       let h = document.documentElement,
@@ -240,7 +244,7 @@ export default class Header extends Component {
   _handleLinkClick = (e, target) => {
     this.setState({ open: !this.state.open })
     if (typeof window !== undefined) {
-      if (window.location.pathname === '/') {
+      if (window.location.pathname === '/' && Boolean(target)) {
         e.preventDefault()
         scrollToElement(target, {
           offset: -95,
@@ -356,11 +360,17 @@ export default class Header extends Component {
             >
               Testimonials
             </Link>
-            <Link className="divider" to={'/contact'}>
+            <Link
+              onClick={this._handleLinkClick}
+              className="divider"
+              to={'/contact'}
+            >
               Contact
             </Link>
 
-            <Link to={'/blog'}>Blog</Link>
+            <Link onClick={this._handleLinkClick} to={'/blog'}>
+              Blog
+            </Link>
           </div>
         </Container>
       </HeaderWrapper>
