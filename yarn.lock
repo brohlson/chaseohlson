@@ -888,7 +888,7 @@
     "@hapi/topo" "3.x.x"
     isemail "3.x.x"
 
-"@hapi/joi@^15.1.0":
+"@hapi/joi@^15.0.0", "@hapi/joi@^15.1.0":
   version "15.1.0"
   resolved "https://registry.yarnpkg.com/@hapi/joi/-/joi-15.1.0.tgz#940cb749b5c55c26ab3b34ce362e82b6162c8e7a"
   integrity sha512-n6kaRQO8S+kepUTbXL9O/UOL788Odqs38/VOfoCrATDtTvyfiO3fgjlSRaNkHabpTLgM7qru9ifqXlXbXk8SeQ==
@@ -5454,10 +5454,10 @@ gatsby-plugin-styled-components@^3.1.0:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-gatsby-react-router-scroll@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.1.0.tgz#4aa36e1e5a5d181cb70902ea7e801796b6c32a7e"
-  integrity sha512-iyvFQ6ljyyHrvqu1ceAF34ootzmTtUAuqhOjAmi27ysYAY6/oL2uNhEnY5OzMb1WUe8yFRB+gmcJ+IwX/pNAGA==
+gatsby-react-router-scroll@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.1.1.tgz#715c15689b1715d350f80a32204a0222a2ad6d49"
+  integrity sha512-mAE4uOUiPkYit4NGUaI7lxljfDuJJyHsLo9UpsbsRMsuEqpF5kTcwTFE8hICvv+c+apjh12hJWAhGGO9K2xOug==
   dependencies:
     "@babel/runtime" "^7.0.0"
     scroll-behavior "^0.9.9"
@@ -5584,10 +5584,10 @@ gatsby-transformer-sharp@^2.2.0:
     semver "^5.6.0"
     sharp "^0.22.1"
 
-gatsby@^2.12.0:
-  version "2.12.0"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.12.0.tgz#ef7db2e77fd118d7fd3955e330ea239a47a75636"
-  integrity sha512-4exunFkNBSRvdq1C5wTjpmjjL66SLLqaBE+q5mKPssaA+8gaS84Wn4BACn/CWWAFSWkF38TPJui/G9KhqfhYdg==
+gatsby@^2.13.2:
+  version "2.13.2"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.13.2.tgz#8cf4e1d1ab7da0620c4373651ee33ad2cdd3ceda"
+  integrity sha512-Crw+HO1HQ93/oCLR08kTLfTBF9o5vct3jiAaBzLZeMOPONOd8AQZju4lf0gSK6wnmDKhdny1lLJB5aAZvddSDg==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -5596,7 +5596,7 @@ gatsby@^2.12.0:
     "@babel/runtime" "^7.0.0"
     "@babel/traverse" "^7.0.0"
     "@gatsbyjs/relay-compiler" "2.0.0-printer-fix.2"
-    "@hapi/joi" "^14.0.0"
+    "@hapi/joi" "^15.0.0"
     "@mikaelkristiansson/domready" "^1.0.9"
     "@pieh/friendly-errors-webpack-plugin" "1.7.0-chalk-2"
     "@reach/router" "^1.1.1"
@@ -5650,7 +5650,7 @@ gatsby@^2.12.0:
     gatsby-graphiql-explorer "^0.2.1"
     gatsby-link "^2.2.0"
     gatsby-plugin-page-creator "^2.1.2"
-    gatsby-react-router-scroll "^2.1.0"
+    gatsby-react-router-scroll "^2.1.1"
     gatsby-telemetry "^1.1.2"
     glob "^7.1.1"
     got "8.0.0"
@@ -5667,6 +5667,7 @@ gatsby@^2.12.0:
     lodash "^4.17.10"
     md5 "^2.2.1"
     md5-file "^3.1.1"
+    micromatch "^3.1.10"
     mime "^2.2.0"
     mini-css-extract-plugin "^0.4.0"
     mitt "^1.1.2"
