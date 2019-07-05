@@ -5472,10 +5472,10 @@ gatsby-remark-prismjs@^3.3.1:
     parse-numeric-range "^0.0.2"
     unist-util-visit "^1.3.0"
 
-gatsby-source-contentful@^2.1.6:
-  version "2.1.6"
-  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.1.6.tgz#dc4788651a78b27c110ec041280b2fefb6707683"
-  integrity sha512-csdm9/ZQKhPzcAUE9+NsA8aTmrDrls6zNw/+F8EEtx2oDmPkbFUD5618GQpysfuWa7BCJ5g1SsRzgDGJthzFRQ==
+gatsby-source-contentful@^2.1.7:
+  version "2.1.7"
+  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.1.7.tgz#9c882fad53df90c0c31e52d2b57fe9a4b9b2a848"
+  integrity sha512-Ng98IU/Lg7zBIOVk+HRLK0z6uDWkz/c7UXzZNF5rcc9q8zEeoQMKUnWmBXrLn9mxUAs+um98R2C2NxXkMgTzjA==
   dependencies:
     "@babel/runtime" "^7.0.0"
     "@hapi/joi" "^15.0.0"
