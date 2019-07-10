@@ -15,7 +15,6 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-offline',
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
@@ -97,13 +96,6 @@ module.exports = {
         ],
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-hotjar`,
-    //   options: {
-    //     id: process.env.HOTJAR_ID,
-    //     sv: process.env.HOTJAR_VERSION,
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -111,9 +103,10 @@ module.exports = {
       },
     },
     // {
-    //   resolve: 'gatsby-plugin-drift',
+    //   resolve: `gatsby-plugin-hotjar`,
     //   options: {
-    //     appId: process.env.DRIFT_ID,
+    //     id: process.env.HOTJAR_ID,
+    //     sv: process.env.HOTJAR_VERSION,
     //   },
     // },
   ],
