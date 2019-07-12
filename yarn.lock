@@ -5434,10 +5434,10 @@ gatsby-plugin-robots-txt@^1.5.0:
     "@babel/runtime" "^7.5.1"
     generate-robotstxt "^7.1.0"
 
-gatsby-plugin-sharp@^2.2.2, gatsby-plugin-sharp@^2.2.5:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.2.5.tgz#b363c90e71cf913167d23e9cdbcf3810d815145e"
-  integrity sha512-IRCd5pp3y84H2zjT27Z5/qZxFP2GW3dTrgYnfC0Lmoqh7+4qGTsb8BslYuuQW03XeySaOY2rG+KiB6mH7gjvzg==
+gatsby-plugin-sharp@^2.2.5, gatsby-plugin-sharp@^2.2.6:
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.2.6.tgz#acb954b0c6b1a3372a243e5a46b4301b375a6043"
+  integrity sha512-leD2ooffd96ENiVQmxHxSjXwEgEIgB9+VHGWugBIrbD+qAPEovnr1132Xmw3NUvRYkxCXsnOoCxAslrzh9VsNQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
     async "^2.1.2"
