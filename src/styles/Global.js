@@ -422,8 +422,7 @@ pre[class*='language-'] ::selection {
 
 /* Inline code */
 :not(pre) > code[class*='language-'] {
-  border-radius: 0.3em;
-  background: #212529;
+  background: #212529d9;
   color: #fff;
   padding: .4rem;
   white-space: normal;
