@@ -13,10 +13,10 @@ const Wrapper = styled.div`
 
 const ImgWrapper = styled.div`
   position: relative;
-  height: 400px;
+  height: 500px;
 
   @media screen and (max-width: 600px) {
-    height: 200px;
+    height: 250px;
   }
 `
 
@@ -24,10 +24,10 @@ const PostImg = styled(Img)`
   position: absolute;
   top: 0;
   left: 0;
-  height: 400px;
+  height: 500px;
 
   @media screen and (max-width: 600px) {
-    height: 200px;
+    height: 250px;
   }
 
   & > img {
@@ -274,7 +274,7 @@ export const blogQuery = graphql`
         file {
           url
         }
-        fluid(maxWidth: 1400) {
+        fluid(maxWidth: 2000) {
           sizes
           src
           srcSet
