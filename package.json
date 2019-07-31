@@ -13,7 +13,7 @@
     "gatsby-image": "^2.2.7",
     "gatsby-plugin-canonical-urls": "^2.1.2",
     "gatsby-plugin-drift": "^1.0.0",
-    "gatsby-plugin-google-analytics": "^2.1.5",
+    "gatsby-plugin-google-analytics": "^2.1.6",
     "gatsby-plugin-hotjar": "^1.0.1",
     "gatsby-plugin-layout": "^1.1.2",
     "gatsby-plugin-manifest": "^2.2.4",
@@ -60,7 +60,7 @@
     "dev": "concurrently \"gatsby develop\" \"yarn generate\"",
     "generate": "netlify-lambda serve functions-src",
     "format": "prettier --write \"src/**/*.js\"",
-    "clear": "rm -rf .cache/ && rm -rf node_modules/ && yarn cache clean --force && yarn install",
+    "clean": "rm -rf .cache/ && rm -rf node_modules/ && yarn cache clean --force && yarn install",
     "serve": "gatsby serve"
   },
   "devDependencies": {
