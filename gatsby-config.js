@@ -100,10 +100,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: process.env.GOOGLE_ID,
-        head: true,
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
-        cookieDomain: 'chaseohlson.com',
+        head: false,
       },
     },
     // {
