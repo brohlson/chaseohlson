@@ -217,10 +217,6 @@ export default class Header extends Component {
     }
   }
 
-  componentDidUpdate(prevProps) {
-    console.log(prevProps)
-  }
-
   _handleScroll = () => {
     if (typeof window !== undefined) {
       let h = document.documentElement,
