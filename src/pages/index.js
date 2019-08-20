@@ -1,13 +1,14 @@
-import React, { Fragment } from 'react'
-import Hero from '../components/Home/Hero'
-import SEO from '../components/SEO'
-import About from '../components/Home/About'
-import Exp from '../components/Home/Exp'
-import Projects from '../components/Home/Projects'
-import Clients from '../components/Home/Clients'
-import Testimonials from '../components/Home/Testimonials'
-import Recent from '../components/Home/Recent'
-import { graphql } from 'gatsby'
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import Hero from '../components/Home/Hero';
+import SEO from '../components/SEO';
+import About from '../components/Home/About';
+import Exp from '../components/Home/Exp';
+import Projects from '../components/Home/Projects';
+import Clients from '../components/Home/Clients';
+import Testimonials from '../components/Home/Testimonials';
+import Recent from '../components/Home/Recent';
+import { graphql } from 'gatsby';
 
 const IndexPage = ({
   data: { homeData, blogData, desktopImage, mobileImage },
@@ -43,9 +44,13 @@ const IndexPage = ({
     <Testimonials testimonials={homeData.edges[0].node.testimonialBlocks} />
     <Recent posts={blogData.edges} />
   </Fragment>
-)
+);
 
-export default IndexPage
+IndexPage.propTypes = {
+  data: PropTypes.object.isRequired,
+};
+
+export default IndexPage;
 
 export const homeQuery = graphql`
   {
@@ -142,4 +147,4 @@ export const homeQuery = graphql`
       }
     }
   }
-`
+`;

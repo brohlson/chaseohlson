@@ -1,4 +1,4 @@
-import { keyframes } from 'styled-components'
+import { keyframes } from 'styled-components';
 
 const width0To100 = keyframes`
   from {
@@ -7,7 +7,7 @@ const width0To100 = keyframes`
   to {
     width: 100%
   }
-`
+`;
 const fadeInUp = keyframes`
   from {
     opacity: 0;
@@ -17,7 +17,7 @@ const fadeInUp = keyframes`
     opacity: 1;
     top: 0;
   }
-`
+`;
 const slideInRight = keyframes`
   from {
     right: -500px;
@@ -25,7 +25,7 @@ const slideInRight = keyframes`
   to{
     right: 0;
   }
-`
+`;
 
 const gradientWave = keyframes`
 0% {
@@ -37,13 +37,13 @@ const gradientWave = keyframes`
 100% 
   background-position: 0% 50%
 }
-`
+`;
 
 const Animations = {
   width0To100,
   fadeInUp,
   slideInRight,
   gradientWave,
-}
+};
 
-export default Animations
+export default Animations;

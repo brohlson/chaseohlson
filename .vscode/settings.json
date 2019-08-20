@@ -1,0 +1,12 @@
+{
+    "[javascriptreact]": {
+        "editor.formatOnSave": true,
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.rulers": [
+            80
+        ]
+    },
+    "editor.fontFamily": "'Inconsolata', monospace",
+}

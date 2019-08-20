@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react'
-import styled from 'styled-components'
-import SEO from '../components/SEO'
+import React, { Fragment } from 'react';
+import styled from 'styled-components';
+import SEO from '../components/SEO';
 
 const Wrap = styled.div`
   background: ${props => props.theme.gradients.red};
@@ -12,7 +12,7 @@ const Wrap = styled.div`
   text-align: center;
   height: calc(100vh - 454px);
   min-height: 300;
-`
+`;
 
 const NotFoundPage = () => (
   <Fragment>
@@ -22,6 +22,6 @@ const NotFoundPage = () => (
       <p>Page Not Found</p>
     </Wrap>
   </Fragment>
-)
+);
 
-export default NotFoundPage
+export default NotFoundPage;

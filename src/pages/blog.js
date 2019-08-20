@@ -1,11 +1,12 @@
-import React, { Component, Fragment } from 'react'
-import styled from 'styled-components'
-import SEO from '../components/SEO'
-import Container from '../components/UI/Container'
-import Button from '../components/UI/Button'
-import PostCardGroup from '../components/Common/PostCardGroup'
-import { graphql } from 'gatsby'
-import helpers from '../util/helpers'
+import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import SEO from '../components/SEO';
+import Container from '../components/UI/Container';
+import Button from '../components/UI/Button';
+import PostCardGroup from '../components/Common/PostCardGroup';
+import { graphql } from 'gatsby';
+import helpers from '../util/helpers';
 
 const HeroWrapper = styled.div`
   height: 400px;
@@ -26,7 +27,7 @@ const HeroWrapper = styled.div`
       line-height: 8rem;
     }
   }
-`
+`;
 
 const PostsWrapper = styled.div`
   padding: 6rem 0;
@@ -39,38 +40,42 @@ const PostsWrapper = styled.div`
       margin-top: 6rem;
     }
   }
-`
+`;
 
 class Blog extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       page: 1,
       chunksPerPage: 2,
       allLoaded: false,
-    }
+    };
   }
+
+  static propTypes = {
+    data: PropTypes.object.isRequired,
+  };
 
   renderPosts = () => {
-    let { edges } = this.props.data.blogData
-    let { page, chunksPerPage } = this.state
-    let chunks = helpers.chunkArray(Array.from(edges), 2)
-    let paginated = Array.from(chunks).splice(0, page * chunksPerPage)
+    let { edges } = this.props.data.blogData;
+    let { page, chunksPerPage } = this.state;
+    let chunks = helpers.chunkArray(Array.from(edges), 2);
+    let paginated = Array.from(chunks).splice(0, page * chunksPerPage);
     return paginated.map((group, index) => (
       <PostCardGroup posts={group} topBorder={index === 0} key={index} />
-    ))
-  }
+    ));
+  };
 
   onLoad = () => {
-    let { page, chunksPerPage } = this.state
-    let { edges } = this.props.data.blogData
-    let allLoaded = (page + 1) * chunksPerPage >= edges.length / 2
-    this.setState({ page: page + 1, allLoaded: allLoaded })
-  }
+    let { page, chunksPerPage } = this.state;
+    let { edges } = this.props.data.blogData;
+    let allLoaded = (page + 1) * chunksPerPage >= edges.length / 2;
+    this.setState({ page: page + 1, allLoaded: allLoaded });
+  };
 
   render() {
-    let { allLoaded, chunksPerPage } = this.state
-    let { edges } = this.props.data.blogData
+    let { allLoaded, chunksPerPage } = this.state;
+    let { edges } = this.props.data.blogData;
     return (
       <Fragment>
         <SEO
@@ -100,11 +105,11 @@ class Blog extends Component {
           </Container>
         </PostsWrapper>
       </Fragment>
-    )
+    );
   }
 }
 
-export default Blog
+export default Blog;
 
 export const blogQuery = graphql`
   {
@@ -127,4 +132,4 @@ export const blogQuery = graphql`
       }
     }
   }
-`
+`;

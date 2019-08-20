@@ -1,7 +1,7 @@
-import { createGlobalStyle } from 'styled-components'
-import 'typeface-exo-2'
-import 'typeface-roboto-mono'
-import 'typeface-inconsolata'
+import { createGlobalStyle } from 'styled-components';
+import 'typeface-exo-2';
+import 'typeface-roboto-mono';
+import 'typeface-inconsolata';
 
 const GlobalStyle = createGlobalStyle`
   p, a, li, span, small {
@@ -510,5 +510,5 @@ pre[data-line] {
   font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
-`
-export default GlobalStyle
+`;
+export default GlobalStyle;

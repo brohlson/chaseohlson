@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react'
-import styled from 'styled-components'
-import SEO from '../components/SEO'
-import Container from '../components/UI/Container'
-import ContactForm from '../components/Common/ContactForm'
+import React, { Fragment } from 'react';
+import styled from 'styled-components';
+import SEO from '../components/SEO';
+import Container from '../components/UI/Container';
+import ContactForm from '../components/Common/ContactForm';
 
 const ContactWrapper = styled.div`
   background: white;
@@ -13,7 +13,7 @@ const ContactWrapper = styled.div`
     margin: auto;
     flex-direction: column;
   }
-`
+`;
 
 const Contact = () => (
   <Fragment>
@@ -26,11 +26,11 @@ const Contact = () => (
     />
     <ContactWrapper>
       <Container>
-        <h2>Let's build a thing</h2>
+        <h2>Let&apos;s build a thing</h2>
         <ContactForm />
       </Container>
     </ContactWrapper>
   </Fragment>
-)
+);
 
-export default Contact
+export default Contact;

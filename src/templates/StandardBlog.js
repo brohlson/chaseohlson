@@ -1,15 +1,15 @@
-import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import Container from '../components/UI/Container'
-import SEO from '../components/SEO'
-import Img from 'gatsby-image'
-import Moment from 'react-moment'
-import { graphql } from 'gatsby'
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Container from '../components/UI/Container';
+import SEO from '../components/SEO';
+import Img from 'gatsby-image';
+import Moment from 'react-moment';
+import { graphql } from 'gatsby';
 
 const Wrapper = styled.div`
   background: white;
-`
+`;
 
 const ImgWrapper = styled.div`
   position: relative;
@@ -18,7 +18,7 @@ const ImgWrapper = styled.div`
   @media screen and (max-width: 600px) {
     height: 250px;
   }
-`
+`;
 
 const PostImg = styled(Img)`
   position: absolute;
@@ -34,7 +34,7 @@ const PostImg = styled(Img)`
     object-fit: 'cover' !important;
     object-position: '50% 50%' !important;
   }
-`
+`;
 
 const BodyWrapper = styled.div`
   margin: 6rem 0;
@@ -46,7 +46,7 @@ const BodyWrapper = styled.div`
     max-width: 100%;
     flex-wrap: wrap;
   }
-`
+`;
 
 const TitleWrapper = styled.div`
   background: white;
@@ -97,7 +97,7 @@ const TitleWrapper = styled.div`
     flex-wrap: wrap;
     padding-bottom: 3rem;
   }
-`
+`;
 
 const PostWrapper = styled.div`
   position: relative;
@@ -193,7 +193,7 @@ const PostWrapper = styled.div`
       }
     }
   }
-`
+`;
 
 const StandardBlog = ({ data: { blog } }) => (
   <Fragment>
@@ -248,11 +248,12 @@ const StandardBlog = ({ data: { blog } }) => (
       </BodyWrapper>
     </Wrapper>
   </Fragment>
-)
+);
 
 StandardBlog.propTypes = {
   pageContext: PropTypes.object.isRequired,
-}
+  data: PropTypes.object.isRequired,
+};
 
 export const blogQuery = graphql`
   query($slug: String!) {
@@ -283,6 +284,6 @@ export const blogQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default StandardBlog
+export default StandardBlog;

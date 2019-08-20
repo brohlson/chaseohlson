@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 const Theme = {
   colors: {
     red: '#EF412D',
@@ -14,7 +15,7 @@ const Theme = {
     blackRed: 'linear-gradient(90deg, #4F2920, #EF412D)',
   },
   effects: {
-    boxShadow: `0px 2px 10px rgba(0, 0, 0, 0.2)`,
+    boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.2)',
   },
   fonts: {
     exo: `'Exo 2', sans-serif`,
@@ -24,6 +25,6 @@ const Theme = {
     mobile: '600px',
     tablet: '900px',
   },
-}
+};
 
-export default Theme
+export default Theme;

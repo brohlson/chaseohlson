@@ -53,16 +53,35 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "yarn format && gatsby build && netlify-lambda build functions-src",
-    "build-functions": "netlify-lambda build functions-src",
-    "dev": "concurrently \"gatsby develop\" \"yarn generate\"",
-    "generate": "netlify-lambda serve functions-src",
-    "format": "prettier --write \"src/**/*.js\"",
-    "clean": "rm -rf .cache/ && rm -rf node_modules/ && yarn cache clean --force && yarn install",
-    "serve": "gatsby serve"
+    "dev": "concurrently \"gatsby develop\" \"yarn serve:functions\"",
+    "serve": "yarn serve:client && yarn serve:functions",
+    "serve:client": "gatsby serve",
+    "serve:functions": "netlify-lambda serve functions-src",
+    "build": "yarn build:client && yarn build:functions",
+    "build:client": "gatsby build",
+    "build:functions": "netlify-lambda build functions-src",
+    "format": "prettier --config ./.prettierrc --write src/**/**/*.js && prettier --config ./.prettierrc --write src/**/*.js",
+    "ssr": "yarn build && yarn serve",
+    "clean": "rm -rf ./node_modules && rm -rf ./.cache && yarn cache clean && yarn"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "directory-named-webpack-plugin": "^4.0.0",
+    "eslint": "^5.12.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-loader": "^2.2.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.14.3",
+    "gatsby-plugin-eslint": "^2.0.3",
+    "husky": "^3.0.4",
     "prettier": "^1.18.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn format"
+    }
   },
   "repository": {
     "type": "git",
