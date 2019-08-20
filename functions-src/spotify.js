@@ -20,20 +20,15 @@ exports.handler = function(event, context, callback) {
   spotify
     .request(`https://api.spotify.com/v1/playlists/${playlist}`)
     .then(data => {
-      let { items } = data.tracks
-      let filtered = []
-      items.map(i => {
-        if (i.track.preview_url !== null) {
-          filtered.push(i)
-        }
-      })
-      let item = filtered[Math.floor(Math.random() * filtered.length)]
-      let { name, preview_url, artists, album, href } = item.track
-      let response = { name, preview_url, artists, album, href }
+      const filtered = data.tracks.items.reduce((acc, i) => {
+        if (i.track.preview_url !== null) acc.push(i)
+        return acc
+      }, [])
+      const item = filtered[Math.floor(Math.random() * filtered.length)]
+      const { name, preview_url, artists, album, href } = item.track
+      const response = { name, preview_url, artists, album, href }
       console.log(
-        `${filtered.length} tracks returned.  Selected "${name}" by ${
-          artists[0].name
-        }.`
+        `${filtered.length} tracks returned.  Selected "${name}" by ${artists[0].name}.`
       )
       // Send successful data back
       callback(null, {

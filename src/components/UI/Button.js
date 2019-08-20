@@ -31,29 +31,26 @@ const ActionButtonWrapper = styled.div`
     max-width: 100%;
   }
 `
-export default class Button extends React.Component {
-  renderLinkButton = () => {
+export default function Button({ link, action, disabled, text, type }) {
+  const renderLinkButton = () => {
     return (
-      <LinkButtonWrapper disabled={this.props.disabled} to={this.props.link}>
+      <LinkButtonWrapper disabled={disabled} to={link}>
         <button>
-          <span>{this.props.text.toUpperCase()}</span>
+          <span>{text.toUpperCase()}</span>
         </button>
       </LinkButtonWrapper>
     )
   }
-  renderActionButton = () => {
+  const renderActionButton = () => {
     return (
-      <ActionButtonWrapper disabled={this.props.disabled}>
-        <button onClick={this.props.action}>
-          <span>{this.props.text.toUpperCase()}</span>
+      <ActionButtonWrapper disabled={disabled}>
+        <button onClick={action}>
+          <span>{text.toUpperCase()}</span>
         </button>
       </ActionButtonWrapper>
     )
   }
-  render() {
-    let { type } = this.props
-    return type === 'link' ? this.renderLinkButton() : this.renderActionButton()
-  }
+  return type === 'link' ? renderLinkButton() : renderActionButton()
 }
 
 Button.propTypes = {
