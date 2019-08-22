@@ -1,6 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const ContainerWrapper = styled.section`
   display: flex;
@@ -16,14 +16,14 @@ const ContainerWrapper = styled.section`
   @media (max-width: ${props => props.theme.sizes.mobile}) {
     padding: 0 20px;
   }
-`
+`;
 
 const Container = ({ props, children }) => (
   <ContainerWrapper>{children}</ContainerWrapper>
-)
+);
 
 Container.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Container
+export default Container;

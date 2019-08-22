@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
-import social from '../images/social.jpg'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { StaticQuery, graphql } from 'gatsby';
+import social from '../images/social.jpg';
 
 function SEO({
   description,
@@ -21,7 +21,7 @@ function SEO({
       query={detailsQuery}
       render={data => {
         const metaDescription =
-          description || data.site.siteMetadata.description
+          description || data.site.siteMetadata.description;
         return (
           <Helmet
             htmlAttributes={{
@@ -93,17 +93,17 @@ function SEO({
               )
               .concat(meta)}
           />
-        )
+        );
       }}
     />
-  )
+  );
 }
 
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
   keywords: [],
-}
+};
 
 SEO.propTypes = {
   title: PropTypes.string.isRequired,
@@ -116,9 +116,9 @@ SEO.propTypes = {
   type: PropTypes.string,
   createdAt: PropTypes.string,
   updatedAt: PropTypes.string,
-}
+};
 
-export default SEO
+export default SEO;
 
 const detailsQuery = graphql`
   query DefaultSEOQuery {
@@ -130,4 +130,4 @@ const detailsQuery = graphql`
       }
     }
   }
-`
+`;

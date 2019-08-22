@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import Container from '../UI/Container'
-import Img from 'gatsby-image'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Container from '../UI/Container';
+import Img from 'gatsby-image';
 
 const ClientsWrapper = styled.div`
   background: white;
@@ -28,12 +28,12 @@ const ClientsWrapper = styled.div`
       }
     }
   }
-`
+`;
 
 const LogoImg = styled(Img)`
   width: 100% !important;
   max-width: 100% !important;
-`
+`;
 
 const Clients = ({ logos }) => (
   <ClientsWrapper id="clients">
@@ -52,10 +52,10 @@ const Clients = ({ logos }) => (
       )}
     </Container>
   </ClientsWrapper>
-)
+);
 
 Clients.propTypes = {
   logos: PropTypes.array,
-}
+};
 
-export default Clients
+export default Clients;

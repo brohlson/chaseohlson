@@ -1,18 +1,18 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
-import axios from 'axios'
-import endpoints from '../../util/endpoints'
-import ReCAPTCHA from 'react-google-recaptcha'
-import LoadingIcon from '../../images/loading.svg'
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import axios from 'axios';
+import endpoints from '../../util/endpoints';
+import ReCAPTCHA from 'react-google-recaptcha';
+import LoadingIcon from '../../images/loading.svg';
 
 const Confirm = styled(ReCAPTCHA)`
   margin-bottom: 2rem;
-`
+`;
 
 const Loading = styled.div`
   min-height: 78px;
   margin-bottom: 2rem;
-`
+`;
 
 const Form = styled.form`
   opacity: ${props => (props.loading ? `.55` : `1`)};
@@ -76,7 +76,7 @@ const Form = styled.form`
     opacity: ${props => (props.overlay ? '.8' : '0')};
     visibility: ${props => (props.overlay ? 'visible' : 'hidden')};
   }
-`
+`;
 
 const Input = styled.input.attrs(() => ({
   'data-hj-whitelist': '',
@@ -85,7 +85,7 @@ const Input = styled.input.attrs(() => ({
   max-width: 100%;
   box-sizing: border-box;
   border-radius: 0;
-`
+`;
 
 const InputWrapper = styled.div`
   padding: 0.2rem;
@@ -94,7 +94,7 @@ const InputWrapper = styled.div`
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-`
+`;
 
 const Message = styled.textarea.attrs(() => ({
   'data-hj-whitelist': '',
@@ -103,7 +103,7 @@ const Message = styled.textarea.attrs(() => ({
   line-height: 1.6;
   resize: vertical;
   min-height: 150px;
-`
+`;
 
 const Submit = styled.input`
   cursor: ${props => (props.disabled ? `not-allowed` : `pointer`)};
@@ -115,7 +115,7 @@ const Submit = styled.input`
   width: 210px;
   max-width: 100%;
   border-radius: 0;
-`
+`;
 
 const Modal = styled.div`
   background: white;
@@ -138,11 +138,11 @@ const Modal = styled.div`
     min-width: inherit;
     max-width: 400px;
   }
-`
+`;
 
 export default class ContactForm extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       name: '',
       email: '',
@@ -151,31 +151,31 @@ export default class ContactForm extends Component {
       showModal: false,
       valid: false,
       error: false,
-    }
+    };
   }
 
   handleInputChange = event => {
-    const target = event.target
-    const value = target.value
-    const name = target.name
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
     this.setState({
       [name]: value,
-    })
-  }
+    });
+  };
 
   handleSubmit = e => {
-    this.setState({ loading: true })
-    let { name, email, subject, message } = this.state
-    let data = { name, email, subject, message }
+    this.setState({ loading: true });
+    let { name, email, subject, message } = this.state;
+    let data = { name, email, subject, message };
     axios.post(endpoints.contact, JSON.stringify(data)).then(response => {
       if (response.status !== 200) {
-        this.handleError()
+        this.handleError();
       } else {
-        this.handleSuccess()
+        this.handleSuccess();
       }
-    })
-    e.preventDefault()
-  }
+    });
+    e.preventDefault();
+  };
 
   handleSuccess = () => {
     this.setState({
@@ -187,8 +187,8 @@ export default class ContactForm extends Component {
       valid: false,
       loading: false,
       error: false,
-    })
-  }
+    });
+  };
 
   handleError = msg => {
     this.setState({
@@ -196,19 +196,19 @@ export default class ContactForm extends Component {
       valid: false,
       loading: false,
       error: true,
-    })
-  }
+    });
+  };
 
   closeModal = () => {
-    this.setState({ showModal: false })
-  }
+    this.setState({ showModal: false });
+  };
 
   onConfirm = () => {
-    this.setState({ valid: true })
-  }
+    this.setState({ valid: true });
+  };
 
   render() {
-    let { name, email, subject, message, loading, error } = this.state
+    let { name, email, subject, message, loading, error } = this.state;
     return (
       <Form
         name="Contact Chase Ohlson"
@@ -286,6 +286,6 @@ export default class ContactForm extends Component {
           </p>
         </Modal>
       </Form>
-    )
+    );
   }
 }

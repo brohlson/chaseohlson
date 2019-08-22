@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
-import { Link, StaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import Container from './Container'
-import scrollToElement from 'scroll-to-element'
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { Link, StaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import Container from './Container';
+import scrollToElement from 'scroll-to-element';
 
 const HeaderWrapper = styled.div`
   background: transparent;
@@ -156,7 +156,7 @@ const HeaderWrapper = styled.div`
       }
     }
   }
-`
+`;
 
 const HeaderMenuMask = styled.div`
   background: white;
@@ -167,7 +167,7 @@ const HeaderMenuMask = styled.div`
   transition: 0.3s all;
   z-index: -1;
   height: 100%;
-`
+`;
 
 const HeaderScrolledMask = styled.div`
   background: white;
@@ -190,30 +190,30 @@ const HeaderScrolledMask = styled.div`
     width: ${props => `${props.progress}`}%;
     z-index: 20;
   }
-`
+`;
 
 const LogoImg = styled(Img)`
   width: 6rem;
-`
+`;
 
 export default class Header extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       open: false,
       scrolled: false,
       progress: 0,
-    }
+    };
   }
 
   componentDidMount() {
     if (typeof window !== undefined) {
-      window.addEventListener('scroll', this._handleScroll)
+      window.addEventListener('scroll', this._handleScroll);
     }
   }
   componentWillUnmount() {
     if (typeof window !== undefined) {
-      window.removeEventListener('scroll', this._handleScroll)
+      window.removeEventListener('scroll', this._handleScroll);
     }
   }
 
@@ -223,35 +223,35 @@ export default class Header extends Component {
         b = document.body,
         st = 'scrollTop',
         sh = 'scrollHeight',
-        scroll
-      scroll = ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100
+        scroll;
+      scroll = ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100;
       if (window.pageYOffset > 5) {
-        this.setState({ scrolled: true, progress: Math.floor(scroll) })
+        this.setState({ scrolled: true, progress: Math.floor(scroll) });
       } else {
-        this.setState({ scrolled: false, progress: Math.floor(scroll) })
+        this.setState({ scrolled: false, progress: Math.floor(scroll) });
       }
     }
-  }
+  };
 
   _handleClick = () => {
-    this.setState({ open: !this.state.open })
-  }
+    this.setState({ open: !this.state.open });
+  };
 
   _handleLinkClick = (e, target) => {
-    this.setState({ open: !this.state.open })
+    this.setState({ open: !this.state.open });
     if (typeof window !== undefined) {
       if (window.location.pathname === '/' && Boolean(target)) {
-        e.preventDefault()
+        e.preventDefault();
         scrollToElement(target, {
           offset: -95,
           duration: 1000,
-        })
+        });
       }
     }
-  }
+  };
 
   render() {
-    let { open, scrolled, progress } = this.state
+    let { open, scrolled, progress } = this.state;
     return (
       <HeaderWrapper triggered={scrolled} open={open}>
         <HeaderMenuMask triggered={open} />
@@ -370,6 +370,6 @@ export default class Header extends Component {
           </div>
         </Container>
       </HeaderWrapper>
-    )
+    );
   }
 }

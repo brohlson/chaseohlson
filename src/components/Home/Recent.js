@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import Container from '../UI/Container'
-import PostCardGroup from '../Common/PostCardGroup'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Container from '../UI/Container';
+import PostCardGroup from '../Common/PostCardGroup';
 
 const RecentWrapper = styled.div`
   background: white;
@@ -18,7 +18,7 @@ const RecentWrapper = styled.div`
         margin-bottom: 2rem;
       }
     }
-`
+`;
 
 const Recent = ({ posts }) => (
   <RecentWrapper>
@@ -31,10 +31,10 @@ const Recent = ({ posts }) => (
       </div>
     </Container>
   </RecentWrapper>
-)
+);
 
 Recent.propTypes = {
   posts: PropTypes.array.isRequired,
-}
+};
 
-export default Recent
+export default Recent;

@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Img from 'gatsby-image'
-import styled from 'styled-components'
-import Container from '../UI/Container'
-import Button from '../UI/Button'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Img from 'gatsby-image';
+import styled from 'styled-components';
+import Container from '../UI/Container';
+import Button from '../UI/Button';
 
 const HeroWrapper = styled.div`
   margin-top: -80px;
@@ -58,7 +58,7 @@ const HeroWrapper = styled.div`
       }
     }
   }
-`
+`;
 const HeroImg = styled(Img)`
   position: absolute !important;
   top: 0;
@@ -74,14 +74,14 @@ const HeroImg = styled(Img)`
     object-fit: 'cover' !important;
     object-position: '50% 50%' !important;
   }
-`
+`;
 
 const MobileHeroImg = styled(Img)`
   margin-top: 3rem;
   @media screen and (min-width: ${props => props.theme.sizes.tablet}) {
     display: none;
   }
-`
+`;
 
 const Hero = props => (
   <HeroWrapper>
@@ -96,12 +96,12 @@ const Hero = props => (
       <HeroImg backgroundColor={'#EF412D'} fluid={props.desktop} />
     </Container>
   </HeroWrapper>
-)
+);
 
 Hero.propTypes = {
   desktop: PropTypes.object.isRequired,
   mobile: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
-}
+};
 
-export default Hero
+export default Hero;

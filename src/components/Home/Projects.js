@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import Container from '../UI/Container'
-import Img from 'gatsby-image'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Container from '../UI/Container';
+import Img from 'gatsby-image';
 
 const ProjectsWrapper = styled.div`
   background: white;
@@ -16,7 +16,7 @@ const ProjectsWrapper = styled.div`
       }
     }
   }
-`
+`;
 
 const ProjectBlockWrapper = styled.div`
   background: ${props => props.bg};
@@ -137,7 +137,7 @@ const ProjectBlockWrapper = styled.div`
       }
     }
   }
-`
+`;
 
 const ProjectImg = styled(Img)`
   width: 100% !important;
@@ -149,7 +149,7 @@ const ProjectImg = styled(Img)`
   @media screen and (min-width: ${props => props.theme.sizes.tablet}) {
     margin-bottom: -7.5rem;
   }
-`
+`;
 
 const ProjectBlock = ({ project }) => (
   <ProjectBlockWrapper bg={project.projectColor}>
@@ -195,7 +195,7 @@ const ProjectBlock = ({ project }) => (
       </div>
     </Container>
   </ProjectBlockWrapper>
-)
+);
 
 const Projects = ({ title, projects }) => (
   <ProjectsWrapper id="work">
@@ -208,11 +208,11 @@ const Projects = ({ title, projects }) => (
       <ProjectBlock key={idx} project={project} />
     ))}
   </ProjectsWrapper>
-)
+);
 
 Projects.propTypes = {
   title: PropTypes.string.isRequired,
   projects: PropTypes.array.isRequired,
-}
+};
 
-export default Projects
+export default Projects;

@@ -1,7 +1,7 @@
-const proxy = require('http-proxy-middleware')
+const proxy = require('http-proxy-middleware');
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -120,6 +120,6 @@ module.exports = {
           '/.netlify/functions/': '',
         },
       })
-    )
+    );
   },
-}
+};

@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import Container from '../UI/Container'
-import Animations from '../../styles/Animations'
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Container from '../UI/Container';
+import Animations from '../../styles/Animations';
 
 const TestWrapper = styled.div`
   background: white;
@@ -43,7 +43,7 @@ const TestWrapper = styled.div`
       }
     }
   }
-`
+`;
 
 const CopyWrapper = styled.div`
   animation: ${Animations.fadeInUp} 0.2s;
@@ -72,7 +72,7 @@ const CopyWrapper = styled.div`
       margin: 0;
     }
   }
-`
+`;
 
 const Dot = styled.button.attrs({
   'aria-label': `Testimonial Page Button`,
@@ -101,7 +101,7 @@ const Dot = styled.button.attrs({
     background: white;
     border-radius: 50rem;
   }
-`
+`;
 
 const Copy = ({ person, company, quote, active }) => (
   <CopyWrapper active={active}>
@@ -114,9 +114,9 @@ const Copy = ({ person, company, quote, active }) => (
       <p>{company}</p>
     </div>
   </CopyWrapper>
-)
+);
 function Testimonials({ testimonials }) {
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(0);
   return (
     <TestWrapper id="testimonials">
       <Container>
@@ -152,11 +152,11 @@ function Testimonials({ testimonials }) {
         </div>
       </Container>
     </TestWrapper>
-  )
+  );
 }
 
 Testimonials.propTypes = {
   testimonials: PropTypes.array.isRequired,
-}
+};
 
-export default Testimonials
+export default Testimonials;

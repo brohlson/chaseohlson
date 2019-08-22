@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from 'styled-components'
-import Button from '../UI/Button'
-import Container from '../UI/Container'
-import Link from 'gatsby-link'
+import React from 'react';
+import styled from 'styled-components';
+import Button from '../UI/Button';
+import Container from '../UI/Container';
+import Link from 'gatsby-link';
 
 // Date
-const d = new Date()
-const y = d.getFullYear()
+const d = new Date();
+const y = d.getFullYear();
 
 const FooterWrapper = styled.div`
   background: white;
@@ -142,7 +142,7 @@ const FooterWrapper = styled.div`
       }
     }
   }
-`
+`;
 
 const Footer = () => (
   <FooterWrapper>
@@ -207,6 +207,6 @@ const Footer = () => (
       </div>
     </Container>
   </FooterWrapper>
-)
+);
 
-export default Footer
+export default Footer;

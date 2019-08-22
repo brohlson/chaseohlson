@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import Container from '../UI/Container'
-import Animations from '../../styles/Animations'
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Container from '../UI/Container';
+import Animations from '../../styles/Animations';
 
 const ExpWrapper = styled.div`
   margin-bottom: 10rem;
@@ -47,7 +47,7 @@ const ExpWrapper = styled.div`
       }
     }
   }
-`
+`;
 
 const TitleBlockWrapper = styled.div`
   background: white;
@@ -86,7 +86,7 @@ const TitleBlockWrapper = styled.div`
     align-items: center;
     width: 100%;
   }
-`
+`;
 const Arrow = styled.div`
   @media screen and (min-width: ${props => props.theme.sizes.mobile}) {
     display: none;
@@ -118,7 +118,7 @@ const Arrow = styled.div`
     z-index: 100;
     transform: rotate(${props => (props.selected ? `-45deg` : `45deg`)});
   }
-`
+`;
 
 const DetailBlockWrapper = styled.div`
   animation: ${Animations.fadeInUp} 0.2s;
@@ -168,7 +168,7 @@ const DetailBlockWrapper = styled.div`
       }
     }
   }
-`
+`;
 
 const TitleDetailBlockWrapper = styled.div`
   flex-direction: column;
@@ -229,19 +229,19 @@ const TitleDetailBlockWrapper = styled.div`
   @media screen and (min-width: ${props => props.theme.sizes.mobile}) {
     display: none;
   }
-`
+`;
 
 function Exp({ blocks }) {
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(0);
 
   const handleLeftClick = idx => {
-    let val = index === parseInt(idx) ? null : parseInt(idx)
-    setIndex(val)
-  }
+    let val = index === parseInt(idx) ? null : parseInt(idx);
+    setIndex(val);
+  };
 
   const renderLeftBlocks = () => {
     return blocks.map((block, idx) => {
-      let { company, details, position, timeframe } = block
+      let { company, details, position, timeframe } = block;
       return (
         <TitleBlockWrapper
           selected={index === idx}
@@ -270,13 +270,13 @@ function Exp({ blocks }) {
             </div>
           </TitleDetailBlockWrapper>
         </TitleBlockWrapper>
-      )
-    })
-  }
+      );
+    });
+  };
 
   const renderDetailBlocks = () => {
     return blocks.map((block, idx) => {
-      let { details, position, timeframe } = block
+      let { details, position, timeframe } = block;
       return (
         <DetailBlockWrapper selected={index === idx} key={idx}>
           <div className="position">
@@ -292,9 +292,9 @@ function Exp({ blocks }) {
             }}
           />
         </DetailBlockWrapper>
-      )
-    })
-  }
+      );
+    });
+  };
 
   return (
     <ExpWrapper id="experience">
@@ -308,11 +308,11 @@ function Exp({ blocks }) {
         </div>
       </Container>
     </ExpWrapper>
-  )
+  );
 }
 
 Exp.propTypes = {
   blocks: PropTypes.array.isRequired,
-}
+};
 
-export default Exp
+export default Exp;

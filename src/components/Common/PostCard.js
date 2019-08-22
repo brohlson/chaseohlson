@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import Button from '../UI/Button'
-import Moment from 'react-moment'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Button from '../UI/Button';
+import Moment from 'react-moment';
 
 const PostCardWrapper = styled.div`
   background: white;
@@ -37,7 +37,7 @@ const PostCardWrapper = styled.div`
   .button {
     margin-top: 4rem;
   }
-`
+`;
 
 const PostCard = ({ data }) => (
   <PostCardWrapper>
@@ -59,10 +59,10 @@ const PostCard = ({ data }) => (
       <Button type={'link'} link={data.node.slug} text={'Read More'} />
     </div>
   </PostCardWrapper>
-)
+);
 
 PostCard.propTypes = {
   data: PropTypes.object,
-}
+};
 
-export default PostCard
+export default PostCard;

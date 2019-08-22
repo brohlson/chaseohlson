@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
-import styled from 'styled-components'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
+import styled from 'styled-components';
 
 const LinkButtonWrapper = styled(Link)`
   opacity: ${props => (props.disabled ? `.3` : `1`)};
@@ -17,7 +17,7 @@ const LinkButtonWrapper = styled(Link)`
       color: ${props => props.theme.colors.black};
     }
   }
-`
+`;
 
 const ActionButtonWrapper = styled.div`
   opacity: ${props => (props.disabled ? `.3` : `1`)};
@@ -30,7 +30,7 @@ const ActionButtonWrapper = styled.div`
     width: 210px;
     max-width: 100%;
   }
-`
+`;
 export default function Button({ link, action, disabled, text, type }) {
   const renderLinkButton = () => {
     return (
@@ -39,8 +39,8 @@ export default function Button({ link, action, disabled, text, type }) {
           <span>{text.toUpperCase()}</span>
         </button>
       </LinkButtonWrapper>
-    )
-  }
+    );
+  };
   const renderActionButton = () => {
     return (
       <ActionButtonWrapper disabled={disabled}>
@@ -48,9 +48,9 @@ export default function Button({ link, action, disabled, text, type }) {
           <span>{text.toUpperCase()}</span>
         </button>
       </ActionButtonWrapper>
-    )
-  }
-  return type === 'link' ? renderLinkButton() : renderActionButton()
+    );
+  };
+  return type === 'link' ? renderLinkButton() : renderActionButton();
 }
 
 Button.propTypes = {
@@ -59,4 +59,4 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   text: PropTypes.string.isRequired,
   type: PropTypes.oneOf(['action', 'link']).isRequired,
-}
+};

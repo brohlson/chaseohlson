@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import PostCard from './PostCard'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import PostCard from './PostCard';
 
 const PostCardGroupWrapper = styled.div`
   background: white;
@@ -39,17 +39,17 @@ const PostCardGroupWrapper = styled.div`
   @media screen and (max-width: ${props => props.theme.sizes.mobile}) {
     flex-wrap: wrap;
   }
-`
+`;
 
 const PostCardGroup = ({ posts, topBorder }) => (
   <PostCardGroupWrapper topBorder={topBorder}>
     {posts && posts.map((post, index) => <PostCard key={index} data={post} />)}
   </PostCardGroupWrapper>
-)
+);
 
 PostCardGroup.propTypes = {
   posts: PropTypes.array.isRequired,
   topBorder: PropTypes.bool,
-}
+};
 
-export default PostCardGroup
+export default PostCardGroup;

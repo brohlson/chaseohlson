@@ -1,11 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import Container from '../UI/Container'
-import axios from 'axios'
-import endpoints from '../../util/endpoints'
-import LoadingIcon from '../../images/loading.svg'
-import ReactAudioPlayer from 'react-audio-player'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Container from '../UI/Container';
+import axios from 'axios';
+import endpoints from '../../util/endpoints';
+import LoadingIcon from '../../images/loading.svg';
+import ReactAudioPlayer from 'react-audio-player';
 
 const AboutWrapper = styled.div`
   margin: 10rem 0;
@@ -101,7 +101,7 @@ const AboutWrapper = styled.div`
       }
     }
   }
-`
+`;
 
 const PlayerWrapper = styled.div`
   .loading {
@@ -110,31 +110,31 @@ const PlayerWrapper = styled.div`
       min-height: 132px;
     }
   }
-`
+`;
 
 export default class About extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       track: {},
       error: false,
       fetching: true,
-    }
+    };
   }
   static propTypes = {
     title: PropTypes.string.isRequired,
     body: PropTypes.string.isRequired,
-  }
+  };
   componentDidMount() {
-    this.getTrack()
+    this.getTrack();
   }
   getTrack = () => {
-    this.setState({ fetching: true })
+    this.setState({ fetching: true });
 
     axios
       .get(endpoints.spotify)
       .then(res => {
-        let { name, href, preview_url, artists } = res.data
+        let { name, href, preview_url, artists } = res.data;
         if (preview_url) {
           this.setState({
             fetching: false,
@@ -145,18 +145,18 @@ export default class About extends React.Component {
               preview_url,
               artist: artists[0].name,
             },
-          })
+          });
         } else {
-          this.setState({ error: true, fetching: false, track: {} })
+          this.setState({ error: true, fetching: false, track: {} });
         }
       })
       .catch(() => {
-        this.setState({ error: true, fetching: false, track: {} })
-      })
-  }
+        this.setState({ error: true, fetching: false, track: {} });
+      });
+  };
 
   renderPlayer = () => {
-    let { fetching, error, track } = this.state
+    let { fetching, error, track } = this.state;
     return (
       <PlayerWrapper>
         {fetching && (
@@ -191,11 +191,11 @@ export default class About extends React.Component {
           </div>
         )}
       </PlayerWrapper>
-    )
-  }
+    );
+  };
   render() {
-    let { title, body } = this.props
-    let { error } = this.state
+    let { title, body } = this.props;
+    let { error } = this.state;
     return (
       <AboutWrapper id="about">
         <Container>
@@ -219,11 +219,11 @@ export default class About extends React.Component {
           )}
         </Container>
       </AboutWrapper>
-    )
+    );
   }
 }
 
 About.propTypes = {
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
-}
+};
