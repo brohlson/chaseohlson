@@ -20,7 +20,7 @@
     "gatsby-plugin-react-helmet": "^3.1.4",
     "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sharp": "^2.2.6",
-    "gatsby-plugin-sitemap": "^2.2.8",
+    "gatsby-plugin-sitemap": "^2.2.9",
     "gatsby-plugin-styled-components": "^3.1.2",
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-prismjs": "^3.3.8",
