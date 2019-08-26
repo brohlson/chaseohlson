@@ -1036,14 +1036,7 @@
     "@babel/plugin-transform-react-jsx-self" "^7.0.0"
     "@babel/plugin-transform-react-jsx-source" "^7.0.0"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.1":
-  version "7.5.2"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.5.2.tgz#98f584f4d03be5d8142c77107ffaedee4d5956f1"
-  integrity sha512-9M29wrrP7//JBGX70+IrDuD1w4iOYhUGpJNMQJVNAXue+cFeFlMTqBECouIziXPUphlgrfjcfiEpGX4t0WGK4g==
-  dependencies:
-    regenerator-runtime "^0.13.2"
-
-"@babel/runtime@^7.4.2", "@babel/runtime@^7.5.5":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.1", "@babel/runtime@^7.5.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.5.5.tgz#74fba56d35efbeca444091c7850ccd494fd2f132"
   integrity sha512-28QvEGyQyNkB0/m2B4FU7IEZGK2NUrcMtT6BZEFALTguLk+AUT6ofsHtPk5QyjAdUkpMJ+/Em+quwz4HOt30AQ==
@@ -6497,14 +6490,14 @@ gatsby-graphiql-explorer@^0.2.8:
   dependencies:
     "@babel/runtime" "^7.5.5"
 
-gatsby-image@^2.2.9:
-  version "2.2.9"
-  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.2.9.tgz#f4b89d9ca939591ab7aa20b43c3c82a2d794aae3"
-  integrity sha512-jmHoEgVDBsSLxWD+W78UgZRHcsKQMN2+i0wR/bbLzILESLirs4s4LeiPmSquj+cqMEtwaZ7CIDEeHSamelY+zQ==
+gatsby-image@^2.2.14:
+  version "2.2.14"
+  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.2.14.tgz#f77c923e4cc06c4b855c20941eccbda89d2899cf"
+  integrity sha512-oPaJ2MFokfZxdywn9vNFjcg77bSQtZNtRBl5lWCxny/MAICDAu4HC7kn0LlPL4rgsXGCX2dIs6VW3mCWmsxUig==
   dependencies:
-    "@babel/runtime" "^7.0.0"
+    "@babel/runtime" "^7.5.5"
     object-fit-images "^3.2.4"
-    prop-types "^15.6.1"
+    prop-types "^15.7.2"
 
 gatsby-link@^2.2.8:
   version "2.2.8"
