@@ -31,7 +31,7 @@
     "http-proxy-middleware": "^0.19.1",
     "mailgun-js": "^0.22.0",
     "moment": "^2.24.0",
-    "netlify-lambda": "^1.6.2",
+    "netlify-lambda": "^1.6.3",
     "node-spotify-api": "^1.1.1",
     "prismjs": "^1.17.1",
     "prop-types": "^15.6.2",
