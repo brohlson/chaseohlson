@@ -6260,10 +6260,10 @@ gatsby-remark-external-links@^0.0.4:
     unist-util-find "^1.0.1"
     unist-util-visit "^1.1.3"
 
-gatsby-remark-prismjs@^3.3.5:
-  version "3.3.9"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-3.3.9.tgz#20eb5fdf1d5481672517058216e8e817fc43c986"
-  integrity sha512-23IoJjj6/opxHAW6QfLGQaO8enA+JK6fYJXwcJ3F+++AcN0EIHM3Sc3sRz9GxuSni2PW9MlWHKo5noqrlabUjA==
+gatsby-remark-prismjs@^3.3.12:
+  version "3.3.12"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-3.3.12.tgz#4239bb48a5e2eb5fcff5adbbac1a6821012bd9bf"
+  integrity sha512-PE744uWg0M09hFZSOpQac+oUpmwKHAYJc0unLIszNdXvbihPL8rhi9aahKiz3EvQDbQ35WNHHPOsS/OjtegmIw==
   dependencies:
     "@babel/runtime" "^7.5.5"
     parse-numeric-range "^0.0.2"
@@ -14063,14 +14063,7 @@ unist-util-visit-parents@^2.0.0:
   dependencies:
     unist-util-is "^2.1.2"
 
-unist-util-visit@^1.0.0, unist-util-visit@^1.1.0, unist-util-visit@^1.1.3:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-1.4.0.tgz#1cb763647186dc26f5e1df5db6bd1e48b3cc2fb1"
-  integrity sha512-FiGu34ziNsZA3ZUteZxSFaczIjGmksfSgdKqBfOejrrfzyUy5b7YrlzT1Bcvi+djkYDituJDy2XB7tGTeBieKw==
-  dependencies:
-    unist-util-visit-parents "^2.0.0"
-
-unist-util-visit@^1.4.1:
+unist-util-visit@^1.0.0, unist-util-visit@^1.1.0, unist-util-visit@^1.1.3, unist-util-visit@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-1.4.1.tgz#4724aaa8486e6ee6e26d7ff3c8685960d560b1e3"
   integrity sha512-AvGNk7Bb//EmJZyhtRUnNMEpId/AZ5Ph/KUpTI09WHQuDZHKovQ1oEv3mfmKpWKtoMzyMC4GLBm1Zy5k12fjIw==
