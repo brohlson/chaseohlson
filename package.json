@@ -27,7 +27,7 @@
     "gatsby-source-contentful": "^2.1.34",
     "gatsby-source-filesystem": "^2.1.22",
     "gatsby-transformer-remark": "^2.6.22",
-    "gatsby-transformer-sharp": "^2.2.13",
+    "gatsby-transformer-sharp": "^2.2.14",
     "http-proxy-middleware": "^0.20.0",
     "mailgun-js": "^0.22.0",
     "moment": "^2.24.0",
