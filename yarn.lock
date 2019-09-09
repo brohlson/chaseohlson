@@ -976,10 +976,10 @@
     "@babel/plugin-transform-react-jsx-self" "^7.0.0"
     "@babel/plugin-transform-react-jsx-source" "^7.0.0"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.1", "@babel/runtime@^7.5.5":
-  version "7.5.5"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.5.5.tgz#74fba56d35efbeca444091c7850ccd494fd2f132"
-  integrity sha512-28QvEGyQyNkB0/m2B4FU7IEZGK2NUrcMtT6BZEFALTguLk+AUT6ofsHtPk5QyjAdUkpMJ+/Em+quwz4HOt30AQ==
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.6.0.tgz#4fc1d642a9fd0299754e8b5de62c631cf5568205"
+  integrity sha512-89eSBLJsxNxOERC0Op4vd+0Bqm6wRMqMbFtV3i0/fbaWw/mJ8Q3eBvgX0G4SyrOOLCtbu98HspF8o09MRT+KzQ==
   dependencies:
     regenerator-runtime "^0.13.2"
 
@@ -6074,10 +6074,10 @@ gatsby-cli@^2.7.44:
     ink "^2.3.0"
     ink-spinner "^3.0.1"
 
-gatsby-core-utils@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.0.7.tgz#0f41dd91da2f2acb59e102ad4c6a4cffeb176b05"
-  integrity sha512-G4C/n8tzZVUgs+nLs8Gho7OfgcOWsoKij6az25vCATC9daqrCh1R0ouInqCtIBk7pBim/jt7UAtlClXpp6HyqQ==
+gatsby-core-utils@^1.0.7, gatsby-core-utils@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.0.8.tgz#e765a1338d65ff1de65238c7f0a9967e07da20fa"
+  integrity sha512-080Jl8NamTbCGliKxXpMjEO1XUYU5FAow+VPR/j6hJk+Kl/gFmpE1mqa5QnHRGLZQhBP/h2T0mUwnSJn9m/Jsw==
 
 gatsby-graphiql-explorer@^0.2.13:
   version "0.2.13"
@@ -6144,13 +6144,13 @@ gatsby-plugin-layout@^1.1.6:
   dependencies:
     "@babel/runtime" "^7.5.5"
 
-gatsby-plugin-manifest@^2.2.14:
-  version "2.2.14"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.14.tgz#414d8eb774f6a2a2da264295330b93e6ee91c758"
-  integrity sha512-4GOyQIVMU+9VMQebXF6F+2TCXyWYe3tmBXEH4HEsdqdz0VEx4ZRsLJYfVl+OHOEFThOfSgkqsISv7NheWwk5KQ==
+gatsby-plugin-manifest@^2.2.16:
+  version "2.2.16"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.16.tgz#ce83838602390e96375212d6535aea25d4037bba"
+  integrity sha512-fYcJODFvWNARHraXssdTMF8qu0OUc3Io+Bq0eByIQZ619EhMM/xfXvoX8sxPCANnq956MwUBgllOdG00rmW1Kg==
   dependencies:
-    "@babel/runtime" "^7.5.5"
-    gatsby-core-utils "^1.0.7"
+    "@babel/runtime" "^7.6.0"
+    gatsby-core-utils "^1.0.8"
     semver "^5.7.1"
     sharp "^0.23.0"
 
