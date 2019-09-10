@@ -68,7 +68,7 @@
     "babel-eslint": "^10.0.2",
     "directory-named-webpack-plugin": "^4.0.0",
     "eslint": "^5.12.1",
-    "eslint-config-prettier": "^6.2.0",
+    "eslint-config-prettier": "^6.3.0",
     "eslint-loader": "^2.2.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
