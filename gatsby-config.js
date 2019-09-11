@@ -1,14 +1,12 @@
 const proxy = require('http-proxy-middleware');
+const siteConfig = require('./config/siteConfig');
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
 module.exports = {
   siteMetadata: {
-    title: ' Chase Ohlson',
-    description: 'Freelance Web Developer Los Angeles',
-    author: '@chaseohlsonweb',
-    siteUrl: 'https://chaseohlson.com',
+    ...siteConfig,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -16,27 +14,27 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
-      resolve: `gatsby-plugin-sitemap`,
+      resolve: 'gatsby-plugin-sitemap',
       options: {
-        output: `/sitemap.xml`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-layout`,
-      options: {
-        component: require.resolve(`./src/components/Layout.js`),
+        output: siteConfig.sitemapPath,
       },
     },
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://chaseohlson.com',
+        siteUrl: siteConfig.siteUrl,
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-plugin-layout',
       options: {
-        name: `images`,
+        component: require.resolve('./src/components/Layout.js'),
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
         path: `${__dirname}/src/images`,
       },
     },
@@ -47,17 +45,17 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-contentful`,
+      resolve: 'gatsby-source-contentful',
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_TOKEN,
       },
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'chase-ohlson',
+        short_name: 'Chase',
         start_url: '/',
         background_color: '#212529',
         theme_color: '#212529',
@@ -73,7 +71,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           {
@@ -84,7 +82,7 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: 'gatsby-remark-prismjs',
             options: {
               classPrefix: 'language-',
               inlineCodeMarker: true,
@@ -97,19 +95,12 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: process.env.GOOGLE_ID,
         head: false,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-hotjar`,
-    //   options: {
-    //     id: process.env.HOTJAR_ID,
-    //     sv: process.env.HOTJAR_VERSION,
-    //   },
-    // },
   ],
   developMiddleware: app => {
     app.use(

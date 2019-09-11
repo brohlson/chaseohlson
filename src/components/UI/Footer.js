@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Button from '../UI/Button';
 import Container from '../UI/Container';
 import Link from 'gatsby-link';
+import { graphql, useStaticQuery } from 'gatsby';
 
 // Date
 const d = new Date();
@@ -144,69 +145,75 @@ const FooterWrapper = styled.div`
   }
 `;
 
-const Footer = () => (
-  <FooterWrapper>
-    <Container>
-      <div className="left">
-        <h4>Need a Los Angeles Web Developer? Let's build something.</h4>
-        <Button type={'link'} link={'/contact'} text={'Get In Touch'} />
-      </div>
-      <div className="right">
-        <ul>
-          <li>
-            <a
-              target="blank"
-              rel="noopener noreferrer"
-              href="https://github.com/brohlson"
-            >
-              Github
-            </a>
-          </li>
-          <li>
-            <a
-              target="blank"
-              rel="noopener noreferrer"
-              href="https://twitter.com/chaseohlsonweb"
-            >
-              Twitter
-            </a>
-          </li>
-          <li>
-            <a
-              target="blank"
-              rel="noopener noreferrer"
-              href="https://www.linkedin.com/in/chase-ohlson-21013349/"
-            >
-              LinkedIn
-            </a>
-          </li>
-          <li>
-            <a
-              target="blank"
-              rel="noopener noreferrer"
-              href="https://chaseohlson.org"
-            >
-              Charity
-            </a>
-          </li>
-          <li>
-            <a
-              target="blank"
-              rel="noopener noreferrer"
-              href="https://github.com/brohlson/chaseohlson"
-            >
-              Source
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div className="copy">
-        <span>
-          &copy; Copyright {y} − <Link to={'/'}>Chase Ohlson</Link>
-        </span>
-      </div>
-    </Container>
-  </FooterWrapper>
-);
+const footerQuery = graphql`
+  {
+    site {
+      siteMetadata {
+        social {
+          twitter
+          github
+          linkedin
+          charity
+          source
+        }
+      }
+    }
+  }
+`;
+
+const Footer = () => {
+  const data = useStaticQuery(footerQuery);
+  const {
+    twitter,
+    github,
+    linkedin,
+    charity,
+    source,
+  } = data.site.siteMetadata.social;
+  return (
+    <FooterWrapper>
+      <Container>
+        <div className="left">
+          <h4>Need a Los Angeles Web Developer? Let&apos;s build something.</h4>
+          <Button type={'link'} link={'/contact'} text={'Get In Touch'} />
+        </div>
+        <div className="right">
+          <ul>
+            <li>
+              <a target="blank" rel="noopener noreferrer" href={github}>
+                Github
+              </a>
+            </li>
+            <li>
+              <a target="blank" rel="noopener noreferrer" href={twitter}>
+                Twitter
+              </a>
+            </li>
+            <li>
+              <a target="blank" rel="noopener noreferrer" href={linkedin}>
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a target="blank" rel="noopener noreferrer" href={charity}>
+                Charity
+              </a>
+            </li>
+            <li>
+              <a target="blank" rel="noopener noreferrer" href={source}>
+                Source
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div className="copy">
+          <span>
+            &copy; Copyright {y} − <Link to={'/'}>Chase Ohlson</Link>
+          </span>
+        </div>
+      </Container>
+    </FooterWrapper>
+  );
+};
 
 export default Footer;
