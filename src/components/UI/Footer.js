@@ -166,7 +166,7 @@ const Footer = () => (
             <a
               target="blank"
               rel="noopener noreferrer"
-              href="https://twitter.com/chaseohlsonweb"
+              href="https://twitter.com/chase_ohlson"
             >
               Twitter
             </a>
