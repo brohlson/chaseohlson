@@ -101,6 +101,14 @@ module.exports = {
         head: false,
       },
     },
+    {
+      resolve: 'gatsby-plugin-sentry',
+      options: {
+        dsn: process.env.SENTRY_DSN,
+        environment: process.env.NODE_ENV,
+        enabled: (() => ['production'].indexOf(process.env.NODE_ENV) !== -1)(),
+      },
+    },
   ],
   developMiddleware: app => {
     app.use(
