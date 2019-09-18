@@ -2148,6 +2148,14 @@ anymatch@^3.0.1:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
+anymatch@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/anymatch/-/anymatch-3.1.0.tgz#e609350e50a9313b472789b2f14ef35808ee14d6"
+  integrity sha512-Ozz7l4ixzI7Oxj2+cw+p0tVUt27BpaJ+1+q1TCeANWxHpvyn2+Un+YamBdfKu0uh8xLodGhoa1v7595NhKDAuA==
+  dependencies:
+    normalize-path "^3.0.0"
+    picomatch "^2.0.4"
+
 aproba@^1.0.3, aproba@^1.1.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/aproba/-/aproba-1.2.0.tgz#6802e6264efd18c790a1b0d517f0f2627bf2c94a"
@@ -3316,6 +3324,21 @@ chokidar@3.0.2:
   integrity sha512-c4PR2egjNjI1um6bamCQ6bUNPDiyofNQruHvKgHQ4gDUP/ITSVSzNsiI5OWtHOsX323i5ha/kk4YmOZ1Ktg7KA==
   dependencies:
     anymatch "^3.0.1"
+    braces "^3.0.2"
+    glob-parent "^5.0.0"
+    is-binary-path "^2.1.0"
+    is-glob "^4.0.1"
+    normalize-path "^3.0.0"
+    readdirp "^3.1.1"
+  optionalDependencies:
+    fsevents "^2.0.6"
+
+chokidar@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.1.0.tgz#ff23d077682a90eadd209bfa76eb10ed6d359668"
+  integrity sha512-6vZfo+7W0EOlbSo0nhVKMz4yyssrwiPbBZ8wj1lq8/+l4ZhGZ2U4Md7PspvmijXp1a26D3B7AHEBmIB7aVtaOQ==
+  dependencies:
+    anymatch "^3.1.0"
     braces "^3.0.2"
     glob-parent "^5.0.0"
     is-binary-path "^2.1.0"
@@ -6288,10 +6311,10 @@ gatsby-plugin-sentry@^1.0.1:
   dependencies:
     "@sentry/browser" latest
 
-gatsby-plugin-sharp@^2.2.22:
-  version "2.2.22"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.2.22.tgz#503a786a1ffa41fef2350db3e2d7cded5b00d211"
-  integrity sha512-W5ewDYseuayOfLWqNs74Xhpjri5hg3GlTUyoDCmcbgwA6LymEKi9dly2Fluk8sRb0NdNlZ5DB/gka7xXt/IX4A==
+gatsby-plugin-sharp@^2.2.22, gatsby-plugin-sharp@^2.2.23:
+  version "2.2.23"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.2.23.tgz#735ced3af92e17d27efabe79514378718b99d43a"
+  integrity sha512-ENNKQEwYaOomQvbS7i6Rz2aw5tH+a2xOu1dV77cTEl4nE4Fcg5k0EJSfGqLod1nS0sd/sXoVnIwZd08zCFTq+w==
   dependencies:
     "@babel/runtime" "^7.6.0"
     async "^2.6.3"
@@ -6311,6 +6334,7 @@ gatsby-plugin-sharp@^2.2.22:
     semver "^5.7.1"
     sharp "^0.23.0"
     svgo "^1.3.0"
+    uuid "^3.3.3"
 
 gatsby-plugin-sitemap@^2.2.12:
   version "2.2.12"
@@ -6357,10 +6381,10 @@ gatsby-remark-prismjs@^3.3.13:
     parse-numeric-range "^0.0.2"
     unist-util-visit "^1.4.1"
 
-gatsby-source-contentful@^2.1.36:
-  version "2.1.36"
-  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.1.36.tgz#f43bec88d1abbfa055a998606c463503c4550ae5"
-  integrity sha512-SyC/+f2TVvg/Jjem5HPu2fPN97AVXr7wtPcDxa+dNARnz0nJV2E/N14MhKHhLyjutxr+C8tqoLtbpkwD4cCuDQ==
+gatsby-source-contentful@^2.1.37:
+  version "2.1.37"
+  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-2.1.37.tgz#2d42841e9c2dc076b13503a109666efc8bdcba8f"
+  integrity sha512-1rzxQqgl8XotAGdbgNZG6jVqqK42JU43pHrfq9o5udMfRbCrwcEMnJGRnFJAQVHHVIdDV9XfxrPUU8d9NO2CCg==
   dependencies:
     "@babel/runtime" "^7.6.0"
     "@hapi/joi" "^15.1.1"
@@ -6371,22 +6395,22 @@ gatsby-source-contentful@^2.1.36:
     contentful "^6.1.3"
     deep-map "^1.5.0"
     fs-extra "^8.1.0"
-    gatsby-plugin-sharp "^2.2.22"
-    gatsby-source-filesystem "^2.1.22"
+    gatsby-plugin-sharp "^2.2.23"
+    gatsby-source-filesystem "^2.1.23"
     is-online "^8.2.0"
     json-stringify-safe "^5.0.1"
     lodash "^4.17.15"
     qs "^6.8.0"
 
-gatsby-source-filesystem@^2.1.22:
-  version "2.1.22"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.1.22.tgz#fd182426198c387ee07e13c44ea0eec3e69879e5"
-  integrity sha512-GUWtBtMEMI2ubr4ql67g+kpDpdrv8Ri/Z2F8KgO2CqNCXKR5ZY/4uf2Yt2mWPNsQgCivH/DkvkfHnw7P++DOTQ==
+gatsby-source-filesystem@^2.1.22, gatsby-source-filesystem@^2.1.23:
+  version "2.1.23"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.1.23.tgz#1b058e5cefb973341e4ef42becb8aad99cb31e8a"
+  integrity sha512-yO9NXqep3Z8mTYz3c0q5IfU2Kg0I1QYQKULkD/wtx1citcH30+chXAemVRx3LLDIBQ4ze/lkWSH7fFESE3IAnw==
   dependencies:
     "@babel/runtime" "^7.6.0"
     better-queue "^3.8.10"
     bluebird "^3.5.5"
-    chokidar "3.0.2"
+    chokidar "3.1.0"
     file-type "^12.3.0"
     fs-extra "^8.1.0"
     gatsby-core-utils "^1.0.8"
@@ -11425,12 +11449,7 @@ qs@6.7.0:
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
   integrity sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
 
-qs@^6.5.1, qs@^6.5.2:
-  version "6.6.0"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.6.0.tgz#a99c0f69a8d26bf7ef012f871cdabb0aee4424c2"
-  integrity sha512-KIJqT9jQJDQx5h5uAVPimw6yVg2SekOKu959OCtktD3FjzbpvaPr8i4zzg07DOMz+igA4W/aNM7OV8H37pFYfA==
-
-qs@^6.8.0:
+qs@^6.5.1, qs@^6.5.2, qs@^6.8.0:
   version "6.8.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.8.0.tgz#87b763f0d37ca54200334cd57bb2ef8f68a1d081"
   integrity sha512-tPSkj8y92PfZVbinY1n84i1Qdx75lZjMQYx9WZhnkofyxzw2r7Ho39G3/aEvSUdebxpnnM4LZJCtvE/Aq3+s9w==
