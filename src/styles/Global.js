@@ -27,7 +27,8 @@ const GlobalStyle = createGlobalStyle`
 
   p, li, span {
       font-size: 1.4rem;
-      line-height: 2.5rem;
+      line-height: 2.8rem;
+  
   }
 
   button {
@@ -423,8 +424,8 @@ pre[class*='language-'] ::selection {
 /* Inline code */
 :not(pre) > code[class*='language-'] {
   background: #212529d9;
+  padding: 0.4rem;
   color: #fff;
-  padding: .4rem;
   white-space: normal;
   font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }

@@ -1,11 +1,13 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Container from '../components/UI/Container';
-import SEO from '../components/SEO';
 import Img from 'gatsby-image';
 import Moment from 'react-moment';
 import { graphql } from 'gatsby';
+
+import Container from '../components/UI/Container';
+import SEO from '../components/SEO';
+import TextContent from '../components/Common/TextContent';
 
 const Wrapper = styled.div`
   background: white;
@@ -158,41 +160,6 @@ const PostWrapper = styled.div`
     background: ${props => props.theme.gradients.red};
     z-index: 100;
   }
-  .content {
-    max-width: 100%;
-    p,
-    pre {
-      margin-bottom: 2rem;
-    }
-    ul {
-      list-style: none;
-      margin-bottom: 2rem;
-      li {
-        position: relative;
-        &:before {
-          content: '';
-          position: absolute;
-          height: 8px;
-          width: 2px;
-          background: ${props => props.theme.gradients.red};
-          top: 0.9rem;
-          left: -1.5rem;
-          z-index: 5;
-        }
-        &:after {
-          content: '';
-          position: absolute;
-          height: 8px;
-          width: 2px;
-          background: ${props => props.theme.gradients.red};
-          top: 0.9rem;
-          left: -1.5rem;
-          z-index: 5;
-          transform: rotate(90deg);
-        }
-      }
-    }
-  }
 `;
 
 const StandardBlog = ({ data: { blog } }) => (
@@ -237,12 +204,7 @@ const StandardBlog = ({ data: { blog } }) => (
             </div>
           </TitleWrapper>
           <PostWrapper>
-            <div
-              className="content"
-              dangerouslySetInnerHTML={{
-                __html: blog.content.childMarkdownRemark.html,
-              }}
-            />
+            <TextContent content={blog.content.childMarkdownRemark.html} />
           </PostWrapper>
         </Container>
       </BodyWrapper>
