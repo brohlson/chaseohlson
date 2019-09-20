@@ -6228,10 +6228,10 @@ gatsby-plugin-google-analytics@^2.1.16:
   dependencies:
     "@babel/runtime" "^7.6.0"
 
-gatsby-plugin-layout@^1.1.7:
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-layout/-/gatsby-plugin-layout-1.1.7.tgz#7e933562866e5fcc3683717ef18156d8e757c127"
-  integrity sha512-tRga/gFKiO0EtSFS04FUv1YzWymCTACI/4cCmgffD2KSDzR05eQZs4CwyjwSgbplofdIXDfyPUpAbcGe0lecEA==
+gatsby-plugin-layout@^1.1.8:
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-layout/-/gatsby-plugin-layout-1.1.8.tgz#b8539e208262231f46fd8a80151faa224a434545"
+  integrity sha512-NbCjp3ONr+NcUrXGv/70ax82ZXpQqMLzI5A8n0T0f6FOXUqigpmuUWH2LnK+Fe9Kpl3n3renBLbtM/3R2LQlig==
   dependencies:
     "@babel/runtime" "^7.6.0"
 
