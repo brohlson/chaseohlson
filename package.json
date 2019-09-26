@@ -26,7 +26,7 @@
     "gatsby-remark-prismjs": "^3.3.13",
     "gatsby-source-contentful": "^2.1.38",
     "gatsby-source-filesystem": "^2.1.24",
-    "gatsby-transformer-remark": "^2.6.23",
+    "gatsby-transformer-remark": "^2.6.26",
     "gatsby-transformer-sharp": "^2.2.15",
     "http-proxy-middleware": "^0.20.0",
     "mailgun-js": "^0.22.0",
