@@ -69,6 +69,9 @@ const HeaderWrapper = styled.div`
       display: none;
       a {
         color: ${props => props.theme.colors.black};
+        font-size: 1.4rem;
+        line-height: 2.8rem;
+        text-transform: uppercase;
         margin-left: 1.5rem;
         font-size: 1.4rem;
         position: relative;
@@ -112,6 +115,9 @@ const HeaderWrapper = styled.div`
       }
     }
     .nav-mm {
+      font-size: 1.4rem;
+      line-height: 2.8rem;
+      text-transform: uppercase;
       transform: translateX(${props => (props.open ? `0%` : `100%`)});
       transition: transform 0.3s ease;
       display: flex;
