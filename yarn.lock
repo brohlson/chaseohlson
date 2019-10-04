@@ -1029,14 +1029,7 @@
     "@babel/plugin-transform-react-jsx-self" "^7.0.0"
     "@babel/plugin-transform-react-jsx-source" "^7.0.0"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.1", "@babel/runtime@^7.6.0":
-  version "7.6.0"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.6.0.tgz#4fc1d642a9fd0299754e8b5de62c631cf5568205"
-  integrity sha512-89eSBLJsxNxOERC0Op4vd+0Bqm6wRMqMbFtV3i0/fbaWw/mJ8Q3eBvgX0G4SyrOOLCtbu98HspF8o09MRT+KzQ==
-  dependencies:
-    regenerator-runtime "^0.13.2"
-
-"@babel/runtime@^7.6.2":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.1", "@babel/runtime@^7.6.0", "@babel/runtime@^7.6.2":
   version "7.6.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.6.2.tgz#c3d6e41b304ef10dcf13777a33e7694ec4a9a6dd"
   integrity sha512-EXxN64agfUqqIGeEjI5dL5z0Sw0ZwWo1mLTi4mQowCZ42O59b7DRpZAnTC6OqdF28wMBMFKNb/4uFGrVaigSpg==
@@ -6232,12 +6225,12 @@ gatsby-graphiql-explorer@^0.2.17:
   dependencies:
     "@babel/runtime" "^7.6.0"
 
-gatsby-image@^2.2.19:
-  version "2.2.19"
-  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.2.19.tgz#2269416195cab741d222edfd6c68b2cbd5725ff1"
-  integrity sha512-Olp89drFRNNUAKsd5PfJCcYUwHQBAvCyUm/ogE7aTl2y5xz50lqHIVx2QWc9d1tGj2pkjRsw0lvsy0C+1X6MWg==
+gatsby-image@^2.2.24:
+  version "2.2.24"
+  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.2.24.tgz#3f9e06db898bf7bc3d3c23b21fdb715b9fbf7043"
+  integrity sha512-K2ejKEe6WE7IJ1WkihFmCsKFgqjIvQkGhk/ztv2H/A+5YyQg0H+qH1RPBH5UsThMK1XRp4zx9xOTE0r00HS1sA==
   dependencies:
-    "@babel/runtime" "^7.6.0"
+    "@babel/runtime" "^7.6.2"
     object-fit-images "^3.2.4"
     prop-types "^15.7.2"
 
