@@ -106,6 +106,11 @@ const PostWrapper = styled.div`
   padding: 6rem 0;
   max-width: 100%;
 
+  img {
+    max-width: 100%;
+    margin: 2rem 0 3rem 0;
+  }
+
   h2 {
     margin-bottom: 2rem;
   }
