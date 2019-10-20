@@ -6290,6 +6290,13 @@ gatsby-plugin-layout@^1.1.10:
   dependencies:
     "@babel/runtime" "^7.6.2"
 
+gatsby-plugin-load-script@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-load-script/-/gatsby-plugin-load-script-1.0.6.tgz#bf844581be1362973f23282ff8430a264b1c56ca"
+  integrity sha512-osglAD+Efv74Lrf6C0q3UG/Y6tUjuX/IZd5bQnzK6e525DG/x90b9o8yYyk4T9OHqBiXnbVOcU7WO1ZG7dkv0g==
+  dependencies:
+    "@babel/runtime" "^7.4.5"
+
 gatsby-plugin-manifest@^2.2.20:
   version "2.2.20"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.20.tgz#67fa1d6335846097364c2eceece5a4bdc326706e"

@@ -41,9 +41,9 @@ const Contact = () => {
         <Container>
           <h2>Let&apos;s build a thing</h2>
           <ContactForm />
-          <CopyText onClick={() => setCopied(true)}>
+          {/* <CopyText onClick={() => setCopied(true)}>
             {isCopied ? 'Copied!' : 'Or click to copy email address'}
-          </CopyText>
+          </CopyText> */}
         </Container>
       </ContactWrapper>
     </Fragment>

@@ -102,6 +102,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-load-script',
+      options: {
+        src: process.env.SMALLCHAT_SCRIPT,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-sentry',
       options: {
         dsn: process.env.SENTRY_DSN,
