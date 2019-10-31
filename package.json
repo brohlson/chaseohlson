@@ -45,7 +45,7 @@
     "react-use-clipboard": "^0.2.0",
     "scroll-to-element": "^2.0.3",
     "spotify-web-api-node": "^4.0.0",
-    "styled-components": "^4.3.2",
+    "styled-components": "^4.4.1",
     "typeface-exo-2": "^0.0.72",
     "typeface-inconsolata": "^0.0.72",
     "typeface-roboto-mono": "^0.0.75"
