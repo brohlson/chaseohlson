@@ -1,12 +1,14 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
+import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import SEO from '../components/SEO';
+
 import Container from '../components/UI/Container';
 import Button from '../components/UI/Button';
 import PostCardGroup from '../components/Common/PostCardGroup';
-import { graphql } from 'gatsby';
+
 import helpers from '../util/helpers';
+import PageSEO from '../components/PageSEO';
 
 const HeroWrapper = styled.div`
   height: 400px;
@@ -42,88 +44,80 @@ const PostsWrapper = styled.div`
   }
 `;
 
-class Blog extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      page: 1,
-      chunksPerPage: 2,
-      allLoaded: false,
-    };
-  }
+export default function Blog({ data: { page, blogData } }) {
+  const [blogPage, setPage] = useState(1);
+  const [allLoaded, setAllLoaded] = useState(false);
 
-  static propTypes = {
-    data: PropTypes.object.isRequired,
-  };
-
-  renderPosts = () => {
-    let { edges } = this.props.data.blogData;
-    let { page, chunksPerPage } = this.state;
-    let chunks = helpers.chunkArray(Array.from(edges), 2);
-    let paginated = Array.from(chunks).splice(0, page * chunksPerPage);
+  const renderPosts = () => {
+    const { edges } = blogData;
+    const chunks = helpers.chunkArray(Array.from(edges), 2);
+    const paginated = Array.from(chunks).splice(0, blogPage * 2);
     return paginated.map((group, index) => (
       <PostCardGroup posts={group} topBorder={index === 0} key={index} />
     ));
   };
 
-  onLoad = () => {
-    let { page, chunksPerPage } = this.state;
-    let { edges } = this.props.data.blogData;
-    let allLoaded = (page + 1) * chunksPerPage >= edges.length / 2;
-    this.setState({ page: page + 1, allLoaded: allLoaded });
+  const onLoad = () => {
+    const { edges } = blogData;
+    const allPostsLoaded = (blogPage + 1) * 2 >= edges.length / 2;
+    setPage(blogPage + 1);
+    setAllLoaded(allPostsLoaded);
   };
 
-  render() {
-    let { allLoaded, chunksPerPage } = this.state;
-    let { edges } = this.props.data.blogData;
-    return (
-      <Fragment>
-        <SEO
-          title="Web Development Blog | Chase Ohlson"
-          url={'https://chaseohlson.com/blog'}
-          description="Chase Ohlson's web development blog.  Covering topics like React & Gatsby and other stuff"
-        />
-        <HeroWrapper>
-          <Container>
-            <h1>The</h1>
-            <h1>Latest</h1>
-          </Container>
-        </HeroWrapper>
-        <PostsWrapper>
-          <Container>
-            {this.renderPosts()}
-            {edges.length >= chunksPerPage * 2 + 1 && (
-              <div className="load">
-                <Button
-                  type={'action'}
-                  action={this.onLoad}
-                  text={allLoaded ? 'All Posts Loaded' : 'Load More Posts'}
-                  disabled={allLoaded}
-                />
-              </div>
-            )}
-          </Container>
-        </PostsWrapper>
-      </Fragment>
-    );
-  }
+  const { edges } = blogData;
+  return (
+    <Fragment>
+      <PageSEO meta={page.seoMetaTags} />
+      <HeroWrapper>
+        <Container>
+          <h1>The</h1>
+          <h1>Latest</h1>
+        </Container>
+      </HeroWrapper>
+      <PostsWrapper>
+        <Container>
+          {renderPosts()}
+          {edges.length >= 2 * 2 + 1 && (
+            <div className="load">
+              <Button
+                type={'action'}
+                action={onLoad}
+                text={allLoaded ? 'All Posts Loaded' : 'Load More Posts'}
+                disabled={allLoaded}
+              />
+            </div>
+          )}
+        </Container>
+      </PostsWrapper>
+    </Fragment>
+  );
 }
 
-export default Blog;
+Blog.propTypes = {
+  data: PropTypes.object.isRequired,
+};
 
 export const blogQuery = graphql`
   {
-    blogData: allContentfulStandardPost(
-      sort: { fields: [createdAt], order: DESC }
+    page: datoCmsBlogPage {
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
+      }
+      title
+    }
+    blogData: allDatoCmsStandardBlog(
+      sort: { fields: [meta___publishedAt], order: DESC }
       limit: 1000
     ) {
       edges {
         node {
           slug
           title
-          dateOverride
-          createdAt
-          content {
+          dateOverride(formatString: "MMMM Do, YYYY")
+          meta {
+            createdAt
+          }
+          contentNode {
             childMarkdownRemark {
               excerpt
             }

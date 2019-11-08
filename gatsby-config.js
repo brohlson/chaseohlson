@@ -45,10 +45,9 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-contentful',
+      resolve: 'gatsby-source-datocms',
       options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_TOKEN,
+        apiToken: process.env.DATO_CMS,
       },
     },
     {

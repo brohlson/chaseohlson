@@ -4,10 +4,10 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const LinkButtonWrapper = styled(Link)`
-  opacity: ${props => (props.disabled ? `.3` : `1`)};
-  pointer-events: ${props => (props.disabled ? `none` : `all`)};
+  opacity: ${props => (props.disabled ? '.3' : '1')};
+  pointer-events: ${props => (props.disabled ? 'none' : 'all')};
   button {
-    pointer-events: ${props => (props.disabled ? `none` : `all`)};
+    pointer-events: ${props => (props.disabled ? 'none' : 'all')};
     background: transparent;
     border: 0.1rem solid ${props => props.theme.colors.black};
     height: 6rem;
@@ -20,10 +20,10 @@ const LinkButtonWrapper = styled(Link)`
 `;
 
 const ActionButtonWrapper = styled.div`
-  opacity: ${props => (props.disabled ? `.3` : `1`)};
-  pointer-events: ${props => (props.disabled ? `none` : `all`)};
+  opacity: ${props => (props.disabled ? '.3' : '1')};
+  pointer-events: ${props => (props.disabled ? 'none' : 'all')};
   button {
-    pointer-events: ${props => (props.disabled ? `none` : `all`)};
+    pointer-events: ${props => (props.disabled ? 'none' : 'all')};
     background: transparent;
     border: 0.1rem solid ${props => props.theme.colors.black};
     height: 6rem;

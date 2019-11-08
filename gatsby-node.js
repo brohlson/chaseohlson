@@ -1,15 +1,12 @@
-const path = require('path')
+const path = require('path');
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
   const standardPosts = new Promise((resolve, reject) => {
     graphql(`
       {
-        allContentfulStandardPost(
-          sort: { fields: [createdAt], order: DESC }
-          limit: 10000
-        ) {
+        allDatoCmsStandardBlog(limit: 10000) {
           edges {
             node {
               slug
@@ -18,22 +15,22 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `).then(result => {
-      const posts = result.data.allContentfulStandardPost.edges
+      const posts = result.data.allDatoCmsStandardBlog.edges;
 
       // Create Pages
       posts.map(post => {
-        let { slug } = post.node
+        let { slug } = post.node;
         createPage({
           path: `/${slug}`,
           component: path.resolve(`./src/templates/StandardBlog.js`),
           context: {
             slug,
           },
-        })
-      })
-      resolve()
-    })
-  })
+        });
+      });
+      resolve();
+    });
+  });
 
-  return Promise.all([standardPosts])
-}
+  return Promise.all([standardPosts]);
+};
