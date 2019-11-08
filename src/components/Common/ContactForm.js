@@ -190,7 +190,7 @@ export default class ContactForm extends Component {
     });
   };
 
-  handleError = msg => {
+  handleError = () => {
     this.setState({
       showModal: true,
       valid: false,

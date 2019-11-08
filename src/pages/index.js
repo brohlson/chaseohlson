@@ -10,10 +10,7 @@ import Testimonials from '../components/Home/Testimonials';
 import Recent from '../components/Home/Recent';
 import { graphql } from 'gatsby';
 
-const IndexPage = ({
-  data: { home, homeData, blogData, desktopImage, mobileImage },
-}) => {
-  console.log(home);
+const IndexPage = ({ data: { home, blog, desktopImage, mobileImage } }) => {
   return (
     <Fragment>
       <PageSEO meta={home.seoMetaTags} />
@@ -25,9 +22,9 @@ const IndexPage = ({
       <About title="About" body={home.aboutNode.childMarkdownRemark.html} />
       <Exp blocks={home.experience} />
       <Projects title={'Recent Projects'} projects={home.projects} />
-      <Clients logos={homeData.edges[0].node.clientLogos} />
-      <Testimonials testimonials={homeData.edges[0].node.testimonialBlocks} />
-      <Recent posts={blogData.edges} />
+      <Clients logos={home.clientLogos} />
+      <Testimonials testimonials={home.testimonials} />
+      <Recent posts={blog.edges} />
     </Fragment>
   );
 };
@@ -50,7 +47,14 @@ export const homeQuery = graphql`
           html
         }
       }
+      testimonials {
+        id
+        quote
+        person
+        company
+      }
       experience {
+        id
         company
         job
         timeframe
@@ -60,12 +64,18 @@ export const homeQuery = graphql`
           }
         }
       }
+      clientLogos {
+        fluid(maxWidth: 400, imgixParams: { fm: "jpg", auto: "compress" }) {
+          ...GatsbyDatoCmsFluid_noBase64
+        }
+      }
       projects {
+        id
         projectTitle
         projectTags
         projectLink
         projectImage {
-          fluid(maxWidth: 1000, imgixParams: { fm: "png", auto: "compress" }) {
+          fluid(maxWidth: 800, imgixParams: { fm: "png", auto: "compress" }) {
             ...GatsbyDatoCmsFluid_noBase64
           }
         }
@@ -77,82 +87,21 @@ export const homeQuery = graphql`
         projectColor {
           hex
         }
-        id
       }
     }
-    homeData: allContentfulHome {
-      edges {
-        node {
-          titleTag
-          meta
-          h1
-          aboutText {
-            childMarkdownRemark {
-              html
-            }
-          }
-          experienceBlocks {
-            company
-            position
-            timeframe
-            details {
-              childMarkdownRemark {
-                html
-              }
-            }
-          }
-          projectBlocks {
-            projectTitle
-            projectDescription {
-              childMarkdownRemark {
-                html
-              }
-            }
-            projectTags
-            projectColor
-            projectLink
-            projectImage {
-              fluid(maxWidth: 800) {
-                sizes
-                src
-                srcSet
-                aspectRatio
-              }
-            }
-          }
-          clientLogos {
-            fluid(maxWidth: 400) {
-              sizes
-              src
-              srcSet
-              aspectRatio
-            }
-          }
-          testimonialBlocks {
-            company
-            person
-            quote {
-              childMarkdownRemark {
-                html
-              }
-            }
-          }
-        }
-      }
-    }
-    blogData: allContentfulStandardPost(
-      sort: { fields: [createdAt], order: DESC }
+    blog: allDatoCmsStandardBlog(
+      sort: { fields: [meta___publishedAt], order: DESC }
       limit: 2
     ) {
       edges {
         node {
-          slug
+          id
           title
-          dateOverride
-          createdAt
-          content {
+          slug
+          dateOverride(formatString: "MMMM Do, YYYY")
+          contentNode {
             childMarkdownRemark {
-              excerpt
+              excerpt(truncate: true)
             }
           }
         }

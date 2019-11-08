@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Button from '../UI/Button';
-import Moment from 'react-moment';
 
 const PostCardWrapper = styled.div`
   background: white;
@@ -42,21 +41,16 @@ const PostCardWrapper = styled.div`
 const PostCard = ({ data }) => (
   <PostCardWrapper>
     <div className="date">
-      <span>
-        <Moment
-          date={data.node.dateOverride || data.node.createdAt}
-          format={'MMMM Do, YYYY'}
-        />
-      </span>
+      <span>{data.node.dateOverride || data.meta.publishedAt}</span>
     </div>
     <div className="postTitle">
       <h4>{data.node.title}</h4>
     </div>
     <div className="excerpt">
-      <p>{data.node.content.childMarkdownRemark.excerpt}</p>
+      <p>{data.node.contentNode.childMarkdownRemark.excerpt}</p>
     </div>
     <div className="button">
-      <Button type={'link'} link={data.node.slug} text={'Read More'} />
+      <Button type={'link'} link={`/${data.node.slug}`} text={'Read More'} />
     </div>
   </PostCardWrapper>
 );

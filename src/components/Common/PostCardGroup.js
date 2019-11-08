@@ -43,7 +43,7 @@ const PostCardGroupWrapper = styled.div`
 
 const PostCardGroup = ({ posts, topBorder }) => (
   <PostCardGroupWrapper topBorder={topBorder}>
-    {posts && posts.map((post, index) => <PostCard key={index} data={post} />)}
+    {posts && posts.map(post => <PostCard key={post.node.id} data={post} />)}
   </PostCardGroupWrapper>
 );
 

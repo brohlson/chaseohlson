@@ -47,7 +47,7 @@ const TestWrapper = styled.div`
 
 const CopyWrapper = styled.div`
   animation: ${Animations.fadeInUp} 0.2s;
-  display: ${props => (props.active ? `flex` : `none`)};
+  display: ${props => (props.active ? 'flex' : 'none')};
   flex-direction: column;
   padding: 0 3rem;
   position: relative;
@@ -75,7 +75,7 @@ const CopyWrapper = styled.div`
 `;
 
 const Dot = styled.button.attrs({
-  'aria-label': `Testimonial Page Button`,
+  'aria-label': 'Testimonial Page Button',
 })`
   height: 1rem;
   width: 1rem;
@@ -96,8 +96,8 @@ const Dot = styled.button.attrs({
   }
   div {
     transition: all 0.1s;
-    height: ${props => (props.active ? `0rem` : `.6rem`)};
-    width: ${props => (props.active ? `0rem` : `.6rem`)};
+    height: ${props => (props.active ? '0rem' : '.6rem')};
+    width: ${props => (props.active ? '0rem' : '.6rem')};
     background: white;
     border-radius: 50rem;
   }
@@ -105,10 +105,9 @@ const Dot = styled.button.attrs({
 
 const Copy = ({ person, company, quote, active }) => (
   <CopyWrapper active={active}>
-    <div
-      className="top"
-      dangerouslySetInnerHTML={{ __html: quote.childMarkdownRemark.html }}
-    />
+    <div className="top">
+      <p>{quote}</p>
+    </div>
     <div className="bottom">
       <p>{person}</p>
       <p>{company}</p>
@@ -127,7 +126,7 @@ function Testimonials({ testimonials }) {
           <div className="inner">
             <div className="nav">
               {testimonials &&
-                Array.from(testimonials).map((noop, idx) => (
+                Array.from(testimonials).map((_, idx) => (
                   <Dot
                     onClick={() => setIndex(idx)}
                     active={index === idx}
@@ -141,7 +140,7 @@ function Testimonials({ testimonials }) {
             {testimonials &&
               testimonials.map((item, idx) => (
                 <Copy
-                  key={idx}
+                  key={item.id}
                   active={index === idx}
                   person={item.person}
                   company={item.company}
@@ -154,6 +153,13 @@ function Testimonials({ testimonials }) {
     </TestWrapper>
   );
 }
+
+Copy.propTypes = {
+  person: PropTypes.string.isRequired,
+  company: PropTypes.string.isRequired,
+  quote: PropTypes.string.isRequired,
+  active: PropTypes.bool.isRequired,
+};
 
 Testimonials.propTypes = {
   testimonials: PropTypes.array.isRequired,

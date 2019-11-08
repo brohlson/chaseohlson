@@ -12534,6 +12534,11 @@ react-async-script@^1.1.1:
     hoist-non-react-statics "^3.3.0"
     prop-types "^15.5.0"
 
+react-async@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/react-async/-/react-async-9.0.0.tgz#60e8282278fc642429229a33ce1dbd427d6470e3"
+  integrity sha512-J1o8clttyaQ12+G2GiRTgsvkD+QZJS9A9GTh3nDWX6gvoskmUwMPXFDntOcUvP032xUAf6F75M2sT3FW095HeA==
+
 react-audio-player@^0.11.1:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/react-audio-player/-/react-audio-player-0.11.1.tgz#b91d0a612ca2c56cf037e34e9b3626be5326a373"

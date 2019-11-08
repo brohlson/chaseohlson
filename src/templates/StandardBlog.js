@@ -2,12 +2,11 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-import Moment from 'react-moment';
 import { graphql } from 'gatsby';
 
 import Container from '../components/UI/Container';
-import SEO from '../components/SEO';
 import TextContent from '../components/Common/TextContent';
+import PageSEO from '../components/PageSEO';
 
 const Wrapper = styled.div`
   background: white;
@@ -167,55 +166,49 @@ const PostWrapper = styled.div`
   }
 `;
 
-const StandardBlog = ({ data: { blog } }) => (
-  <Fragment>
-    <SEO
-      title={blog.titleTag}
-      description={blog.metaDescription}
-      img={blog.featuredImage.file.url}
-      type={'article'}
-      createdAt={blog.dateOverride || blog.createdAt}
-      updatedAt={blog.updatedAt}
-      url={`https://chaseohlson.com/${blog.slug}`}
-    />
-    <Wrapper>
-      <ImgWrapper>
-        <PostImg backgroundColor={'#2B2B2B'} fluid={blog.featuredImage.fluid} />
-      </ImgWrapper>
-      <BodyWrapper>
-        <Container>
-          <TitleWrapper>
-            <div className="title">
-              <h1>{blog.title}</h1>
-            </div>
-            <div className="details">
-              <p>
-                Date: {''}
-                <Moment
-                  date={blog.dateOverride || blog.createdAt}
-                  format={'MMMM Do, YYYY'}
-                />
-              </p>
-              <p>
-                Topics:{' '}
-                {blog.tags.map((item, index) =>
-                  index + 1 === blog.tags.length ? (
-                    <span key={index}>{item}</span>
-                  ) : (
-                    <span key={index}>{item}, </span>
-                  )
-                )}
-              </p>
-            </div>
-          </TitleWrapper>
-          <PostWrapper>
-            <TextContent content={blog.content.childMarkdownRemark.html} />
-          </PostWrapper>
-        </Container>
-      </BodyWrapper>
-    </Wrapper>
-  </Fragment>
-);
+const StandardBlog = ({ data: { blog } }) => {
+  const splitTags = blog.tags.split(',');
+  return (
+    <Fragment>
+      <PageSEO meta={blog.seoMetaTags} />
+      <Wrapper>
+        <ImgWrapper>
+          <PostImg
+            backgroundColor={'#2B2B2B'}
+            fluid={blog.featuredImage.fluid}
+          />
+        </ImgWrapper>
+        <BodyWrapper>
+          <Container>
+            <TitleWrapper>
+              <div className="title">
+                <h1>{blog.title}</h1>
+              </div>
+              <div className="details">
+                <p>Date: {blog.dateOverride || blog.meta.publishedAt}</p>
+                <p>
+                  Topics:{' '}
+                  {splitTags.map((item, index) =>
+                    index + 1 === splitTags.length ? (
+                      <span key={index}>{item}</span>
+                    ) : (
+                      <span key={index}>{item}, </span>
+                    )
+                  )}
+                </p>
+              </div>
+            </TitleWrapper>
+            <PostWrapper>
+              <TextContent
+                content={blog.contentNode.childMarkdownRemark.html}
+              />
+            </PostWrapper>
+          </Container>
+        </BodyWrapper>
+      </Wrapper>
+    </Fragment>
+  );
+};
 
 StandardBlog.propTypes = {
   pageContext: PropTypes.object.isRequired,
@@ -224,29 +217,25 @@ StandardBlog.propTypes = {
 
 export const blogQuery = graphql`
   query($slug: String!) {
-    blog: contentfulStandardPost(slug: { eq: $slug }) {
+    blog: datoCmsStandardBlog(slug: { eq: $slug }) {
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
+      }
       title
       slug
-      titleTag
-      createdAt
-      updatedAt
-      metaDescription
-      dateOverride
+      dateOverride(formatString: "MMMM Do, YYYY")
+      meta {
+        publishedAt(formatString: "MMMM Do, YYYY")
+      }
       tags
-      content {
+      contentNode {
         childMarkdownRemark {
           html
         }
       }
       featuredImage {
-        file {
-          url
-        }
-        fluid(maxWidth: 2000) {
-          sizes
-          src
-          srcSet
-          aspectRatio
+        fluid(maxWidth: 2000, imgixParams: { fm: "jpg", auto: "compress" }) {
+          ...GatsbyDatoCmsFluid_noBase64
         }
       }
     }
