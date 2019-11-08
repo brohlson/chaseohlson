@@ -37,7 +37,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.10.2",
     "react-audio-player": "^0.11.1",
-    "react-dom": "^16.10.2",
+    "react-dom": "^16.11.0",
     "react-google-recaptcha": "^2.0.1",
     "react-helmet": "^5.2.1",
     "scroll-to-element": "^2.0.3",
