@@ -151,51 +151,56 @@ const ProjectImg = styled(Img)`
   }
 `;
 
-const ProjectBlock = ({ project }) => (
-  <ProjectBlockWrapper bg={project.projectColor}>
-    <Container>
-      <div className="left">
-        <div className="info">
-          <div className="p__title">
-            <h3>{project.projectTitle}</h3>
-          </div>
-          <div
-            className="p__desc"
-            dangerouslySetInnerHTML={{
-              __html: project.projectDescription.childMarkdownRemark.html,
-            }}
-          />
-          <div className="p__tags">
-            <p>Development Tools</p>
-            <ul>
-              {project.projectTags.map((tag, idx) => (
-                <li key={idx}>{tag}</li>
-              ))}
-            </ul>
-          </div>
-
-          {project.projectLink && (
-            <div className="p__cta">
-              <a
-                href={project.projectLink}
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-              >
-                <button>View Project</button>
-              </a>
+const ProjectBlock = ({ project }) => {
+  function splitTags(str) {
+    return str.split(',');
+  }
+  return (
+    <ProjectBlockWrapper bg={project.projectColor.hex}>
+      <Container>
+        <div className="left">
+          <div className="info">
+            <div className="p__title">
+              <h3>{project.projectTitle}</h3>
             </div>
-          )}
+            <div
+              className="p__desc"
+              dangerouslySetInnerHTML={{
+                __html: project.projectDescriptionNode.childMarkdownRemark.html,
+              }}
+            />
+            <div className="p__tags">
+              <p>Development Tools</p>
+              <ul>
+                {splitTags(project.projectTags).map((tag, idx) => (
+                  <li key={idx}>{tag}</li>
+                ))}
+              </ul>
+            </div>
+
+            {project.projectLink && (
+              <div className="p__cta">
+                <a
+                  href={project.projectLink}
+                  target="_blank"
+                  rel="nofollow noopener noreferrer"
+                >
+                  <button>View Project</button>
+                </a>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-      <div className="right">
-        <ProjectImg
-          backgroundColor={project.projectColor}
-          fluid={project.projectImage.fluid}
-        />
-      </div>
-    </Container>
-  </ProjectBlockWrapper>
-);
+        <div className="right">
+          <ProjectImg
+            backgroundColor={project.projectColor.hex}
+            fluid={project.projectImage.fluid}
+          />
+        </div>
+      </Container>
+    </ProjectBlockWrapper>
+  );
+};
 
 const Projects = ({ title, projects }) => (
   <ProjectsWrapper id="work">
@@ -204,8 +209,8 @@ const Projects = ({ title, projects }) => (
         <h2>{title}</h2>
       </div>
     </Container>
-    {projects.map((project, idx) => (
-      <ProjectBlock key={idx} project={project} />
+    {projects.map(project => (
+      <ProjectBlock key={project.id} project={project} />
     ))}
   </ProjectsWrapper>
 );

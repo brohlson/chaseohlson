@@ -241,7 +241,7 @@ function Exp({ blocks }) {
 
   const renderLeftBlocks = () => {
     return blocks.map((block, idx) => {
-      let { company, details, position, timeframe } = block;
+      let { company, detailsNode, position, timeframe } = block;
       return (
         <TitleBlockWrapper
           selected={index === idx}
@@ -264,7 +264,7 @@ function Exp({ blocks }) {
               <div
                 className="details"
                 dangerouslySetInnerHTML={{
-                  __html: details.childMarkdownRemark.html,
+                  __html: detailsNode.childMarkdownRemark.html,
                 }}
               />
             </div>
@@ -276,7 +276,7 @@ function Exp({ blocks }) {
 
   const renderDetailBlocks = () => {
     return blocks.map((block, idx) => {
-      let { details, position, timeframe } = block;
+      let { detailsNode, position, timeframe } = block;
       return (
         <DetailBlockWrapper selected={index === idx} key={idx}>
           <div className="position">
@@ -288,7 +288,7 @@ function Exp({ blocks }) {
           <div
             className="details"
             dangerouslySetInnerHTML={{
-              __html: details.childMarkdownRemark.html,
+              __html: detailsNode.childMarkdownRemark.html,
             }}
           />
         </DetailBlockWrapper>

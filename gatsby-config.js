@@ -52,6 +52,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-datocms',
+      options: {
+        apiToken: process.env.DATO_CMS,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'chase-ohlson',

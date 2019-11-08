@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Hero from '../components/Home/Hero';
-import SEO from '../components/SEO';
+import PageSEO from '../components/PageSEO';
 import About from '../components/Home/About';
 import Exp from '../components/Home/Exp';
 import Projects from '../components/Home/Projects';
@@ -11,40 +11,26 @@ import Recent from '../components/Home/Recent';
 import { graphql } from 'gatsby';
 
 const IndexPage = ({
-  data: { homeData, blogData, desktopImage, mobileImage },
-}) => (
-  <Fragment>
-    <SEO
-      title={homeData.edges[0].node.titleTag}
-      description={homeData.edges[0].node.meta}
-      url={'https://chaseohlson.com'}
-      keywords={[
-        'web developer',
-        'web developer los angeles',
-        'los angeles web developer',
-        'freelance web developer',
-        'los angeles web development',
-      ]}
-    />
-    <Hero
-      desktop={desktopImage.childImageSharp.fluid}
-      mobile={mobileImage.childImageSharp.fluid}
-      title={homeData.edges[0].node.h1}
-    />
-    <About
-      title="About"
-      body={homeData.edges[0].node.aboutText.childMarkdownRemark.html}
-    />
-    <Exp blocks={homeData.edges[0].node.experienceBlocks} />
-    <Projects
-      title={'Recent Projects'}
-      projects={homeData.edges[0].node.projectBlocks}
-    />
-    <Clients logos={homeData.edges[0].node.clientLogos} />
-    <Testimonials testimonials={homeData.edges[0].node.testimonialBlocks} />
-    <Recent posts={blogData.edges} />
-  </Fragment>
-);
+  data: { home, homeData, blogData, desktopImage, mobileImage },
+}) => {
+  console.log(home);
+  return (
+    <Fragment>
+      <PageSEO meta={home.seoMetaTags} />
+      <Hero
+        desktop={desktopImage.childImageSharp.fluid}
+        mobile={mobileImage.childImageSharp.fluid}
+        title={home.headline}
+      />
+      <About title="About" body={home.aboutNode.childMarkdownRemark.html} />
+      <Exp blocks={home.experience} />
+      <Projects title={'Recent Projects'} projects={home.projects} />
+      <Clients logos={homeData.edges[0].node.clientLogos} />
+      <Testimonials testimonials={homeData.edges[0].node.testimonialBlocks} />
+      <Recent posts={blogData.edges} />
+    </Fragment>
+  );
+};
 
 IndexPage.propTypes = {
   data: PropTypes.object.isRequired,
@@ -54,6 +40,46 @@ export default IndexPage;
 
 export const homeQuery = graphql`
   {
+    home: datoCmsHome {
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
+      }
+      headline
+      aboutNode {
+        childMarkdownRemark {
+          html
+        }
+      }
+      experience {
+        company
+        job
+        timeframe
+        detailsNode {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
+      projects {
+        projectTitle
+        projectTags
+        projectLink
+        projectImage {
+          fluid(maxWidth: 1000, imgixParams: { fm: "png", auto: "compress" }) {
+            ...GatsbyDatoCmsFluid_noBase64
+          }
+        }
+        projectDescriptionNode {
+          childMarkdownRemark {
+            html
+          }
+        }
+        projectColor {
+          hex
+        }
+        id
+      }
+    }
     homeData: allContentfulHome {
       edges {
         node {
