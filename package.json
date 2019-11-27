@@ -40,6 +40,7 @@
     "react-dom": "^16.10.2",
     "react-google-recaptcha": "^2.0.1",
     "react-helmet": "^5.2.1",
+    "react-twitter-embed": "^3.0.3",
     "scroll-to-element": "^2.0.3",
     "styled-components": "^4.4.1",
     "typeface-exo-2": "^0.0.72",

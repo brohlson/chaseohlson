@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
+import { TwitterFollowButton } from 'react-twitter-embed';
 
 import Container from '../components/UI/Container';
 import TextContent from '../components/Common/TextContent';
@@ -96,6 +97,9 @@ const TitleWrapper = styled.div`
   .details {
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: 1.2rem;
+  }
+  .author {
     padding-bottom: 3rem;
   }
 `;
@@ -196,6 +200,9 @@ const StandardBlog = ({ data: { blog } }) => {
                     )
                   )}
                 </p>
+              </div>
+              <div className="author">
+                <TwitterFollowButton screenName={'chase_ohlson'} />
               </div>
             </TitleWrapper>
             <PostWrapper>

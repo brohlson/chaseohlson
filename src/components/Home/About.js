@@ -105,9 +105,9 @@ const AboutWrapper = styled.div`
 
 const PlayerWrapper = styled.div`
   .loading {
-    min-height: 115px;
+    padding: 4.3rem 0;
     @media screen and (max-width: ${props => props.theme.sizes.mobile}) {
-      min-height: 132px;
+      padding: 5.6rem 0;
     }
   }
 `;
