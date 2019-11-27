@@ -67,7 +67,7 @@
   "devDependencies": {
     "babel-eslint": "^10.0.2",
     "directory-named-webpack-plugin": "^4.0.0",
-    "eslint": "^5.12.1",
+    "eslint": "^6.7.1",
     "eslint-config-prettier": "^6.7.0",
     "eslint-loader": "^2.2.1",
     "eslint-plugin-import": "^2.18.2",
