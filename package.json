@@ -9,7 +9,7 @@
     "babel-plugin-styled-components": "^1.10.6",
     "concurrently": "^5.0.0",
     "dotenv": "^8.1.0",
-    "gatsby": "^2.18.4",
+    "gatsby": "^2.18.6",
     "gatsby-image": "^2.2.30",
     "gatsby-plugin-canonical-urls": "^2.1.13",
     "gatsby-plugin-google-analytics": "^2.1.29",
