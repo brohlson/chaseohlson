@@ -28,7 +28,7 @@
     "gatsby-remark-prismjs": "^3.3.25",
     "gatsby-source-datocms": "^2.1.18",
     "gatsby-source-filesystem": "^2.1.35",
-    "gatsby-transformer-remark": "^2.6.38",
+    "gatsby-transformer-remark": "^2.6.39",
     "gatsby-transformer-sharp": "^2.3.2",
     "http-proxy-middleware": "^0.20.0",
     "mailgun-js": "^0.22.0",
