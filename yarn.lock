@@ -6002,10 +6002,10 @@ gatsby-remark-prismjs@^3.3.25:
     parse-numeric-range "^0.0.2"
     unist-util-visit "^1.4.1"
 
-gatsby-source-datocms@^2.1.18:
-  version "2.1.18"
-  resolved "https://registry.yarnpkg.com/gatsby-source-datocms/-/gatsby-source-datocms-2.1.18.tgz#f28f6e73109b7ed6d3382d67e02aa95541ed68dd"
-  integrity sha512-aqk6Nee9qNY0RXG0d4jrVPcVR+n81rkSKX1P82SXwvKvsH7IvEXQXbuFKqfaMPFxtwPybwtpjwc3X1FbJf6l6w==
+gatsby-source-datocms@^2.1.19:
+  version "2.1.19"
+  resolved "https://registry.yarnpkg.com/gatsby-source-datocms/-/gatsby-source-datocms-2.1.19.tgz#ac7952f5dac696427e00ad4037387f663de6e4a0"
+  integrity sha512-opTM6SPd2Yokm6tAqemMfLC6CD0JmD+ARYRUDCQcsY+j++iMFMSx1Hg0Q4Y0ijip0wMW7pkY8er4SlRBwasVfg==
   dependencies:
     core-js "^3.2.1"
     datocms-client "~3.0.3"
