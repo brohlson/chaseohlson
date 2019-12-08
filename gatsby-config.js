@@ -100,12 +100,12 @@ module.exports = {
         head: false,
       },
     },
-    {
-      resolve: 'gatsby-plugin-load-script',
-      options: {
-        src: process.env.SMALLCHAT_SCRIPT,
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-load-script',
+    //   options: {
+    //     src: process.env.SMALLCHAT_SCRIPT,
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-sentry',
       options: {
