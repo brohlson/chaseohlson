@@ -98,6 +98,10 @@ export const homeQuery = graphql`
           id
           title
           slug
+          meta {
+            createdAt(formatString: "MMMM Do, YYYY")
+            publishedAt(formatString: "MMMM Do, YYYY")
+          }
           dateOverride(formatString: "MMMM Do, YYYY")
           contentNode {
             childMarkdownRemark {

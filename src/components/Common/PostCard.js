@@ -41,7 +41,7 @@ const PostCardWrapper = styled.div`
 const PostCard = ({ data }) => (
   <PostCardWrapper>
     <div className="date">
-      <span>{data.node.dateOverride || data.meta.publishedAt}</span>
+      <span>{data.node.dateOverride || data.node.meta.publishedAt}</span>
     </div>
     <div className="postTitle">
       <h4>{data.node.title}</h4>

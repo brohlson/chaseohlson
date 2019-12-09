@@ -115,7 +115,8 @@ export const blogQuery = graphql`
           title
           dateOverride(formatString: "MMMM Do, YYYY")
           meta {
-            createdAt
+            createdAt(formatString: "MMMM Do, YYYY")
+            publishedAt(formatString: "MMMM Do, YYYY")
           }
           contentNode {
             childMarkdownRemark {
