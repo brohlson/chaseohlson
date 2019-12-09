@@ -100,12 +100,14 @@ module.exports = {
         head: false,
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-load-script',
-    //   options: {
-    //     src: process.env.SMALLCHAT_SCRIPT,
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-hubspot',
+      options: {
+        trackingCode: process.env.HUBSPOT_PORTAL_ID,
+        respectDNT: true,
+        productionOnly: false,
+      },
+    },
     {
       resolve: 'gatsby-plugin-sentry',
       options: {

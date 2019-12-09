@@ -5911,6 +5911,13 @@ gatsby-plugin-google-analytics@^2.1.29:
   dependencies:
     "@babel/runtime" "^7.7.4"
 
+gatsby-plugin-hubspot@^1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-hubspot/-/gatsby-plugin-hubspot-1.3.3.tgz#b5bfe1eefcf71d3e8edd31d72d0749ab9db68528"
+  integrity sha512-zsbx0folEzX1kVexN9mmLihmIh24K35+WqBcJmNctxPs8EGydqivg3g3WkB2Gpcta8FM+RhLfugFeHdhb1aPHw==
+  dependencies:
+    "@babel/runtime" "^7.6.3"
+
 gatsby-plugin-layout@^1.1.16:
   version "1.1.16"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-layout/-/gatsby-plugin-layout-1.1.16.tgz#423833c271eaeb996cacb8ac567912173b9fbb3f"
