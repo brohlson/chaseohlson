@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import 'typeface-exo-2';
 import 'typeface-roboto-mono';
 import 'typeface-inconsolata';
+import 'prism-theme-night-owl';
 
 const GlobalStyle = createGlobalStyle`
   p, a, li, span, small {
@@ -53,9 +54,6 @@ html {
   font-size: 62.5%;
 }
 
-@-ms-viewport {
-  width: device-width;
-}
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
@@ -190,7 +188,12 @@ pre {
   margin-bottom: 1rem !important;
   overflow: auto;
   -ms-overflow-style: scrollbar;
-  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
+  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace !important;
+  font-size: 1.5rem !important;
+  * {
+    font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace !important;
+  font-size: 1.5rem !important;
+  }
 }
 
 figure {
@@ -350,166 +353,6 @@ template {
   display: none !important;
 }
 
-/******** Code *********/
-
-code[class*='language-'],
-pre[class*='language-'] {
-  color: white;
-  background: #212529;
-  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-  font-feature-settings: normal;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.5;
-  margin-bottom: 0;
-
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
-}
-
-/* Code blocks */
-
-
-.gatsby-highlight {
-  margin-bottom: 1.5rem;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #EF412D, #4F2920);
-  -webkit-overflow-scrolling: touch;
-  overflow: auto;
-  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-}
-
-pre[class*='language-'] {
-  overflow: auto;
-  padding: 1.3125rem;
-  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-}
-
-pre[class*='language-']::-moz-selection {
-  /* Firefox */
-  background: hsl(207, 4%, 16%);
-  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-}
-
-pre[class*='language-']::selection {
-  /* Safari */
-  background: hsl(207, 4%, 16%);
-  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-}
-
-/* Text Selection colour */
-pre[class*='language-']::-moz-selection,
-pre[class*='language-'] ::-moz-selection {
-  text-shadow: none;
-  background: hsla(0, 0%, 100%, 0.15);
-  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-}
-
-pre[class*='language-']::selection,
-pre[class*='language-'] ::selection {
-  text-shadow: none;
-  background: hsla(0, 0%, 100%, 0.15);
-  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-}
-
-/* Inline code */
-:not(pre) > code[class*='language-'] {
-  background: #212529d9;
-  padding: 0.4rem;
-  color: #fff;
-  white-space: normal;
-  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-}
-
-.token.attr-name {
-  color: rgb(173, 219, 103);
-  font-style: italic;
-  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-}
-
-.token.comment {
-  color: rgb(128, 147, 147);
-  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-}
-
-.token.string,
-.token.url {
-  color: rgb(173, 219, 103);
-  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-}
-
-.token.variable {
-  color: rgb(214, 222, 235);
-  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-}
-
-.token.number {
-  color: rgb(247, 140, 108);
-  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-}
-
-.token.builtin,
-.token.char,
-.token.constant,
-.token.function {
-  color: rgb(130, 170, 255);
-  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-}
-
-.token.punctuation {
-  color: rgb(199, 146, 234);
-  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-}
-
-.token.selector,
-.token.doctype {
-  color: rgb(199, 146, 234);
-  font-style: 'italic';
-  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-}
-
-.token.class-name {
-  color: rgb(255, 203, 139);
-  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-}
-
-.token.tag,
-.token.operator,
-.token.keyword,
-.token.interpolation {
-  color: #ffa7c4;
-  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-}
-
-.token.boolean {
-  color: rgb(255, 88, 116);
-  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-}
-
-.token.property {
-  color: rgb(128, 203, 196);
-  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-}
-
-.token.namespace {
-  color: rgb(178, 204, 214);
-  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-}
-
-pre[data-line] {
-  padding: 1em 0 1em 3em;
-  position: relative;
-  font-family: Inconsolata, Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-}
-
 `;
+
 export default GlobalStyle;

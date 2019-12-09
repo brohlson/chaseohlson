@@ -109,6 +109,13 @@ const PostWrapper = styled.div`
   padding: 6rem 0;
   max-width: 100%;
 
+  code {
+    &.language-text {
+      border-radius: 0;
+      padding: 0.2rem;
+    }
+  }
+
   img {
     max-width: 100%;
     margin: 2rem 0 3rem 0;

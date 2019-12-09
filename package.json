@@ -34,6 +34,7 @@
     "mailgun-js": "^0.22.0",
     "netlify-lambda": "^1.6.3",
     "node-spotify-api": "^1.1.1",
+    "prism-theme-night-owl": "^1.2.0",
     "prismjs": "^1.17.1",
     "prop-types": "^15.6.2",
     "react": "^16.12.0",
