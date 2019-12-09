@@ -29,7 +29,7 @@
     "gatsby-source-datocms": "^2.1.20",
     "gatsby-source-filesystem": "^2.1.40",
     "gatsby-transformer-remark": "^2.6.39",
-    "gatsby-transformer-sharp": "^2.3.2",
+    "gatsby-transformer-sharp": "^2.3.7",
     "http-proxy-middleware": "^0.20.0",
     "mailgun-js": "^0.22.0",
     "netlify-lambda": "^1.6.3",
