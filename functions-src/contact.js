@@ -18,9 +18,9 @@ const headers = {
 
 exports.handler = function(event, context, callback) {
   let data = JSON.parse(event.body);
-  let { name, email, subject, message } = data;
+  let { firstname, lastname, email, subject, message } = data;
   let mailOptions = {
-    from: `${name} <${email}>`,
+    from: `${firstname} ${lastname} <${email}>`,
     to: 'chase@chaseohlson.com',
     replyTo: email,
     subject: `CO | ${subject}`,

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Container from '../UI/Container';
-import axios from 'axios';
+import fetch from 'isomorphic-unfetch';
 import endpoints from '../../util/endpoints';
 import LoadingIcon from '../../images/loading.svg';
 import ReactAudioPlayer from 'react-audio-player';
@@ -131,10 +131,10 @@ export default class About extends React.Component {
   getTrack = () => {
     this.setState({ fetching: true });
 
-    axios
-      .get(endpoints.spotify)
+    fetch(endpoints.spotify)
+      .then(res => res.json())
       .then(res => {
-        let { name, href, preview_url, artists } = res.data;
+        let { name, href, preview_url, artists } = res;
         if (preview_url) {
           this.setState({
             fetching: false,

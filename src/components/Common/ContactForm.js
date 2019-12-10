@@ -1,9 +1,15 @@
+/* eslint-disable quotes */
+/* eslint-disable no-console */
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
+import fetch from 'isomorphic-unfetch';
+import Cookies from 'js-cookie';
 import endpoints from '../../util/endpoints';
 import ReCAPTCHA from 'react-google-recaptcha';
 import LoadingIcon from '../../images/loading.svg';
+
+const formId = process.env.HUBSPOT_CONTACT_FORM_ID;
+const portalId = process.env.HUBSPOT_PORTAL_ID;
 
 const Confirm = styled(ReCAPTCHA)`
   margin-bottom: 2rem;
@@ -15,7 +21,7 @@ const Loading = styled.div`
 `;
 
 const Form = styled.form`
-  opacity: ${props => (props.loading ? `.55` : `1`)};
+  opacity: ${props => (props.loading === 'true' ? `.5` : `1`)};
   transition: opacity 0.3s ease;
   max-width: 100%;
   display: flex;
@@ -96,6 +102,15 @@ const InputWrapper = styled.div`
   box-sizing: border-box;
 `;
 
+const InputGroup = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  ${InputWrapper} {
+    width: 49%;
+  }
+`;
+
 const Message = styled.textarea.attrs(() => ({
   'data-hj-whitelist': '',
 }))`
@@ -105,8 +120,7 @@ const Message = styled.textarea.attrs(() => ({
   min-height: 150px;
 `;
 
-const Submit = styled.input`
-  cursor: ${props => (props.disabled ? `not-allowed` : `pointer`)};
+const SubmitButton = styled.button`
   border: 0.1rem solid ${props => props.theme.colors.black} !important;
   color: ${props => props.theme.colors.black};
   font-family: 'Roboto Mono';
@@ -115,6 +129,9 @@ const Submit = styled.input`
   width: 210px;
   max-width: 100%;
   border-radius: 0;
+  opacity: ${props => (props.buttonDisabled ? 0.5 : 1)} !important;
+  pointer-events: ${props =>
+    props.buttonDisabled ? 'none' : 'all'} !important;
 `;
 
 const Modal = styled.div`
@@ -132,8 +149,8 @@ const Modal = styled.div`
   text-align: center;
   align-items: flex-start;
   transition: all 0.3s ease;
-  opacity: ${props => (props.visible ? '1' : '0')};
-  visibility: ${props => (props.visible ? 'visible' : 'hidden')};
+  opacity: ${props => (props.visible === 'true' ? '1' : '0')};
+  visibility: ${props => (props.visible === 'true' ? 'visible' : 'hidden')};
   @media screen and (min-width: ${props => props.theme.sizes.mobile}) {
     min-width: inherit;
     max-width: 400px;
@@ -144,13 +161,16 @@ export default class ContactForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
+      firstname: '',
+      lastname: '',
+      phone: '',
       email: '',
       subject: '',
       message: '',
       showModal: false,
       valid: false,
       error: false,
+      loading: false,
     };
   }
 
@@ -163,33 +183,6 @@ export default class ContactForm extends Component {
     });
   };
 
-  handleSubmit = e => {
-    this.setState({ loading: true });
-    let { name, email, subject, message } = this.state;
-    let data = { name, email, subject, message };
-    axios.post(endpoints.contact, JSON.stringify(data)).then(response => {
-      if (response.status !== 200) {
-        this.handleError();
-      } else {
-        this.handleSuccess();
-      }
-    });
-    e.preventDefault();
-  };
-
-  handleSuccess = () => {
-    this.setState({
-      name: '',
-      email: '',
-      message: '',
-      subject: '',
-      showModal: true,
-      valid: false,
-      loading: false,
-      error: false,
-    });
-  };
-
   handleError = () => {
     this.setState({
       showModal: true,
@@ -197,6 +190,107 @@ export default class ContactForm extends Component {
       loading: false,
       error: true,
     });
+  };
+
+  handleSubmit = e => {
+    if (e) e.preventDefault();
+    const {
+      firstname,
+      lastname,
+      email,
+      phone,
+      subject,
+      message,
+      valid,
+    } = this.state;
+    if (!valid) return null;
+
+    this.setState({ loading: true });
+    const data = { firstname, lastname, email, phone, subject, message };
+    fetch(endpoints.contact, {
+      method: 'post',
+      body: JSON.stringify(data),
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        Accept: 'application/json, application/xml, text/plain, text/html, *.*',
+      }),
+    })
+      .then(() => this.submitHubspotData(data))
+      .catch(() => this.handleError());
+  };
+
+  submitHubspotData = data => {
+    const isBrowser = typeof window !== 'undefined';
+    const hutk = isBrowser ? Cookies.get('hubspotutk') : null;
+    const pageUri = isBrowser ? window.location.href : null;
+    const pageName = isBrowser ? document.title : null;
+    const postUrl = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
+
+    const body = {
+      submittedAt: Date.now(),
+      fields: [
+        {
+          name: 'firstname',
+          value: data.firstname,
+        },
+        {
+          name: 'lastname',
+          value: data.lastname,
+        },
+        {
+          name: 'email',
+          value: data.email,
+        },
+        {
+          name: 'message',
+          value: data.message,
+        },
+        {
+          name: 'subject',
+          value: data.subject,
+        },
+      ],
+      context: {
+        hutk,
+        pageUri,
+        pageName,
+      },
+    };
+
+    if (data.phone) {
+      body.fields.push({
+        name: 'phone',
+        value: data.phone,
+      });
+    }
+
+    fetch(postUrl, {
+      method: 'post',
+      body: JSON.stringify(body),
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        Accept: 'application/json, application/xml, text/plain, text/html, *.*',
+      }),
+    })
+      .then(res => res.json())
+      .then(() => {
+        this.setState({
+          firstname: '',
+          lastname: '',
+          phone: '',
+          email: '',
+          subject: '',
+          message: '',
+          showModal: true,
+          valid: false,
+          loading: false,
+          error: false,
+        });
+      })
+      .catch(err => {
+        console.warn(err);
+        this.handleError();
+      });
   };
 
   closeModal = () => {
@@ -208,40 +302,76 @@ export default class ContactForm extends Component {
   };
 
   render() {
-    let { name, email, subject, message, loading, error } = this.state;
+    let {
+      firstname,
+      lastname,
+      email,
+      phone,
+      subject,
+      message,
+      loading,
+      error,
+      valid,
+    } = this.state;
     return (
       <Form
+        data-form-id={formId}
+        data-portal-id={portalId}
         name="Contact Chase Ohlson"
         onSubmit={this.handleSubmit}
         overlay={this.state.showModal}
         onClick={this.closeModal}
-        loading={this.state.loading}
+        loading={this.state.loading.toString()}
       >
-        <InputWrapper>
-          <Input
-            name="name"
-            type="text"
-            placeholder="Full Name"
-            value={name}
-            onChange={this.handleInputChange}
-            required
-          />
-        </InputWrapper>
-        <InputWrapper>
-          <Input
-            name="email"
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={this.handleInputChange}
-            required
-          />
-        </InputWrapper>
+        <InputGroup>
+          <InputWrapper>
+            <Input
+              name="firstname"
+              type="text"
+              placeholder="First Name *"
+              value={firstname}
+              onChange={this.handleInputChange}
+              required
+            />
+          </InputWrapper>
+          <InputWrapper>
+            <Input
+              name="lastname"
+              type="text"
+              placeholder="Last Name *"
+              value={lastname}
+              onChange={this.handleInputChange}
+              required
+            />
+          </InputWrapper>
+        </InputGroup>
+        <InputGroup>
+          <InputWrapper>
+            <Input
+              name="email"
+              type="email"
+              placeholder="Email *"
+              value={email}
+              onChange={this.handleInputChange}
+              required
+            />
+          </InputWrapper>
+          <InputWrapper>
+            <Input
+              name="phone"
+              type="tel"
+              placeholder="Phone"
+              value={phone}
+              onChange={this.handleInputChange}
+            />
+          </InputWrapper>
+        </InputGroup>
+
         <InputWrapper>
           <Input
             name="subject"
             type="subject"
-            placeholder="Subject"
+            placeholder="Subject *"
             value={subject}
             onChange={this.handleInputChange}
             required
@@ -251,7 +381,7 @@ export default class ContactForm extends Component {
           <Message
             name="message"
             type="text"
-            placeholder="Message"
+            placeholder="Message *"
             value={message}
             onChange={this.handleInputChange}
             required
@@ -261,7 +391,7 @@ export default class ContactForm extends Component {
           <Confirm
             sitekey="6Lft9pEUAAAAAG8g30HbjfOZd38GhdWvMTLqlVc7"
             theme="dark"
-            onChange={this.onConfirm}
+            onChange={() => this.onConfirm()}
           />
         )}
         {loading && (
@@ -270,14 +400,11 @@ export default class ContactForm extends Component {
           </Loading>
         )}
 
-        <Submit
-          disabled={!this.state.valid}
-          name="submit"
-          type="submit"
-          value="Send It"
-        />
+        <SubmitButton buttonDisabled={!valid} name="submit" type="submit">
+          Send It
+        </SubmitButton>
 
-        <Modal visible={this.state.showModal}>
+        <Modal visible={this.state.showModal.toString()}>
           <p>
             {error
               ? `Oops! Something went wrong.  Ensure you're using a valid email address & try again. `
