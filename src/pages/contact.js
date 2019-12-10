@@ -23,6 +23,8 @@ const contactQuery = graphql`
         ...GatsbyDatoCmsSeoMetaTags
       }
       title
+      hubspotForm
+      hubspotPortal
     }
   }
 `;
@@ -35,7 +37,10 @@ const Contact = () => {
       <ContactWrapper>
         <Container>
           <h2>{page.title}</h2>
-          <ContactForm />
+          <ContactForm
+            hubspotForm={page.hubspotForm}
+            hubspotPortal={page.hubspotPortal}
+          />
         </Container>
       </ContactWrapper>
     </Fragment>

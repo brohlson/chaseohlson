@@ -2,14 +2,12 @@
 /* eslint-disable no-console */
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import fetch from 'isomorphic-unfetch';
 import Cookies from 'js-cookie';
 import endpoints from '../../util/endpoints';
 import ReCAPTCHA from 'react-google-recaptcha';
 import LoadingIcon from '../../images/loading.svg';
-
-const formId = process.env.HUBSPOT_CONTACT_FORM_ID;
-const portalId = process.env.HUBSPOT_PORTAL_ID;
 
 const Confirm = styled(ReCAPTCHA)`
   margin-bottom: 2rem;
@@ -174,6 +172,11 @@ export default class ContactForm extends Component {
     };
   }
 
+  static propTypes = {
+    hubspotForm: PropTypes.string.isRequired,
+    hubspotPortal: PropTypes.string.isRequired,
+  };
+
   handleInputChange = event => {
     const target = event.target;
     const value = target.value;
@@ -224,7 +227,7 @@ export default class ContactForm extends Component {
     const hutk = isBrowser ? Cookies.get('hubspotutk') : null;
     const pageUri = isBrowser ? window.location.href : null;
     const pageName = isBrowser ? document.title : null;
-    const postUrl = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
+    const postUrl = `https://api.hsforms.com/submissions/v3/integration/submit/${this.props.hubspotPortal}/${this.props.hubspotForm}`;
 
     const body = {
       submittedAt: Date.now(),
@@ -315,8 +318,8 @@ export default class ContactForm extends Component {
     } = this.state;
     return (
       <Form
-        data-form-id={formId}
-        data-portal-id={portalId}
+        data-form-id={this.props.hubspotForm}
+        data-portal-id={this.props.hubspotPortal}
         name="Contact Chase Ohlson"
         onSubmit={this.handleSubmit}
         overlay={this.state.showModal}
