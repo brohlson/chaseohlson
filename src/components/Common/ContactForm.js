@@ -123,6 +123,7 @@ const SubmitButton = styled.button`
   color: ${props => props.theme.colors.black};
   font-family: 'Roboto Mono';
   text-transform: uppercase;
+  background: white;
   height: 6rem;
   width: 210px;
   max-width: 100%;
