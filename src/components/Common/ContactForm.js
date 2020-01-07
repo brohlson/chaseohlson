@@ -206,8 +206,9 @@ export default class ContactForm extends Component {
       subject,
       message,
       valid,
+      loading,
     } = this.state;
-    if (!valid) return null;
+    if (!valid || loading) return null;
 
     this.setState({ loading: true });
     const data = { firstname, lastname, email, phone, subject, message };
