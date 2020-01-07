@@ -37,7 +37,7 @@
     "netlify-lambda": "^1.6.3",
     "node-spotify-api": "^1.1.1",
     "prism-theme-night-owl": "^1.2.0",
-    "prismjs": "^1.17.1",
+    "prismjs": "^1.18.0",
     "prop-types": "^15.6.2",
     "react": "^16.12.0",
     "react-audio-player": "^0.11.1",
