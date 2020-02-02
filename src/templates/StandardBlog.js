@@ -116,6 +116,18 @@ const PostWrapper = styled.div`
     }
   }
 
+  blockquote {
+    background: #f9f9f9;
+    padding: 1.2rem;
+    padding-left: 2rem;
+    border-left: 0.4rem solid #222;
+    margin-bottom: 2rem;
+    p {
+      margin: 0;
+      font-style: italic;
+    }
+  }
+
   img {
     max-width: 100%;
     margin: 2rem 0 3rem 0;

@@ -19,6 +19,12 @@ module.exports = {
         offset: -90,
       },
     },
+    // {
+    //   resolve: require.resolve('../gatsby-plugin-anchor-links'),
+    //   options: {
+    //     offset: -90,
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
