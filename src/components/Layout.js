@@ -11,12 +11,12 @@ const SiteRoot = styled.div`
   padding-top: 80px;
 `;
 
-const Layout = ({ children }) => (
+const Layout = ({ children, location }) => (
   <SiteRoot>
     <GlobalStyle />
     <ThemeProvider theme={Theme}>
       <>
-        <Header />
+        <Header location={location} />
         {children}
         <Footer />
       </>

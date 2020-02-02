@@ -14,6 +14,12 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
+      resolve: 'gatsby-plugin-anchor-links',
+      options: {
+        offset: -90,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-sitemap',
       options: {
         output: siteConfig.sitemapPath,

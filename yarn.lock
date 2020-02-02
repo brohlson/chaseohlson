@@ -6134,6 +6134,13 @@ gatsby-page-utils@^0.0.37:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
+gatsby-plugin-anchor-links@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-anchor-links/-/gatsby-plugin-anchor-links-1.0.8.tgz#ff46140cb2ff5f0ece17bf0c311adabf99f27c79"
+  integrity sha512-IHmR3YHhFWpHRtfwrX/NePwkrvEz6ol9gudGvEXkOGN0MHdx3sSBRvPFpYEPcALJ8weVJlP0Mhpg2meU7YC7dw==
+  dependencies:
+    scroll-to-element "^2.0.3"
+
 gatsby-plugin-canonical-urls@^2.1.18:
   version "2.1.18"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-canonical-urls/-/gatsby-plugin-canonical-urls-2.1.18.tgz#c52485cda0f72576ca19c1ab7aaf2852230119dd"
@@ -11666,6 +11673,11 @@ react-twitter-embed@^3.0.3:
     exenv "^1.2.2"
     react-proptype-conditional-require "^1.0.4"
     scriptjs "^2.5.9"
+
+react-use-scroll-position@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-use-scroll-position/-/react-use-scroll-position-2.0.0.tgz#c5bb29f751d126ff1c0306c28d7055ce0d4ef034"
+  integrity sha512-nQaWMPElzI8aN1vYTnqy0xV17pEhItgyWUBOtdmMEqsbY1mV3+iZMyTeAJ+oegsQIugYxBU4LnV2NosynN+KKA==
 
 react@^16.12.0:
   version "16.12.0"

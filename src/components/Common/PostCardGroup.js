@@ -25,7 +25,7 @@ const PostCardGroupWrapper = styled.div`
       content: '';
       position: absolute;
       height: 0.2rem;
-      width: ${props => (props.topBorder ? `100%` : `0%`)};
+      width: ${props => (props.topBorder ? '100%' : '0%')};
       top: 0;
       left: 0;
       background: ${props => props.theme.gradients.red};

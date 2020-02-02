@@ -53,7 +53,11 @@ export default function Blog({ data: { page, blogData } }) {
     const chunks = helpers.chunkArray(Array.from(edges), 2);
     const paginated = Array.from(chunks).splice(0, blogPage * 2);
     return paginated.map((group, index) => (
-      <PostCardGroup posts={group} topBorder={index === 0} key={index} />
+      <PostCardGroup
+        posts={group}
+        topBorder={index === 0}
+        key={`group-${index}`}
+      />
     ));
   };
 
@@ -111,6 +115,7 @@ export const blogQuery = graphql`
     ) {
       edges {
         node {
+          id
           slug
           title
           dateOverride(formatString: "MMMM Do, YYYY")

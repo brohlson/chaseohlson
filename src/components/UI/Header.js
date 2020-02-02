@@ -1,11 +1,14 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState, Fragment } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { Link, StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import Container from './Container';
-import scrollToElement from 'scroll-to-element';
+import { useScrollYPosition } from 'react-use-scroll-position';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
-const HeaderWrapper = styled.div`
+import Container from './Container';
+
+const HeaderWrapper = styled.nav`
   background: transparent;
   position: fixed;
   width: 100%;
@@ -118,7 +121,7 @@ const HeaderWrapper = styled.div`
       font-size: 1.4rem;
       line-height: 2.8rem;
       text-transform: uppercase;
-      transform: translateX(${props => (props.open ? `0%` : `100%`)});
+      transform: translateX(${props => (props.open ? '0%' : '100%')});
       transition: transform 0.3s ease;
       display: flex;
       flex-direction: column;
@@ -169,7 +172,7 @@ const HeaderMenuMask = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: ${props => (props.triggered ? `100%` : `0%`)};
+  width: ${props => (props.triggered ? '100%' : '0%')};
   transition: 0.3s all;
   z-index: -1;
   height: 100%;
@@ -184,198 +187,82 @@ const HeaderScrolledMask = styled.div`
   transition: width 0.3s ease;
   z-index: -1;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-  width: ${props => (props.triggered ? `100%` : `0%`)};
-  &:after {
-    transition: width 0.1s ease;
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: ${props => props.theme.gradients.red};
-    height: 0.2rem;
-    width: ${props => `${props.progress}`}%;
-    z-index: 20;
-  }
+  width: ${props => (props.triggered ? '100%' : '0%')};
 `;
 
 const LogoImg = styled(Img)`
   width: 6rem;
 `;
 
-export default class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      open: false,
-      scrolled: false,
-      progress: 0,
-    };
-  }
+export default function Header({ location }) {
+  const [open, setOpen] = useState(false);
 
-  componentDidMount() {
-    if (typeof window !== undefined) {
-      window.addEventListener('scroll', this._handleScroll);
-    }
-  }
-  componentWillUnmount() {
-    if (typeof window !== undefined) {
-      window.removeEventListener('scroll', this._handleScroll);
-    }
-  }
+  const scrollY = typeof window !== 'undefined' ? useScrollYPosition() : 0,
+    scrolled = scrollY !== 0;
 
-  _handleScroll = () => {
-    if (typeof window !== undefined) {
-      let h = document.documentElement,
-        b = document.body,
-        st = 'scrollTop',
-        sh = 'scrollHeight',
-        scroll;
-      scroll = ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100;
-      if (window.pageYOffset > 5) {
-        this.setState({ scrolled: true, progress: Math.floor(scroll) });
-      } else {
-        this.setState({ scrolled: false, progress: Math.floor(scroll) });
-      }
-    }
-  };
+  useEffect(() => {
+    setOpen(false);
+  }, [location, scrollY]);
 
-  _handleClick = () => {
-    this.setState({ open: !this.state.open });
-  };
-
-  _handleLinkClick = (e, target) => {
-    this.setState({ open: !this.state.open });
-    if (typeof window !== undefined) {
-      if (window.location.pathname === '/' && Boolean(target)) {
-        e.preventDefault();
-        scrollToElement(target, {
-          offset: -95,
-          duration: 1000,
-        });
-      }
-    }
-  };
-
-  render() {
-    let { open, scrolled, progress } = this.state;
+  function renderLinks() {
     return (
-      <HeaderWrapper triggered={scrolled} open={open}>
-        <HeaderMenuMask triggered={open} />
-        <HeaderScrolledMask triggered={scrolled} progress={progress} />
-        <Container>
-          <div className="logo">
-            <StaticQuery
-              query={graphql`
-                query {
-                  file(relativePath: { eq: "logo-grey.png" }) {
-                    childImageSharp {
-                      fluid(maxWidth: 80) {
-                        ...GatsbyImageSharpFluid_noBase64
-                      }
+      <Fragment>
+        <AnchorLink to="/#about">About</AnchorLink>
+        <AnchorLink to="/#experience">Experience</AnchorLink>
+        <AnchorLink to="/#work">Work</AnchorLink>
+        <AnchorLink to="/#clients">Clients</AnchorLink>
+        <AnchorLink to="/#testimonials">Testimonials</AnchorLink>
+        <Link className="divider" to={'/contact'}>
+          Contact
+        </Link>
+        <Link to={'/blog'}>Blog</Link>
+      </Fragment>
+    );
+  }
+
+  return (
+    <HeaderWrapper triggered={scrolled} open={open}>
+      <HeaderMenuMask triggered={open} />
+      <HeaderScrolledMask triggered={scrolled} />
+      <Container>
+        <div className="logo">
+          <StaticQuery
+            query={graphql`
+              query {
+                file(relativePath: { eq: "logo-grey.png" }) {
+                  childImageSharp {
+                    fluid(maxWidth: 80) {
+                      ...GatsbyImageSharpFluid_noBase64
                     }
                   }
                 }
-              `}
-              render={data => (
-                <Link to="/">
-                  <LogoImg fluid={data.file.childImageSharp.fluid} />
-                </Link>
-              )}
-            />
-          </div>
-          <div className="nav-d">
-            <Link
-              onClick={e => this._handleLinkClick(e, '#about')}
-              to={'/#about'}
-            >
-              About
-            </Link>
-            <Link
-              onClick={e => this._handleLinkClick(e, '#experience')}
-              to={'/#experience'}
-            >
-              Experience
-            </Link>
-            <Link
-              onClick={e => this._handleLinkClick(e, '#work')}
-              to={'/#work'}
-            >
-              Work
-            </Link>
-            <Link
-              onClick={e => this._handleLinkClick(e, '#clients')}
-              to={'/#clients'}
-            >
-              Clients
-            </Link>
-            <Link
-              onClick={e => this._handleLinkClick(e, '#testimonials')}
-              to={'/#testimonials'}
-            >
-              Testimonials
-            </Link>
-            <Link className="divider" to={'/contact'}>
-              Contact
-            </Link>
-
-            <Link to={'/blog'}>Blog</Link>
-          </div>
-          <div className={`nav-m${this.state.open ? ' open' : ''}`}>
-            <button
-              aria-label="Toggle Menu"
-              onClick={this._handleClick}
-              className="icon"
-            >
-              <div className="first" />
-              <div className="second" />
-              <div className="third" />
-            </button>
-          </div>
-          <div className="nav-mm">
-            <Link
-              onClick={e => this._handleLinkClick(e, '#about')}
-              to={'/#about'}
-            >
-              About
-            </Link>
-            <Link
-              onClick={e => this._handleLinkClick(e, '#experience')}
-              to={'/#experience'}
-            >
-              Experience
-            </Link>
-            <Link
-              onClick={e => this._handleLinkClick(e, '#work')}
-              to={'/#work'}
-            >
-              Work
-            </Link>
-            <Link
-              onClick={e => this._handleLinkClick(e, '#clients')}
-              to={'/#clients'}
-            >
-              Clients
-            </Link>
-            <Link
-              onClick={e => this._handleLinkClick(e, '#testimonials')}
-              to={'/#testimonials'}
-            >
-              Testimonials
-            </Link>
-            <Link
-              onClick={this._handleLinkClick}
-              className="divider"
-              to={'/contact'}
-            >
-              Contact
-            </Link>
-
-            <Link onClick={this._handleLinkClick} to={'/blog'}>
-              Blog
-            </Link>
-          </div>
-        </Container>
-      </HeaderWrapper>
-    );
-  }
+              }
+            `}
+            render={data => (
+              <Link to="/">
+                <LogoImg fluid={data.file.childImageSharp.fluid} />
+              </Link>
+            )}
+          />
+        </div>
+        <div className="nav-d">{renderLinks()}</div>
+        <div className={`nav-m${open ? ' open' : ''}`}>
+          <button
+            aria-label="Toggle Menu"
+            onClick={() => setOpen(!open)}
+            className="icon"
+          >
+            <div className="first" />
+            <div className="second" />
+            <div className="third" />
+          </button>
+        </div>
+        <div className="nav-mm">{renderLinks()}</div>
+      </Container>
+    </HeaderWrapper>
+  );
 }
+
+Header.propTypes = {
+  location: PropTypes.object.isRequired,
+};
