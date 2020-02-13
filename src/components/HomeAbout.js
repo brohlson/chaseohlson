@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Container from '../UI/Container';
+import Container from './Container';
 import fetch from 'isomorphic-unfetch';
-import endpoints from '../../util/endpoints';
-import LoadingIcon from '../../images/loading.svg';
+import endpoints from '../util/endpoints';
+import LoadingIcon from '../images/loading.svg';
 import ReactAudioPlayer from 'react-audio-player';
 
 const AboutWrapper = styled.div`
@@ -112,7 +112,7 @@ const PlayerWrapper = styled.div`
   }
 `;
 
-export default class About extends React.Component {
+export default class HomeAbout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -223,7 +223,7 @@ export default class About extends React.Component {
   }
 }
 
-About.propTypes = {
+HomeAbout.propTypes = {
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
 };

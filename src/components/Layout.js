@@ -1,10 +1,14 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import styled, { ThemeProvider } from 'styled-components';
+
 import GlobalStyle from '../styles/Global';
 import Theme from '../styles/Theme';
-import styled, { ThemeProvider } from 'styled-components';
-import Header from './UI/Header';
-import Footer from './UI/Footer';
+
+import Header from './Header';
+import Footer from './Footer';
 
 const SiteRoot = styled.div`
   background: white;
@@ -13,6 +17,9 @@ const SiteRoot = styled.div`
 
 const Layout = ({ children, location }) => (
   <SiteRoot>
+    <Helmet>
+      <link rel="preconnect" href="https://datocms-assets.com" />
+    </Helmet>
     <GlobalStyle />
     <ThemeProvider theme={Theme}>
       <>

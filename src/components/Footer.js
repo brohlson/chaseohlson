@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from '../UI/Button';
-import Container from '../UI/Container';
+import Button from './Button';
+import Container from './Container';
 import Link from 'gatsby-link';
 import { graphql, useStaticQuery } from 'gatsby';
 

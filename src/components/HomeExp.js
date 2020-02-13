@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Container from '../UI/Container';
-import Animations from '../../styles/Animations';
+import Container from './Container';
+import Animations from '../styles/Animations';
 
 const ExpWrapper = styled.div`
   margin-bottom: 10rem;
@@ -66,7 +66,7 @@ const TitleBlockWrapper = styled.div`
     position: absolute;
     bottom: 0;
     left: 0;
-    width: ${props => (props.selected ? `100%` : `0%`)};
+    width: ${props => (props.selected ? '100%' : '0%')};
     height: 0.2rem;
     background: ${props => props.theme.gradients.blackRed};
     z-index: 100;
@@ -78,7 +78,7 @@ const TitleBlockWrapper = styled.div`
     pointer-events: none;
     color: ${props =>
       props.selected ? props.theme.colors.red : props.theme.colors.black};
-    font-weight: ${props => (props.selected ? `500` : `normal`)};
+    font-weight: ${props => (props.selected ? '500' : 'normal')};
   }
   .title {
     display: flex;
@@ -104,7 +104,7 @@ const Arrow = styled.div`
     height: 100%;
     background: ${props => props.theme.gradients.red};
     z-index: 100;
-    transform: rotate(${props => (props.selected ? `45deg` : `-45deg`)});
+    transform: rotate(${props => (props.selected ? '45deg' : '-45deg')});
   }
   &:after {
     transition: all 0.2s ease;
@@ -116,7 +116,7 @@ const Arrow = styled.div`
     height: 100%;
     background: ${props => props.theme.gradients.redVert};
     z-index: 100;
-    transform: rotate(${props => (props.selected ? `-45deg` : `45deg`)});
+    transform: rotate(${props => (props.selected ? '-45deg' : '45deg')});
   }
 `;
 
@@ -124,7 +124,7 @@ const DetailBlockWrapper = styled.div`
   animation: ${Animations.fadeInUp} 0.2s;
   transition: opacity 0.2s ease;
   position: relative;
-  display: ${props => (props.selected ? `flex` : `none`)};
+  display: ${props => (props.selected ? 'flex' : 'none')};
   flex-direction: column;
   .position {
     font-weight: bold;
@@ -176,7 +176,7 @@ const TitleDetailBlockWrapper = styled.div`
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
-    max-height: ${props => (props.selected ? `800px` : `0`)};
+    max-height: ${props => (props.selected ? '800px' : '0')};
     span {
       color: ${props => props.theme.colors.black};
       text-transform: none;
@@ -231,7 +231,7 @@ const TitleDetailBlockWrapper = styled.div`
   }
 `;
 
-function Exp({ blocks }) {
+function HomeExp({ blocks }) {
   const [index, setIndex] = useState(0);
 
   const handleLeftClick = idx => {
@@ -311,8 +311,8 @@ function Exp({ blocks }) {
   );
 }
 
-Exp.propTypes = {
+HomeExp.propTypes = {
   blocks: PropTypes.array.isRequired,
 };
 
-export default Exp;
+export default HomeExp;

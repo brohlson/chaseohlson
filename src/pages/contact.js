@@ -2,8 +2,8 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 
-import Container from '../components/UI/Container';
-import ContactForm from '../components/Common/ContactForm';
+import Container from '../components/Container';
+import ContactForm from '../components/ContactForm';
 import PageSEO from '../components/PageSEO';
 
 const ContactWrapper = styled.div`

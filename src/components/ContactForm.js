@@ -5,9 +5,9 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import fetch from 'isomorphic-unfetch';
 import Cookies from 'js-cookie';
-import endpoints from '../../util/endpoints';
+import endpoints from '../util/endpoints';
 import ReCAPTCHA from 'react-google-recaptcha';
-import LoadingIcon from '../../images/loading.svg';
+import LoadingIcon from '../images/loading.svg';
 
 const Confirm = styled(ReCAPTCHA)`
   margin-bottom: 2rem;

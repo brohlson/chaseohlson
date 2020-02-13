@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Container from '../UI/Container';
-import Animations from '../../styles/Animations';
+import Container from './Container';
+import Animations from '../styles/Animations';
 
 const TestWrapper = styled.div`
   background: white;

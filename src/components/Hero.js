@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
-import Container from '../UI/Container';
-import Button from '../UI/Button';
+import Container from './Container';
+import Button from './Button';
 
 const HeroWrapper = styled.div`
   margin-top: -80px;

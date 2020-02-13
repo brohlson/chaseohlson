@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Container from '../UI/Container';
+import Container from './Container';
 import Img from 'gatsby-image';
 
 const ClientsWrapper = styled.div`
@@ -35,11 +35,11 @@ const LogoImg = styled(Img)`
   max-width: 100% !important;
 `;
 
-const Clients = ({ logos }) => (
+const HomeClients = ({ logos }) => (
   <ClientsWrapper id="clients">
     <Container>
       <div className="title">
-        <h2>I've Worked With</h2>
+        <h2>I&apos;ve Worked With</h2>
       </div>
       {logos && (
         <div className="logos">
@@ -54,8 +54,8 @@ const Clients = ({ logos }) => (
   </ClientsWrapper>
 );
 
-Clients.propTypes = {
+HomeClients.propTypes = {
   logos: PropTypes.array,
 };
 
-export default Clients;
+export default HomeClients;

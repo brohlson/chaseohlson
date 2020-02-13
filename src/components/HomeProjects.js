@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Container from '../UI/Container';
+import Container from './Container';
 import Img from 'gatsby-image';
 
 const ProjectsWrapper = styled.div`
@@ -202,7 +203,7 @@ const ProjectBlock = ({ project }) => {
   );
 };
 
-const Projects = ({ title, projects }) => (
+const HomeProjects = ({ title, projects }) => (
   <ProjectsWrapper id="work">
     <Container>
       <div className="title">
@@ -215,9 +216,9 @@ const Projects = ({ title, projects }) => (
   </ProjectsWrapper>
 );
 
-Projects.propTypes = {
+HomeProjects.propTypes = {
   title: PropTypes.string.isRequired,
   projects: PropTypes.array.isRequired,
 };
 
-export default Projects;
+export default HomeProjects;

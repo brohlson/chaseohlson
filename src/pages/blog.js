@@ -3,9 +3,9 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import Container from '../components/UI/Container';
-import Button from '../components/UI/Button';
-import PostCardGroup from '../components/Common/PostCardGroup';
+import Container from '../components/Container';
+import Button from '../components/Button';
+import PostCardGroup from '../components/PostCardGroup';
 
 import helpers from '../util/helpers';
 import PageSEO from '../components/PageSEO';

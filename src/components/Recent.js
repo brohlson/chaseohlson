@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Container from '../UI/Container';
-import PostCardGroup from '../Common/PostCardGroup';
+import Container from './Container';
+import PostCardGroup from './PostCardGroup';
 
 const RecentWrapper = styled.div`
   background: white;

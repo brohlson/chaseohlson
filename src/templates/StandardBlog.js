@@ -5,8 +5,8 @@ import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import { TwitterFollowButton } from 'react-twitter-embed';
 
-import Container from '../components/UI/Container';
-import TextContent from '../components/Common/TextContent';
+import Container from '../components/Container';
+import TextContent from '../components/TextContent';
 import PageSEO from '../components/PageSEO';
 
 const Wrapper = styled.div`
