@@ -26,7 +26,7 @@
     "gatsby-remark-prismjs": "^3.3.31",
     "gatsby-source-datocms": "^2.1.23",
     "gatsby-source-filesystem": "^2.1.46",
-    "gatsby-transformer-remark": "^2.6.48",
+    "gatsby-transformer-remark": "^2.6.51",
     "gatsby-transformer-sharp": "^2.3.14",
     "http-proxy-middleware": "^0.20.0",
     "isomorphic-unfetch": "^3.0.0",
