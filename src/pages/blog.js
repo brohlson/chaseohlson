@@ -45,14 +45,10 @@ const PostsWrapper = styled.div`
 `;
 
 export default function Blog({ data: { page, blogData } }) {
-  const [blogPage, setPage] = useState(1);
-  const [allLoaded, setAllLoaded] = useState(false);
-
   const renderPosts = () => {
     const { edges } = blogData;
     const chunks = helpers.chunkArray(Array.from(edges), 2);
-    const paginated = Array.from(chunks).splice(0, blogPage * 2);
-    return paginated.map((group, index) => (
+    return chunks.map((group, index) => (
       <PostCardGroup
         posts={group}
         topBorder={index === 0}
@@ -61,14 +57,6 @@ export default function Blog({ data: { page, blogData } }) {
     ));
   };
 
-  const onLoad = () => {
-    const { edges } = blogData;
-    const allPostsLoaded = (blogPage + 1) * 2 >= edges.length / 2;
-    setPage(blogPage + 1);
-    setAllLoaded(allPostsLoaded);
-  };
-
-  const { edges } = blogData;
   return (
     <Fragment>
       <PageSEO meta={page.seoMetaTags} />
@@ -79,19 +67,7 @@ export default function Blog({ data: { page, blogData } }) {
         </Container>
       </HeroWrapper>
       <PostsWrapper>
-        <Container>
-          {renderPosts()}
-          {edges.length >= 2 * 2 + 1 && (
-            <div className="load">
-              <Button
-                type={'action'}
-                action={onLoad}
-                text={allLoaded ? 'All Posts Loaded' : 'Load More Posts'}
-                disabled={allLoaded}
-              />
-            </div>
-          )}
-        </Container>
+        <Container>{renderPosts()}</Container>
       </PostsWrapper>
     </Fragment>
   );
@@ -120,7 +96,7 @@ export const blogQuery = graphql`
           title
           dateOverride(formatString: "MMMM Do, YYYY")
           meta {
-            createdAt(formatString: "MMMM Do, YYYY")
+            firstPublishedAt(formatString: "MMMM Do, YYYY")
             publishedAt(formatString: "MMMM Do, YYYY")
           }
           contentNode {

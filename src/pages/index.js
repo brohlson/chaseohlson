@@ -100,7 +100,7 @@ export const homeQuery = graphql`
           title
           slug
           meta {
-            createdAt(formatString: "MMMM Do, YYYY")
+            firstPublishedAt(formatString: "MMMM Do, YYYY")
             publishedAt(formatString: "MMMM Do, YYYY")
           }
           dateOverride(formatString: "MMMM Do, YYYY")

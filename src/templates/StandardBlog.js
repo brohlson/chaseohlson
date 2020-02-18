@@ -66,11 +66,12 @@ const TitleWrapper = styled.div`
     position: relative;
     margin-left: 1.5rem;
     margin-top: 0;
-    &:first-child {
-      margin-right: 3.5rem;
-    }
+
+    margin-right: 3.5rem;
+
     &:last-child {
       margin-bottom: 0;
+      margin-right: 0;
     }
     &:before {
       content: '';
@@ -191,6 +192,7 @@ const PostWrapper = styled.div`
 
 const StandardBlog = ({ data: { blog } }) => {
   const splitTags = blog.tags.split(',');
+  const hasBeenUpdated = blog.meta.firstPublishedAt !== blog.meta.publishedAt;
   return (
     <Fragment>
       <PageSEO meta={blog.seoMetaTags} />
@@ -208,7 +210,8 @@ const StandardBlog = ({ data: { blog } }) => {
                 <h1>{blog.title}</h1>
               </div>
               <div className="details">
-                <p>Date: {blog.dateOverride || blog.meta.publishedAt}</p>
+                {hasBeenUpdated && <p>Updated: {blog.meta.publishedAt}</p>}
+                <p>Posted: {blog.dateOverride || blog.meta.firstPublishedAt}</p>
                 <p>
                   Topics:{' '}
                   {splitTags.map((item, index) =>
@@ -251,8 +254,8 @@ export const blogQuery = graphql`
       slug
       dateOverride(formatString: "MMMM Do, YYYY")
       meta {
+        firstPublishedAt(formatString: "MMMM Do, YYYY")
         publishedAt(formatString: "MMMM Do, YYYY")
-        createdAt(formatString: "MMMM Do, YYYY")
       }
       tags
       contentNode {

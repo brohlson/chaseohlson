@@ -5,6 +5,9 @@ import 'typeface-inconsolata';
 import 'prism-theme-night-owl';
 
 const GlobalStyle = createGlobalStyle`
+  a:hover {
+    text-decoration: none !important;
+  }
   p, a, li, span, small {
     font-family: 'Roboto Mono', monospace;
   }
