@@ -1,0 +1,61 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "13:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: eslint-config-prettier
+    versions:
+    - 6.15.0
+  - dependency-name: http-proxy-middleware
+    versions:
+    - 1.0.6
+    - 1.1.0
+    - 1.1.1
+    - 1.1.2
+    - 1.2.0
+    - 1.3.0
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+  - dependency-name: prismjs
+    versions:
+    - 1.21.0
+  - dependency-name: concurrently
+    versions:
+    - 5.3.0
+    - 6.0.0
+    - 6.0.1
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
+  - dependency-name: gatsby-source-datocms
+    versions:
+    - 2.5.10
+    - 2.5.11
+    - 2.5.12
+    - 2.5.14
+    - 2.5.16
+    - 2.5.17
+    - 2.5.18
+    - 2.5.19
+    - 2.5.8
+    - 2.6.10
+    - 2.6.11
+    - 2.6.12
+    - 2.6.5
+    - 2.6.6
+    - 2.6.8
+  - dependency-name: y18n
+    versions:
+    - 4.0.1
+  - dependency-name: gatsby-transformer-remark
+    versions:
+    - 2.15.0
+    - 2.16.0
+  - dependency-name: gatsby-plugin-google-analytics
+    versions:
+    - 2.10.0
